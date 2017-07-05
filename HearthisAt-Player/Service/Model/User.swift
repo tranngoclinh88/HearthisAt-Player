@@ -11,12 +11,12 @@ import ObjectMapper
 
 struct User: Mappable {
     
-    private(set) var id: String?
+    private(set) var id: Int?
     private(set) var permalink: String?
     private(set) var username: String?
     private(set) var uri: String?
-    private(set) var permalinkUrl: String?
-    private(set) var avatarUrl: String?
+    private(set) var permalinkUrl: URL?
+    private(set) var avatarUrl: URL?
     
     // MARK: Mappable
     
@@ -25,11 +25,11 @@ struct User: Mappable {
     }
     
     mutating func mapping(map: Map) {
-        self.id             <- map["id"]
+        self.id             <- (map["id"], IntTransform())
         self.permalink      <- map["permalink"]
         self.username       <- map["username"]
         self.uri            <- map["uri"]
-        self.permalinkUrl   <- map["permalink_url"]
-        self.avatarUrl      <- map["avatar_url"]
+        self.permalinkUrl   <- (map["permalink_url"], URLTransform())
+        self.avatarUrl      <- (map["avatar_url"], URLTransform())
     }
 }
