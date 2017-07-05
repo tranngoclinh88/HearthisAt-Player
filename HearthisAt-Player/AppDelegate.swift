@@ -20,8 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let config = AppConfig(with: NSDictionary(contentsOfFile: configPlist) as! [String : Any])
         
         let requestBuilder = RequestBuilder(with: config)
+        let requestExecutor = RequestExecutor()
         
-        let request = requestBuilder.build(for: .topTracks, method: .get)
+        if let request = requestBuilder.build(for: .topTracks, method: .get) {
+            requestExecutor.execute(request, success: { (request, response, data) in
+                
+            }, failure: { (request, response, error) in
+                dump(error)
+            })
+        }
         
         return true
     }

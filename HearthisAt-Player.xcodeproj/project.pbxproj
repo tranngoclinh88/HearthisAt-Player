@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF99A0E8C28570A1DB19CE19 /* Pods_HearthisAt_Player.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E2E1F66437A6670157C12D /* Pods_HearthisAt_Player.framework */; };
+		D62375681F0D47F800AACA96 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375671F0D47F800AACA96 /* Response.swift */; };
 		D693E7D91F0D385400C5B88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D693E7D81F0D385400C5B88C /* AppDelegate.swift */; };
 		D6BAB3861F0D39980056A13A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB37E1F0D39980056A13A /* Assets.xcassets */; };
 		D6BAB3871F0D39980056A13A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB37F1F0D39980056A13A /* LaunchScreen.storyboard */; };
@@ -22,11 +23,13 @@
 		D6BAB39C1F0D3E080056A13A /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAB39B1F0D3E080056A13A /* Endpoints.swift */; };
 		D6BAB39E1F0D3F920056A13A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAB39D1F0D3F920056A13A /* Request.swift */; };
 		D6BAB3A01F0D3F9E0056A13A /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAB39F1F0D3F9E0056A13A /* RequestBuilder.swift */; };
+		D6BAB3A21F0D43B90056A13A /* RequestExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAB3A11F0D43B90056A13A /* RequestExecutor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		13E78C73F61817FF43F0C0FF /* Pods-HearthisAt-Player.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HearthisAt-Player.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HearthisAt-Player/Pods-HearthisAt-Player.debug.xcconfig"; sourceTree = "<group>"; };
 		B688C9A710F1D9E93CE040A5 /* Pods-HearthisAt-Player.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HearthisAt-Player.release.xcconfig"; path = "Pods/Target Support Files/Pods-HearthisAt-Player/Pods-HearthisAt-Player.release.xcconfig"; sourceTree = "<group>"; };
+		D62375671F0D47F800AACA96 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		D693E7D51F0D385400C5B88C /* HearthisAt-Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HearthisAt-Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D693E7D81F0D385400C5B88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D693E7E41F0D385400C5B88C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -43,6 +46,7 @@
 		D6BAB39B1F0D3E080056A13A /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		D6BAB39D1F0D3F920056A13A /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		D6BAB39F1F0D3F9E0056A13A /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		D6BAB3A11F0D43B90056A13A /* RequestExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestExecutor.swift; sourceTree = "<group>"; };
 		F9E2E1F66437A6670157C12D /* Pods_HearthisAt_Player.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HearthisAt_Player.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -174,7 +178,9 @@
 			children = (
 				D6BAB39B1F0D3E080056A13A /* Endpoints.swift */,
 				D6BAB39D1F0D3F920056A13A /* Request.swift */,
+				D62375671F0D47F800AACA96 /* Response.swift */,
 				D6BAB39F1F0D3F9E0056A13A /* RequestBuilder.swift */,
+				D6BAB3A11F0D43B90056A13A /* RequestExecutor.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -307,7 +313,9 @@
 				D6BAB3941F0D3B8B0056A13A /* AppConfig.swift in Sources */,
 				D6BAB3961F0D3BE50056A13A /* ApiConfig.swift in Sources */,
 				D6BAB3901F0D3ABB0056A13A /* Config.swift in Sources */,
+				D62375681F0D47F800AACA96 /* Response.swift in Sources */,
 				D693E7D91F0D385400C5B88C /* AppDelegate.swift in Sources */,
+				D6BAB3A21F0D43B90056A13A /* RequestExecutor.swift in Sources */,
 				D6BAB3A01F0D3F9E0056A13A /* RequestBuilder.swift in Sources */,
 				D6BAB38D1F0D3A5B0056A13A /* Service.swift in Sources */,
 				D6BAB39C1F0D3E080056A13A /* Endpoints.swift in Sources */,

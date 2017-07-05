@@ -13,10 +13,15 @@ class Request {
     
     // MARK: Properties
     
+    /// The URL for the request.
     let url: URL
+    /// The method to use.
     let method: Alamofire.HTTPMethod
+    /// The headers to send.
     let headers: Alamofire.HTTPHeaders?
+    /// The parameters to send.
     let parameters: Alamofire.Parameters?
+    /// The encoding to use.
     let encoding: Alamofire.ParameterEncoding?
     
     // MARK: Init
