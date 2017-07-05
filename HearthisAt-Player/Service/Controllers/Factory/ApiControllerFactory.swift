@@ -10,7 +10,7 @@ import Foundation
 
 class ApiControllerFactory: ControllerFactory {
     
-    private(set) var tracksController: TracksController
+    private(set) var feedController: FeedController
     
     // MARK: Init
     
@@ -18,8 +18,8 @@ class ApiControllerFactory: ControllerFactory {
                   requestBuilder: RequestBuilder,
                   requestExecutor: RequestExecutor) {
         
-        self.tracksController = TracksApiController(with: config,
-                                                    requestBuilder: requestBuilder,
-                                                    requestExecutor: requestExecutor)
+        self.feedController = FeedApiController(with: config,
+                                                requestBuilder: requestBuilder,
+                                                requestExecutor: requestExecutor)
     }
 }

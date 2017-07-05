@@ -1,5 +1,5 @@
 //
-//  TracksController.swift
+//  FeedController.swift
 //  HearthisAt-Player
 //
 //  Created by Merrick Sapsford on 05/07/2017.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol TracksController: Controller {
+protocol FeedController: Controller {
     
 }

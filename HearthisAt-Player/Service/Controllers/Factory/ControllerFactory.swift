@@ -12,7 +12,7 @@ protocol ControllerFactory: class {
     
     // MARK: Properties
     
-    var tracksController: TracksController { get }
+    var feedController: FeedController { get }
     
     // MARK: Init
     

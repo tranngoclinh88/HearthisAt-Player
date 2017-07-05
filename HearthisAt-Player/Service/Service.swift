@@ -17,8 +17,8 @@ class Service {
     let requestExecutor: RequestExecutor
     private let controllerFactory: ControllerFactory
     
-    var tracksController: TracksController {
-        return controllerFactory.tracksController
+    var feedController: FeedController {
+        return controllerFactory.feedController
     }
     
     // MARK: Init

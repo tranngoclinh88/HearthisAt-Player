@@ -10,7 +10,7 @@ import Foundation
 
 enum Endpoint {
     
-    case topTracks
+    case feed
 }
 
 extension Endpoint {
@@ -19,7 +19,7 @@ extension Endpoint {
     var path: String {
         switch self {
             
-        case .topTracks:
+        case .feed:
             return "/feed/"
         }
     }
