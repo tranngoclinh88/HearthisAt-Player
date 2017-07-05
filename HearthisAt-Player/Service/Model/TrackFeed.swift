@@ -16,4 +16,16 @@ class TrackFeed: PagedResults<Track> {
         case popular = "popular"
         case new = "new"
     }
+    
+    // MARK: Properties
+    
+    static let defaultPageSize = 20
+    
+    let kind: Kind
+    
+    // MARK: Init
+    
+    init(kind: Kind) {
+        self.kind = kind
+    }
 }

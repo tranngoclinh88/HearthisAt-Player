@@ -11,10 +11,17 @@ import ObjectMapper
 
 class FeedApiController: ApiController, FeedController {
  
+    // MARK: Properties
+    
+    private(set) var popularFeed = TrackFeed(kind: .popular)
+    private(set) var newFeed = TrackFeed(kind: .new)
+    
+    // MARK: Methods
+    
     func loadFeed(of kind: TrackFeed.Kind,
                   pageIndex: Int,
                   count: Int,
-                  success: ((TrackFeed) -> Void)?,
+                  success: ((TrackFeed, [Track]) -> Void)?,
                   failure: ((Error) -> Void)?) {
         
         let parameters: [String : Any] = ["type" : kind.rawValue,
@@ -27,6 +34,7 @@ class FeedApiController: ApiController, FeedController {
                                                     return
         }
         
+        // perform the request
         requestExecutor.execute(request,
                                 success:
             { (request, response, data) in
@@ -38,13 +46,38 @@ class FeedApiController: ApiController, FeedController {
                     
                     let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [[String : Any]]
                     let tracks = Mapper<Track>().mapArray(JSONArray: json)
-                    dump(tracks)
+                    let feed = self.feed(for: kind)
+                    
+                    feed.insert(page: tracks, at: pageIndex)
+                    
+                    success?(feed, tracks)
                     
                 } catch {
                     failure?(ControllerError.unexpectedResponse)
                 }
         }) { (request, response, error) in
             
+        }
+    }
+    
+    func loadNextPage(of feed: TrackFeed,
+                      success: ((TrackFeed, [Track]) -> Void)?,
+                      failure: ((Error) -> Void)?) {
+        loadFeed(of: feed.kind,
+                 pageIndex: feed.currentPage,
+                 count: feed.pageSize ?? TrackFeed.defaultPageSize,
+                 success: success,
+                 failure: failure)
+    }
+    
+    // MARK: Utility
+    
+    func feed(for kind: TrackFeed.Kind) -> TrackFeed {
+        switch kind {
+        case .popular:
+            return popularFeed
+        case .new:
+            return newFeed
         }
     }
 }

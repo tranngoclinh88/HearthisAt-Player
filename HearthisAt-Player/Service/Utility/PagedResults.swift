@@ -16,27 +16,71 @@ class PagedResults<T> {
     
     // MARK: Properties
     
-    private var pages: [PageIndex : [T]] = [:]
+    private var elements: [PageIndex : ResultsPage<T>] = [:]
     
     var count: Int {
         return allItems.count
     }
     
+    var currentPage: PageIndex {
+        return elements.count - 1
+    }
+    
+    var pageSize: Int? {
+        return elements[currentPage]?.items.count
+    }
+    
     var allItems: [T] {
         var allItems = [T]()
-        pages.forEach { (pageIndex, items) in
-            allItems.append(contentsOf: items)
+        elements.forEach { (pageIndex, page) in
+            allItems.append(contentsOf: page.items)
         }
         return allItems
     }
     
-    func append(page: [T]) {
-        let nextIndex = pages.count
-        pages[nextIndex] = page
+    var isEmpty: Bool {
+        return elements.count == 0
     }
     
     func page(at index: PageIndex) -> [T]? {
-        guard pages.count < index else { return nil }
-        return pages[index]
+        guard elements.count < index else { return nil }
+        return elements[index]?.items
+    }
+    
+    func append(page: [T]) {
+        let nextIndex = elements.count
+        elements[nextIndex] = ResultsPage<T>(with: page)
+    }
+    
+    func insert(page: [T],
+                at index: PageIndex) {
+        
+        let index = min(index, elements.count)
+        elements[index] = ResultsPage<T>(with: page)
+
+        // invalidate later page indexes
+        let validElements = self.elements.filter({ $0.key <= index})
+        self.elements.removeAll()
+        validElements.forEach { (index, page) in
+            self.elements[index] = page
+        }
+    }
+}
+
+fileprivate extension PagedResults {
+    
+    class ResultsPage<T> {
+        
+        let items: [T]
+        
+        private(set) var isValid: Bool = true
+        
+        init(with items: [T]) {
+            self.items = items
+        }
+        
+        func invalidate() {
+            isValid = false
+        }
     }
 }
