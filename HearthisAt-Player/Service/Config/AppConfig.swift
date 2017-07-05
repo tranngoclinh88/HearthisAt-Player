@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Object that contains configuration data for the application.
 struct AppConfig: Config {
     
     private struct Keys {
@@ -16,6 +17,7 @@ struct AppConfig: Config {
     
     // MARK: Properties
     
+    /// API Configuration.
     let api: ApiConfig
     
     // MARK: Init

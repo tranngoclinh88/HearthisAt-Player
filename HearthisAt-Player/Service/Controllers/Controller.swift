@@ -1,5 +1,5 @@
 //
-//  Config.swift
+//  Controller.swift
 //  HearthisAt-Player
 //
 //  Created by Merrick Sapsford on 05/07/2017.
@@ -8,8 +8,6 @@
 
 import Foundation
 
-/// An object that contains configuration data for the application.
-protocol Config {
+protocol Controller {
     
-    init(with dataDictionary: [String : Any])
 }

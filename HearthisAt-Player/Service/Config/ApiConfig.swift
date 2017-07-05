@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Object that contains configuration data for the Hearthis.at API.
 struct ApiConfig: Config {
     
     // MARK: Keys

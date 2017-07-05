@@ -18,6 +18,8 @@
 		D6BAB3921F0D3B180056A13A /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB3911F0D3B180056A13A /* Config.plist */; };
 		D6BAB3941F0D3B8B0056A13A /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAB3931F0D3B8B0056A13A /* AppConfig.swift */; };
 		D6BAB3961F0D3BE50056A13A /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAB3951F0D3BE50056A13A /* ApiConfig.swift */; };
+		D6BAB3991F0D3DB30056A13A /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAB3981F0D3DB30056A13A /* Controller.swift */; };
+		D6BAB39C1F0D3E080056A13A /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAB39B1F0D3E080056A13A /* Endpoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		D6BAB3911F0D3B180056A13A /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		D6BAB3931F0D3B8B0056A13A /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		D6BAB3951F0D3BE50056A13A /* ApiConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
+		D6BAB3981F0D3DB30056A13A /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		D6BAB39B1F0D3E080056A13A /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		F9E2E1F66437A6670157C12D /* Pods_HearthisAt_Player.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HearthisAt_Player.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -112,6 +116,8 @@
 			children = (
 				D6BAB38C1F0D3A5B0056A13A /* Service.swift */,
 				D6BAB38E1F0D3A710056A13A /* Config */,
+				D6BAB3971F0D3DAB0056A13A /* Controllers */,
+				D6BAB39A1F0D3E030056A13A /* Requests */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -149,6 +155,22 @@
 				D6BAB3951F0D3BE50056A13A /* ApiConfig.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		D6BAB3971F0D3DAB0056A13A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D6BAB3981F0D3DB30056A13A /* Controller.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D6BAB39A1F0D3E030056A13A /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				D6BAB39B1F0D3E080056A13A /* Endpoints.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +303,8 @@
 				D6BAB3901F0D3ABB0056A13A /* Config.swift in Sources */,
 				D693E7D91F0D385400C5B88C /* AppDelegate.swift in Sources */,
 				D6BAB38D1F0D3A5B0056A13A /* Service.swift in Sources */,
+				D6BAB39C1F0D3E080056A13A /* Endpoints.swift in Sources */,
+				D6BAB3991F0D3DB30056A13A /* Controller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
