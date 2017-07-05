@@ -14,5 +14,6 @@ enum ControllerError: Error {
 }
 
 protocol Controller: class {
-    
+ 
+    typealias MethodFailure = (Error) -> Void
 }

@@ -10,4 +10,16 @@ import Foundation
 
 class TracksApiController: ApiController, TracksController {
     
+    func tracks(for user: User) -> PagedResults<Track>? {
+        // return loaded tracks for a user
+        return nil
+    }
+    
+    func loadTracks(for user: User,
+                    page: Int,
+                    count: Int,
+                    success: ((PagedResults<Track>) -> Void)?,
+                    failure: (Error) -> Void) {
+        
+    }
 }

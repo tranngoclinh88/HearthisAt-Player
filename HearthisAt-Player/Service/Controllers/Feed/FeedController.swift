@@ -31,7 +31,7 @@ protocol FeedController: Controller {
                   pageIndex: Int,
                   count: Int,
                   success: ((_ feed: TrackFeed, _ newPage: [Track]) -> Void)?,
-                  failure: ((Error) -> Void)?)
+                  failure: MethodFailure?)
     
     /// Load the next page of a feed.
     ///
@@ -41,5 +41,5 @@ protocol FeedController: Controller {
     ///   - failure: Execution on failed method.
     func loadNextPage(of feed: TrackFeed,
                       success: ((_ feed: TrackFeed, _ newPage: [Track]) -> Void)?,
-                      failure: ((Error) -> Void)?)
+                      failure: MethodFailure?)
 }

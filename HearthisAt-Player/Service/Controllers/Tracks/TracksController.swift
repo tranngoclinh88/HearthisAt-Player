@@ -10,4 +10,11 @@ import Foundation
 
 protocol TracksController: Controller {
     
+    func tracks(for user: User) -> PagedResults<Track>?
+    
+    func loadTracks(for user: User,
+                    page: Int,
+                    count: Int,
+                    success: ((PagedResults<Track>) -> Void)?,
+                    failure: MethodFailure)
 }
