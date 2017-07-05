@@ -8,13 +8,7 @@
 
 import Foundation
 
-protocol ControllerFactory: class {
-    
-    // MARK: Properties
-    
-    var feedController: FeedController { get }
-    
-    var playbackController: PlaybackController { get }
+protocol ControllerFactory: ControllerProvider {
     
     // MARK: Init
     

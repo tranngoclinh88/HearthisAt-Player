@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Service {
+class Service: ControllerProvider {
     
     // MARK: Properties
     
@@ -19,6 +19,9 @@ class Service {
     
     var feedController: FeedController {
         return controllerFactory.feedController
+    }
+    var tracksController: TracksController {
+        return controllerFactory.tracksController
     }
     var playbackController: PlaybackController {
         return controllerFactory.playbackController

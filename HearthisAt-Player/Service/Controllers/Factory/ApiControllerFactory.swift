@@ -12,6 +12,7 @@ class ApiControllerFactory: ControllerFactory {
     
     private(set) var feedController: FeedController
     private(set) var playbackController: PlaybackController
+    private(set) var tracksController: TracksController
     
     // MARK: Init
     
@@ -22,6 +23,9 @@ class ApiControllerFactory: ControllerFactory {
         self.feedController = FeedApiController(with: config,
                                                 requestBuilder: requestBuilder,
                                                 requestExecutor: requestExecutor)
+        self.tracksController = TracksApiController(with: config,
+                                                    requestBuilder: requestBuilder,
+                                                    requestExecutor: requestExecutor)
         self.playbackController = PlaybackApiController(with: config,
                                                         requestBuilder: requestBuilder,
                                                         requestExecutor: requestExecutor)

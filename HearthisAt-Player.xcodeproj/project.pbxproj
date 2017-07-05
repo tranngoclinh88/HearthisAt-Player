@@ -21,6 +21,9 @@
 		D62375871F0D769400AACA96 /* MapperTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375861F0D769400AACA96 /* MapperTransforms.swift */; };
 		D623758A1F0D82A800AACA96 /* PlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375891F0D82A800AACA96 /* PlaybackController.swift */; };
 		D623758C1F0D82AF00AACA96 /* PlaybackApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623758B1F0D82AF00AACA96 /* PlaybackApiController.swift */; };
+		D623758F1F0D84F000AACA96 /* TracksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623758E1F0D84F000AACA96 /* TracksController.swift */; };
+		D62375911F0D850200AACA96 /* TracksApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375901F0D850200AACA96 /* TracksApiController.swift */; };
+		D62375931F0D855800AACA96 /* ControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375921F0D855800AACA96 /* ControllerProvider.swift */; };
 		D693E7D91F0D385400C5B88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D693E7D81F0D385400C5B88C /* AppDelegate.swift */; };
 		D6BAB3861F0D39980056A13A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB37E1F0D39980056A13A /* Assets.xcassets */; };
 		D6BAB3871F0D39980056A13A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB37F1F0D39980056A13A /* LaunchScreen.storyboard */; };
@@ -54,6 +57,9 @@
 		D62375861F0D769400AACA96 /* MapperTransforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapperTransforms.swift; sourceTree = "<group>"; };
 		D62375891F0D82A800AACA96 /* PlaybackController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackController.swift; sourceTree = "<group>"; };
 		D623758B1F0D82AF00AACA96 /* PlaybackApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackApiController.swift; sourceTree = "<group>"; };
+		D623758E1F0D84F000AACA96 /* TracksController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksController.swift; sourceTree = "<group>"; };
+		D62375901F0D850200AACA96 /* TracksApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksApiController.swift; sourceTree = "<group>"; };
+		D62375921F0D855800AACA96 /* ControllerProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerProvider.swift; sourceTree = "<group>"; };
 		D693E7D51F0D385400C5B88C /* HearthisAt-Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HearthisAt-Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D693E7D81F0D385400C5B88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D693E7E41F0D385400C5B88C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -149,6 +155,15 @@
 			path = Playback;
 			sourceTree = "<group>";
 		};
+		D623758D1F0D84E900AACA96 /* Tracks */ = {
+			isa = PBXGroup;
+			children = (
+				D623758E1F0D84F000AACA96 /* TracksController.swift */,
+				D62375901F0D850200AACA96 /* TracksApiController.swift */,
+			);
+			path = Tracks;
+			sourceTree = "<group>";
+		};
 		D693E7CC1F0D385400C5B88C = {
 			isa = PBXGroup;
 			children = (
@@ -242,8 +257,10 @@
 			children = (
 				D6BAB3981F0D3DB30056A13A /* Controller.swift */,
 				D62375731F0D4DD400AACA96 /* ApiController.swift */,
+				D62375921F0D855800AACA96 /* ControllerProvider.swift */,
 				D62375691F0D4B7B00AACA96 /* Factory */,
 				D623757A1F0D65A200AACA96 /* Feed */,
+				D623758D1F0D84E900AACA96 /* Tracks */,
 				D62375881F0D82A100AACA96 /* Playback */,
 			);
 			path = Controllers;
@@ -392,16 +409,19 @@
 				D623757E1F0D65AE00AACA96 /* FeedApiController.swift in Sources */,
 				D6BAB3961F0D3BE50056A13A /* ApiConfig.swift in Sources */,
 				D623756B1F0D4B8100AACA96 /* ControllerFactory.swift in Sources */,
+				D623758F1F0D84F000AACA96 /* TracksController.swift in Sources */,
 				D6BAB3901F0D3ABB0056A13A /* Config.swift in Sources */,
 				D62375791F0D62DB00AACA96 /* Track.swift in Sources */,
 				D623756D1F0D4C1200AACA96 /* ApiControllerFactory.swift in Sources */,
 				D62375681F0D47F800AACA96 /* Response.swift in Sources */,
+				D62375931F0D855800AACA96 /* ControllerProvider.swift in Sources */,
 				D693E7D91F0D385400C5B88C /* AppDelegate.swift in Sources */,
 				D6BAB3A21F0D43B90056A13A /* RequestExecutor.swift in Sources */,
 				D6BAB3A01F0D3F9E0056A13A /* RequestBuilder.swift in Sources */,
 				D62375741F0D4DD400AACA96 /* ApiController.swift in Sources */,
 				D62375811F0D661E00AACA96 /* PagedResults.swift in Sources */,
 				D6BAB38D1F0D3A5B0056A13A /* Service.swift in Sources */,
+				D62375911F0D850200AACA96 /* TracksApiController.swift in Sources */,
 				D623757C1F0D65A800AACA96 /* FeedController.swift in Sources */,
 				D62375871F0D769400AACA96 /* MapperTransforms.swift in Sources */,
 				D623758C1F0D82AF00AACA96 /* PlaybackApiController.swift in Sources */,
