@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    private(set) var service: Service?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -22,13 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let requestBuilder = RequestBuilder(with: config)
         let requestExecutor = RequestExecutor()
         
-        if let request = requestBuilder.build(for: .topTracks, method: .get) {
-            requestExecutor.execute(request, success: { (request, response, data) in
-                
-            }, failure: { (request, response, error) in
-                dump(error)
-            })
-        }
+        self.service = Service(with: config,
+                               requestBuilder: requestBuilder,
+                               requestExecutor: requestExecutor,
+                               controllerFactoryType: ApiControllerFactory.self)
         
         return true
     }

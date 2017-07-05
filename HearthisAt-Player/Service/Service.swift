@@ -10,4 +10,29 @@ import Foundation
 
 class Service {
     
+    // MARK: Properties
+    
+    let config: AppConfig
+    let requestBuilder: RequestBuilder
+    let requestExecutor: RequestExecutor
+    private let controllerFactory: ControllerFactory
+    
+    var tracksController: TracksController {
+        return controllerFactory.tracksController
+    }
+    
+    // MARK: Init
+    
+    init(with config: AppConfig,
+         requestBuilder: RequestBuilder,
+         requestExecutor: RequestExecutor,
+         controllerFactoryType: ControllerFactory.Type) {
+        self.config = config
+        self.requestBuilder = requestBuilder
+        self.requestExecutor = requestExecutor
+        
+        self.controllerFactory = controllerFactoryType.init(with: config,
+                                                            requestBuilder: requestBuilder,
+                                                            requestExecutor: requestExecutor)
+    }
 }

@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		BF99A0E8C28570A1DB19CE19 /* Pods_HearthisAt_Player.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E2E1F66437A6670157C12D /* Pods_HearthisAt_Player.framework */; };
 		D62375681F0D47F800AACA96 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375671F0D47F800AACA96 /* Response.swift */; };
+		D623756B1F0D4B8100AACA96 /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623756A1F0D4B8100AACA96 /* ControllerFactory.swift */; };
+		D623756D1F0D4C1200AACA96 /* ApiControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623756C1F0D4C1200AACA96 /* ApiControllerFactory.swift */; };
+		D62375701F0D4CB300AACA96 /* TracksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623756F1F0D4CB300AACA96 /* TracksController.swift */; };
+		D62375721F0D4CC500AACA96 /* TracksApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375711F0D4CC500AACA96 /* TracksApiController.swift */; };
+		D62375741F0D4DD400AACA96 /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375731F0D4DD400AACA96 /* ApiController.swift */; };
 		D693E7D91F0D385400C5B88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D693E7D81F0D385400C5B88C /* AppDelegate.swift */; };
 		D6BAB3861F0D39980056A13A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB37E1F0D39980056A13A /* Assets.xcassets */; };
 		D6BAB3871F0D39980056A13A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB37F1F0D39980056A13A /* LaunchScreen.storyboard */; };
@@ -30,6 +35,11 @@
 		13E78C73F61817FF43F0C0FF /* Pods-HearthisAt-Player.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HearthisAt-Player.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HearthisAt-Player/Pods-HearthisAt-Player.debug.xcconfig"; sourceTree = "<group>"; };
 		B688C9A710F1D9E93CE040A5 /* Pods-HearthisAt-Player.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HearthisAt-Player.release.xcconfig"; path = "Pods/Target Support Files/Pods-HearthisAt-Player/Pods-HearthisAt-Player.release.xcconfig"; sourceTree = "<group>"; };
 		D62375671F0D47F800AACA96 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		D623756A1F0D4B8100AACA96 /* ControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
+		D623756C1F0D4C1200AACA96 /* ApiControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiControllerFactory.swift; sourceTree = "<group>"; };
+		D623756F1F0D4CB300AACA96 /* TracksController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksController.swift; sourceTree = "<group>"; };
+		D62375711F0D4CC500AACA96 /* TracksApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksApiController.swift; sourceTree = "<group>"; };
+		D62375731F0D4DD400AACA96 /* ApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
 		D693E7D51F0D385400C5B88C /* HearthisAt-Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HearthisAt-Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D693E7D81F0D385400C5B88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D693E7E41F0D385400C5B88C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -77,6 +87,24 @@
 				B688C9A710F1D9E93CE040A5 /* Pods-HearthisAt-Player.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D62375691F0D4B7B00AACA96 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				D623756A1F0D4B8100AACA96 /* ControllerFactory.swift */,
+				D623756C1F0D4C1200AACA96 /* ApiControllerFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		D623756E1F0D4CAA00AACA96 /* Tracks */ = {
+			isa = PBXGroup;
+			children = (
+				D623756F1F0D4CB300AACA96 /* TracksController.swift */,
+				D62375711F0D4CC500AACA96 /* TracksApiController.swift */,
+			);
+			path = Tracks;
 			sourceTree = "<group>";
 		};
 		D693E7CC1F0D385400C5B88C = {
@@ -169,6 +197,9 @@
 			isa = PBXGroup;
 			children = (
 				D6BAB3981F0D3DB30056A13A /* Controller.swift */,
+				D62375731F0D4DD400AACA96 /* ApiController.swift */,
+				D62375691F0D4B7B00AACA96 /* Factory */,
+				D623756E1F0D4CAA00AACA96 /* Tracks */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -312,13 +343,18 @@
 				D6BAB3891F0D39980056A13A /* ViewController.swift in Sources */,
 				D6BAB3941F0D3B8B0056A13A /* AppConfig.swift in Sources */,
 				D6BAB3961F0D3BE50056A13A /* ApiConfig.swift in Sources */,
+				D623756B1F0D4B8100AACA96 /* ControllerFactory.swift in Sources */,
 				D6BAB3901F0D3ABB0056A13A /* Config.swift in Sources */,
+				D623756D1F0D4C1200AACA96 /* ApiControllerFactory.swift in Sources */,
 				D62375681F0D47F800AACA96 /* Response.swift in Sources */,
 				D693E7D91F0D385400C5B88C /* AppDelegate.swift in Sources */,
 				D6BAB3A21F0D43B90056A13A /* RequestExecutor.swift in Sources */,
 				D6BAB3A01F0D3F9E0056A13A /* RequestBuilder.swift in Sources */,
+				D62375721F0D4CC500AACA96 /* TracksApiController.swift in Sources */,
+				D62375741F0D4DD400AACA96 /* ApiController.swift in Sources */,
 				D6BAB38D1F0D3A5B0056A13A /* Service.swift in Sources */,
 				D6BAB39C1F0D3E080056A13A /* Endpoints.swift in Sources */,
+				D62375701F0D4CB300AACA96 /* TracksController.swift in Sources */,
 				D6BAB39E1F0D3F920056A13A /* Request.swift in Sources */,
 				D6BAB3991F0D3DB30056A13A /* Controller.swift in Sources */,
 			);
