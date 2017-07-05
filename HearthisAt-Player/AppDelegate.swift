@@ -19,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let configPlist = Bundle(for: type(of: self)).path(forResource: "Config", ofType: "plist")!
         let config = AppConfig(with: NSDictionary(contentsOfFile: configPlist) as! [String : Any])
         
+        let requestBuilder = RequestBuilder(with: config)
+        
+        let request = requestBuilder.build(for: .topTracks, method: .get)
+        
         return true
     }
 }
