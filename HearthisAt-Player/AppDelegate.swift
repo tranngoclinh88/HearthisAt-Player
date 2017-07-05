@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                requestBuilder: requestBuilder,
                                requestExecutor: requestExecutor,
                                controllerFactoryType: ApiControllerFactory.self)
-        
+    
         return true
     }
 }

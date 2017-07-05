@@ -19,6 +19,8 @@
 		D62375831F0D691200AACA96 /* TrackFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375821F0D691200AACA96 /* TrackFeed.swift */; };
 		D62375851F0D71FB00AACA96 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375841F0D71FB00AACA96 /* User.swift */; };
 		D62375871F0D769400AACA96 /* MapperTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375861F0D769400AACA96 /* MapperTransforms.swift */; };
+		D623758A1F0D82A800AACA96 /* PlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375891F0D82A800AACA96 /* PlaybackController.swift */; };
+		D623758C1F0D82AF00AACA96 /* PlaybackApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623758B1F0D82AF00AACA96 /* PlaybackApiController.swift */; };
 		D693E7D91F0D385400C5B88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D693E7D81F0D385400C5B88C /* AppDelegate.swift */; };
 		D6BAB3861F0D39980056A13A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB37E1F0D39980056A13A /* Assets.xcassets */; };
 		D6BAB3871F0D39980056A13A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB37F1F0D39980056A13A /* LaunchScreen.storyboard */; };
@@ -50,6 +52,8 @@
 		D62375821F0D691200AACA96 /* TrackFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackFeed.swift; sourceTree = "<group>"; };
 		D62375841F0D71FB00AACA96 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D62375861F0D769400AACA96 /* MapperTransforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapperTransforms.swift; sourceTree = "<group>"; };
+		D62375891F0D82A800AACA96 /* PlaybackController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackController.swift; sourceTree = "<group>"; };
+		D623758B1F0D82AF00AACA96 /* PlaybackApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackApiController.swift; sourceTree = "<group>"; };
 		D693E7D51F0D385400C5B88C /* HearthisAt-Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HearthisAt-Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D693E7D81F0D385400C5B88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D693E7E41F0D385400C5B88C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -134,6 +138,15 @@
 				D62375861F0D769400AACA96 /* MapperTransforms.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		D62375881F0D82A100AACA96 /* Playback */ = {
+			isa = PBXGroup;
+			children = (
+				D62375891F0D82A800AACA96 /* PlaybackController.swift */,
+				D623758B1F0D82AF00AACA96 /* PlaybackApiController.swift */,
+			);
+			path = Playback;
 			sourceTree = "<group>";
 		};
 		D693E7CC1F0D385400C5B88C = {
@@ -231,6 +244,7 @@
 				D62375731F0D4DD400AACA96 /* ApiController.swift */,
 				D62375691F0D4B7B00AACA96 /* Factory */,
 				D623757A1F0D65A200AACA96 /* Feed */,
+				D62375881F0D82A100AACA96 /* Playback */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -373,6 +387,7 @@
 			files = (
 				D6BAB3891F0D39980056A13A /* ViewController.swift in Sources */,
 				D62375831F0D691200AACA96 /* TrackFeed.swift in Sources */,
+				D623758A1F0D82A800AACA96 /* PlaybackController.swift in Sources */,
 				D6BAB3941F0D3B8B0056A13A /* AppConfig.swift in Sources */,
 				D623757E1F0D65AE00AACA96 /* FeedApiController.swift in Sources */,
 				D6BAB3961F0D3BE50056A13A /* ApiConfig.swift in Sources */,
@@ -389,6 +404,7 @@
 				D6BAB38D1F0D3A5B0056A13A /* Service.swift in Sources */,
 				D623757C1F0D65A800AACA96 /* FeedController.swift in Sources */,
 				D62375871F0D769400AACA96 /* MapperTransforms.swift in Sources */,
+				D623758C1F0D82AF00AACA96 /* PlaybackApiController.swift in Sources */,
 				D6BAB39C1F0D3E080056A13A /* Endpoints.swift in Sources */,
 				D6BAB39E1F0D3F920056A13A /* Request.swift in Sources */,
 				D6BAB3991F0D3DB30056A13A /* Controller.swift in Sources */,

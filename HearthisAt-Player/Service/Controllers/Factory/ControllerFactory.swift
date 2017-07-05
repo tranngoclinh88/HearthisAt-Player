@@ -14,6 +14,8 @@ protocol ControllerFactory: class {
     
     var feedController: FeedController { get }
     
+    var playbackController: PlaybackController { get }
+    
     // MARK: Init
     
     init(with config: AppConfig,

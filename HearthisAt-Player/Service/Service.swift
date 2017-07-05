@@ -20,6 +20,9 @@ class Service {
     var feedController: FeedController {
         return controllerFactory.feedController
     }
+    var playbackController: PlaybackController {
+        return controllerFactory.playbackController
+    }
     
     // MARK: Init
     
