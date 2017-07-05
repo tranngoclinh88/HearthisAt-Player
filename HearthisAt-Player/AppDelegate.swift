@@ -27,6 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                requestExecutor: requestExecutor,
                                controllerFactoryType: ApiControllerFactory.self)
         
+        service?.feedController.loadFeed(of: .popular, pageIndex: 0, count: 20, success: { (feed) in
+            
+        }, failure: { (error) in
+            
+        })
+        
         return true
     }
 }

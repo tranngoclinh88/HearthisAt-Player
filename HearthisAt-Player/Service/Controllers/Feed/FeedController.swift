@@ -10,4 +10,9 @@ import Foundation
 
 protocol FeedController: Controller {
     
+    func loadFeed(of kind: TrackFeed.Kind,
+                  pageIndex: Int,
+                  count: Int,
+                  success: ((TrackFeed) -> Void)?,
+                  failure: ((Error) -> Void)?)
 }

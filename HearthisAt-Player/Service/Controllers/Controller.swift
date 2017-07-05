@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum ControllerError: Error {
+    case unknownMethodFailure
+    case unexpectedResponse
+}
+
 protocol Controller: class {
     
 }

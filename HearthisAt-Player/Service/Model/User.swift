@@ -1,0 +1,35 @@
+//
+//  User.swift
+//  HearthisAt-Player
+//
+//  Created by Merrick Sapsford on 05/07/2017.
+//  Copyright © 2017 Merrick Sapsford. All rights reserved.
+//
+
+import Foundation
+import ObjectMapper
+
+struct User: Mappable {
+    
+    private(set) var id: String?
+    private(set) var permalink: String?
+    private(set) var username: String?
+    private(set) var uri: String?
+    private(set) var permalinkUrl: String?
+    private(set) var avatarUrl: String?
+    
+    // MARK: Mappable
+    
+    init?(map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        self.id             <- map["id"]
+        self.permalink      <- map["permalink"]
+        self.username       <- map["username"]
+        self.uri            <- map["uri"]
+        self.permalinkUrl   <- map["permalink_url"]
+        self.avatarUrl      <- map["avatar_url"]
+    }
+}
