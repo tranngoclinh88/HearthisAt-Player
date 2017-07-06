@@ -24,11 +24,17 @@
 		D623758F1F0D84F000AACA96 /* TracksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623758E1F0D84F000AACA96 /* TracksController.swift */; };
 		D62375911F0D850200AACA96 /* TracksApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375901F0D850200AACA96 /* TracksApiController.swift */; };
 		D62375931F0D855800AACA96 /* ControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375921F0D855800AACA96 /* ControllerProvider.swift */; };
+		D68DAC551F0EAA61000B390D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC541F0EAA61000B390D /* RootViewController.swift */; };
+		D68DAC571F0EAA7A000B390D /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC561F0EAA7A000B390D /* Root.storyboard */; };
+		D68DAC591F0EAA8E000B390D /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC581F0EAA8E000B390D /* Feed.storyboard */; };
+		D68DAC5B1F0EAA97000B390D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC5A1F0EAA97000B390D /* FeedViewController.swift */; };
+		D68DAC5F1F0EAB19000B390D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC5E1F0EAB19000B390D /* GradientView.swift */; };
+		D68DAC611F0EABD2000B390D /* AlbumArtBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC601F0EABD2000B390D /* AlbumArtBackgroundView.swift */; };
+		D68DAC631F0EAC3F000B390D /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC621F0EAC3F000B390D /* ColorPalette.swift */; };
+		D68DAC661F0EAFC5000B390D /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC651F0EAFC5000B390D /* Component.swift */; };
 		D693E7D91F0D385400C5B88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D693E7D81F0D385400C5B88C /* AppDelegate.swift */; };
 		D6BAB3861F0D39980056A13A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB37E1F0D39980056A13A /* Assets.xcassets */; };
 		D6BAB3871F0D39980056A13A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB37F1F0D39980056A13A /* LaunchScreen.storyboard */; };
-		D6BAB3891F0D39980056A13A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAB3851F0D39980056A13A /* ViewController.swift */; };
-		D6BAB38B1F0D39AD0056A13A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB38A1F0D39AD0056A13A /* Main.storyboard */; };
 		D6BAB38D1F0D3A5B0056A13A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAB38C1F0D3A5B0056A13A /* Service.swift */; };
 		D6BAB3901F0D3ABB0056A13A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAB38F1F0D3ABB0056A13A /* Config.swift */; };
 		D6BAB3921F0D3B180056A13A /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB3911F0D3B180056A13A /* Config.plist */; };
@@ -60,13 +66,19 @@
 		D623758E1F0D84F000AACA96 /* TracksController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksController.swift; sourceTree = "<group>"; };
 		D62375901F0D850200AACA96 /* TracksApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksApiController.swift; sourceTree = "<group>"; };
 		D62375921F0D855800AACA96 /* ControllerProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerProvider.swift; sourceTree = "<group>"; };
+		D68DAC541F0EAA61000B390D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		D68DAC561F0EAA7A000B390D /* Root.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
+		D68DAC581F0EAA8E000B390D /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
+		D68DAC5A1F0EAA97000B390D /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		D68DAC5E1F0EAB19000B390D /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		D68DAC601F0EABD2000B390D /* AlbumArtBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumArtBackgroundView.swift; sourceTree = "<group>"; };
+		D68DAC621F0EAC3F000B390D /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		D68DAC651F0EAFC5000B390D /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		D693E7D51F0D385400C5B88C /* HearthisAt-Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HearthisAt-Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D693E7D81F0D385400C5B88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D693E7E41F0D385400C5B88C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		D6BAB37E1F0D39980056A13A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6BAB37F1F0D39980056A13A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D6BAB3851F0D39980056A13A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D6BAB38A1F0D39AD0056A13A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D6BAB38C1F0D3A5B0056A13A /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		D6BAB38F1F0D3ABB0056A13A /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		D6BAB3911F0D3B180056A13A /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
@@ -164,6 +176,48 @@
 			path = Tracks;
 			sourceTree = "<group>";
 		};
+		D68DAC521F0EAA55000B390D /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				D68DAC581F0EAA8E000B390D /* Feed.storyboard */,
+				D68DAC5A1F0EAA97000B390D /* FeedViewController.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		D68DAC531F0EAA55000B390D /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				D68DAC561F0EAA7A000B390D /* Root.storyboard */,
+				D68DAC541F0EAA61000B390D /* RootViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		D68DAC5C1F0EAB10000B390D /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		D68DAC5D1F0EAB10000B390D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D68DAC5E1F0EAB19000B390D /* GradientView.swift */,
+				D68DAC601F0EABD2000B390D /* AlbumArtBackgroundView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D68DAC641F0EAFA0000B390D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D68DAC651F0EAFC5000B390D /* Component.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		D693E7CC1F0D385400C5B88C = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +254,7 @@
 				D693E7E41F0D385400C5B88C /* Info.plist */,
 				D6BAB37E1F0D39980056A13A /* Assets.xcassets */,
 				D6BAB37F1F0D39980056A13A /* LaunchScreen.storyboard */,
+				D68DAC621F0EAC3F000B390D /* ColorPalette.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -229,6 +284,9 @@
 		D6BAB3821F0D39980056A13A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D68DAC641F0EAFA0000B390D /* Base */,
+				D68DAC5C1F0EAB10000B390D /* Controls */,
+				D68DAC5D1F0EAB10000B390D /* Views */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -236,8 +294,8 @@
 		D6BAB3841F0D39980056A13A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				D6BAB38A1F0D39AD0056A13A /* Main.storyboard */,
-				D6BAB3851F0D39980056A13A /* ViewController.swift */,
+				D68DAC531F0EAA55000B390D /* Root */,
+				D68DAC521F0EAA55000B390D /* Feed */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -340,8 +398,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D68DAC571F0EAA7A000B390D /* Root.storyboard in Resources */,
 				D6BAB3921F0D3B180056A13A /* Config.plist in Resources */,
-				D6BAB38B1F0D39AD0056A13A /* Main.storyboard in Resources */,
+				D68DAC591F0EAA8E000B390D /* Feed.storyboard in Resources */,
 				D6BAB3861F0D39980056A13A /* Assets.xcassets in Resources */,
 				D6BAB3871F0D39980056A13A /* LaunchScreen.storyboard in Resources */,
 			);
@@ -402,9 +461,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6BAB3891F0D39980056A13A /* ViewController.swift in Sources */,
 				D62375831F0D691200AACA96 /* TrackFeed.swift in Sources */,
 				D623758A1F0D82A800AACA96 /* PlaybackController.swift in Sources */,
+				D68DAC611F0EABD2000B390D /* AlbumArtBackgroundView.swift in Sources */,
 				D6BAB3941F0D3B8B0056A13A /* AppConfig.swift in Sources */,
 				D623757E1F0D65AE00AACA96 /* FeedApiController.swift in Sources */,
 				D6BAB3961F0D3BE50056A13A /* ApiConfig.swift in Sources */,
@@ -412,13 +471,16 @@
 				D623758F1F0D84F000AACA96 /* TracksController.swift in Sources */,
 				D6BAB3901F0D3ABB0056A13A /* Config.swift in Sources */,
 				D62375791F0D62DB00AACA96 /* Track.swift in Sources */,
+				D68DAC551F0EAA61000B390D /* RootViewController.swift in Sources */,
 				D623756D1F0D4C1200AACA96 /* ApiControllerFactory.swift in Sources */,
 				D62375681F0D47F800AACA96 /* Response.swift in Sources */,
+				D68DAC631F0EAC3F000B390D /* ColorPalette.swift in Sources */,
 				D62375931F0D855800AACA96 /* ControllerProvider.swift in Sources */,
 				D693E7D91F0D385400C5B88C /* AppDelegate.swift in Sources */,
 				D6BAB3A21F0D43B90056A13A /* RequestExecutor.swift in Sources */,
 				D6BAB3A01F0D3F9E0056A13A /* RequestBuilder.swift in Sources */,
 				D62375741F0D4DD400AACA96 /* ApiController.swift in Sources */,
+				D68DAC5B1F0EAA97000B390D /* FeedViewController.swift in Sources */,
 				D62375811F0D661E00AACA96 /* PagedResults.swift in Sources */,
 				D6BAB38D1F0D3A5B0056A13A /* Service.swift in Sources */,
 				D62375911F0D850200AACA96 /* TracksApiController.swift in Sources */,
@@ -427,6 +489,8 @@
 				D623758C1F0D82AF00AACA96 /* PlaybackApiController.swift in Sources */,
 				D6BAB39C1F0D3E080056A13A /* Endpoints.swift in Sources */,
 				D6BAB39E1F0D3F920056A13A /* Request.swift in Sources */,
+				D68DAC5F1F0EAB19000B390D /* GradientView.swift in Sources */,
+				D68DAC661F0EAFC5000B390D /* Component.swift in Sources */,
 				D6BAB3991F0D3DB30056A13A /* Controller.swift in Sources */,
 				D62375851F0D71FB00AACA96 /* User.swift in Sources */,
 			);
