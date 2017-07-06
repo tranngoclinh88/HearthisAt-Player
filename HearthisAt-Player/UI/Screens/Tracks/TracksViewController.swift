@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TinyConstraints
 
 class TracksViewController: PagingTableViewController {
     
@@ -14,10 +15,22 @@ class TracksViewController: PagingTableViewController {
     
     var artist: User!
     
+    private var headerView: TracksHeaderView = {
+        let headerView = TracksHeaderView()
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        return headerView
+    }()
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // add header view
+        view.addSubview(headerView)
+        headerView.top(to: view)
+        headerView.left(to: view)
+        headerView.right(to: view)
         
         dump(service.tracksController.tracks(for: artist))
         
