@@ -26,6 +26,7 @@ class FeedViewController: UIViewController {
     var popularFeed: TrackFeed {
         return service.feedController.popularFeed
     }
+    fileprivate var isLoadingFeed: Bool = false
     
     // MARK: Lifecycle
     
@@ -40,6 +41,11 @@ class FeedViewController: UIViewController {
         let nib = UINib(nibName: Defaults.cellNibName, bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: Defaults.cellReuseIdentifier)
         
+        // Add paging footer
+        let footerView = PagingFooterView()
+        footerView.frame = CGRect(x: 0.0, y: 0.0, width: 0.0, height: footerView.intrinsicContentSize.height)
+        tableView.tableFooterView = footerView
+        
         loadNextPageOfFeed()
     }
 }
@@ -47,10 +53,14 @@ class FeedViewController: UIViewController {
 extension FeedViewController {
     
     func loadNextPageOfFeed() {
+        isLoadingFeed = true
         service.feedController.loadNextPage(of: popularFeed,
                                             success: { (feed, newPage) in
+                                                self.isLoadingFeed = false
                                                 self.tableView.reloadData()
         }) { (error) in
+            self.isLoadingFeed = false
+            dump(error)
             // TODO - Handle error
         }
     }
@@ -79,4 +89,23 @@ extension FeedViewController: UITableViewDataSource {
 
 extension FeedViewController: UITableViewDelegate {
     
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView,
+                                  willDecelerate decelerate: Bool) {
+        if !decelerate {
+            checkIfPageLoadRequired()
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        checkIfPageLoadRequired()
+    }
+    
+    func checkIfPageLoadRequired() {
+        let bottomEdge = tableView.contentOffset.y + tableView.frame.size.height
+        if bottomEdge >= tableView.contentSize.height {
+            guard !self.isLoadingFeed else { return }
+            
+            loadNextPageOfFeed()
+        }
+    }
 }
