@@ -38,8 +38,10 @@ class PagedResults<T> {
     
     var allItems: [T] {
         var allItems = [T]()
-        elements.forEach { (pageIndex, page) in
-            allItems.append(contentsOf: page.items)
+        
+        let indexes = elements.keys.sorted()
+        indexes.forEach { (pageIndex) in
+            allItems.append(contentsOf: elements[pageIndex]!.items)
         }
         return allItems
     }
