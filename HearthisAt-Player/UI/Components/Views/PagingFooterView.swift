@@ -36,10 +36,24 @@ class PagingFooterView: ViewComponent {
     // MARK: Animation
     
     func startAnimating() {
+        guard activityIndicatorView.isAnimating == false else { return }
+        
+        activityIndicatorView.alpha = 0.0
         activityIndicatorView.startAnimating()
+        UIView.animate(withDuration: 0.3) {
+            self.activityIndicatorView.alpha = 1.0
+        }
     }
     
     func stopAnimating() {
-        activityIndicatorView.stopAnimating()
+        guard activityIndicatorView.isAnimating else { return }
+        
+        UIView.animate(withDuration: 0.3,
+                       animations: { 
+                        self.activityIndicatorView.alpha = 0.0
+        }) { (finished) in
+            self.activityIndicatorView.stopAnimating()
+            self.activityIndicatorView.alpha = 1.0
+        }
     }
 }
