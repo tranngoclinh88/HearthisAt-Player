@@ -6,7 +6,7 @@
 //  Copyright © 2017 Merrick Sapsford. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Service: ControllerProvider {
     
@@ -40,5 +40,13 @@ class Service: ControllerProvider {
         self.controllerFactory = controllerFactoryType.init(with: config,
                                                             requestBuilder: requestBuilder,
                                                             requestExecutor: requestExecutor)
+    }
+}
+
+extension UIViewController {
+ 
+    var service: Service! {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        return appDelegate?.service
     }
 }
