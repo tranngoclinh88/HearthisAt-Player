@@ -10,6 +10,7 @@ import Foundation
 
 protocol ControllerProvider: class {
     
+    var artistController: ArtistController { get }
     var feedController: FeedController { get }
     var tracksController: TracksController { get }
     var playbackController: PlaybackController { get }
