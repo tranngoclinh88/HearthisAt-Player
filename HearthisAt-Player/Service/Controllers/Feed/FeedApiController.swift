@@ -56,7 +56,7 @@ class FeedApiController: ApiController, FeedController {
                     failure?(ControllerError.unexpectedResponse)
                 }
         }) { (request, response, error) in
-            
+            failure?(error)
         }
     }
     

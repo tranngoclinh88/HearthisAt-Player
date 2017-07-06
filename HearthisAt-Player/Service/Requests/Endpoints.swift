@@ -11,6 +11,8 @@ import Foundation
 enum Endpoint {
     
     case feed
+    
+    case artistTracks(username: String)
 }
 
 extension Endpoint {
@@ -21,6 +23,9 @@ extension Endpoint {
             
         case .feed:
             return "/feed/"
+            
+        case .artistTracks(let username):
+            return "/\(username)/"
         }
     }
 }
