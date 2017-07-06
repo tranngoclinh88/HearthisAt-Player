@@ -25,10 +25,13 @@ class FeedApiController: ApiController, FeedController {
     // MARK: Methods
     
     func loadFeed(of kind: TrackFeed.Kind,
-                  pageIndex: Int,
-                  count: Int,
+                  pageIndex: Int?,
+                  count: Int?,
                   success: ((TrackFeed, [Track]) -> Void)?,
                   failure: ((Error) -> Void)?) {
+        
+        let pageIndex = pageIndex ?? 1
+        let count = count ?? Defaults.pageSize
         
         let parameters: [String : Any] = ["type" : kind.rawValue,
                                           "page" : pageIndex,

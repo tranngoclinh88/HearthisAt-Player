@@ -29,10 +29,12 @@ class TracksApiController: ApiController, TracksController {
     }
     
     func loadTracks(for artist: User,
-                    pageIndex: Int,
-                    count: Int,
+                    pageIndex: Int?,
+                    count: Int?,
                     success: (([Track], ArtistTracksList) -> Void)?,
                     failure: Controller.MethodFailure?) {
+        let pageIndex = pageIndex ?? 1
+        let count = count ?? Defaults.pageSize
         
         guard let identifier = artist.permalink else {
             failure?(ControllerError.unknownMethodFailure)

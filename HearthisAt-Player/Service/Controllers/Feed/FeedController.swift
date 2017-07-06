@@ -28,8 +28,8 @@ protocol FeedController: Controller {
     ///   - success: Execution on successful method.
     ///   - failure: Execution on failed method.
     func loadFeed(of kind: TrackFeed.Kind,
-                  pageIndex: Int,
-                  count: Int,
+                  pageIndex: Int?,
+                  count: Int?,
                   success: ((_ feed: TrackFeed, _ newPage: [Track]) -> Void)?,
                   failure: MethodFailure?)
     

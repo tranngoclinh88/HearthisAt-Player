@@ -43,6 +43,8 @@
 		D68DAC7F1F0ECDE6000B390D /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC7E1F0ECDE6000B390D /* String+Localization.swift */; };
 		D68DAC811F0ECF19000B390D /* ArtistList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC801F0ECF19000B390D /* ArtistList.swift */; };
 		D68DAC841F0ED8FA000B390D /* TracksHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC831F0ED8FA000B390D /* TracksHeaderView.swift */; };
+		D68DAC861F0EDEF9000B390D /* TrackItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC851F0EDEF9000B390D /* TrackItemCell.swift */; };
+		D68DAC881F0EDF29000B390D /* TrackItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC871F0EDF29000B390D /* TrackItemCell.xib */; };
 		D693E7D91F0D385400C5B88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D693E7D81F0D385400C5B88C /* AppDelegate.swift */; };
 		D6BAB3861F0D39980056A13A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB37E1F0D39980056A13A /* Assets.xcassets */; };
 		D6BAB3871F0D39980056A13A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB37F1F0D39980056A13A /* LaunchScreen.storyboard */; };
@@ -96,6 +98,8 @@
 		D68DAC7E1F0ECDE6000B390D /* String+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		D68DAC801F0ECF19000B390D /* ArtistList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistList.swift; sourceTree = "<group>"; };
 		D68DAC831F0ED8FA000B390D /* TracksHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksHeaderView.swift; sourceTree = "<group>"; };
+		D68DAC851F0EDEF9000B390D /* TrackItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackItemCell.swift; sourceTree = "<group>"; };
+		D68DAC871F0EDF29000B390D /* TrackItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackItemCell.xib; sourceTree = "<group>"; };
 		D693E7D51F0D385400C5B88C /* HearthisAt-Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HearthisAt-Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D693E7D81F0D385400C5B88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D693E7E41F0D385400C5B88C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -283,6 +287,8 @@
 			isa = PBXGroup;
 			children = (
 				D68DAC831F0ED8FA000B390D /* TracksHeaderView.swift */,
+				D68DAC851F0EDEF9000B390D /* TrackItemCell.swift */,
+				D68DAC871F0EDF29000B390D /* TrackItemCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -471,6 +477,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D68DAC881F0EDF29000B390D /* TrackItemCell.xib in Resources */,
 				D68DAC771F0ECBFF000B390D /* Tracks.storyboard in Resources */,
 				D68DAC571F0EAA7A000B390D /* Root.storyboard in Resources */,
 				D6BAB3921F0D3B180056A13A /* Config.plist in Resources */,
@@ -554,6 +561,7 @@
 				D68DAC631F0EAC3F000B390D /* ColorPalette.swift in Sources */,
 				D62375931F0D855800AACA96 /* ControllerProvider.swift in Sources */,
 				D68DAC6F1F0EBFEC000B390D /* PagingFooterView.swift in Sources */,
+				D68DAC861F0EDEF9000B390D /* TrackItemCell.swift in Sources */,
 				D693E7D91F0D385400C5B88C /* AppDelegate.swift in Sources */,
 				D6BAB3A21F0D43B90056A13A /* RequestExecutor.swift in Sources */,
 				D6BAB3A01F0D3F9E0056A13A /* RequestBuilder.swift in Sources */,
