@@ -42,6 +42,7 @@
 		D68DAC7A1F0ECD8E000B390D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC7C1F0ECD8E000B390D /* Localizable.strings */; };
 		D68DAC7F1F0ECDE6000B390D /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC7E1F0ECDE6000B390D /* String+Localization.swift */; };
 		D68DAC811F0ECF19000B390D /* ArtistList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC801F0ECF19000B390D /* ArtistList.swift */; };
+		D68DAC841F0ED8FA000B390D /* TracksHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC831F0ED8FA000B390D /* TracksHeaderView.swift */; };
 		D693E7D91F0D385400C5B88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D693E7D81F0D385400C5B88C /* AppDelegate.swift */; };
 		D6BAB3861F0D39980056A13A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB37E1F0D39980056A13A /* Assets.xcassets */; };
 		D6BAB3871F0D39980056A13A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB37F1F0D39980056A13A /* LaunchScreen.storyboard */; };
@@ -94,6 +95,7 @@
 		D68DAC7B1F0ECD8E000B390D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D68DAC7E1F0ECDE6000B390D /* String+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		D68DAC801F0ECF19000B390D /* ArtistList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistList.swift; sourceTree = "<group>"; };
+		D68DAC831F0ED8FA000B390D /* TracksHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksHeaderView.swift; sourceTree = "<group>"; };
 		D693E7D51F0D385400C5B88C /* HearthisAt-Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HearthisAt-Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D693E7D81F0D385400C5B88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D693E7E41F0D385400C5B88C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 		D68DAC731F0ECBC3000B390D /* Tracks */ = {
 			isa = PBXGroup;
 			children = (
+				D68DAC821F0ED8F3000B390D /* Views */,
 				D68DAC761F0ECBFF000B390D /* Tracks.storyboard */,
 				D68DAC741F0ECBCB000B390D /* TracksViewController.swift */,
 			);
@@ -274,6 +277,14 @@
 				D68DAC7E1F0ECDE6000B390D /* String+Localization.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		D68DAC821F0ED8F3000B390D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D68DAC831F0ED8FA000B390D /* TracksHeaderView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D693E7CC1F0D385400C5B88C = {
@@ -539,6 +550,7 @@
 				D68DAC551F0EAA61000B390D /* RootViewController.swift in Sources */,
 				D623756D1F0D4C1200AACA96 /* ApiControllerFactory.swift in Sources */,
 				D62375681F0D47F800AACA96 /* Response.swift in Sources */,
+				D68DAC841F0ED8FA000B390D /* TracksHeaderView.swift in Sources */,
 				D68DAC631F0EAC3F000B390D /* ColorPalette.swift in Sources */,
 				D62375931F0D855800AACA96 /* ControllerProvider.swift in Sources */,
 				D68DAC6F1F0EBFEC000B390D /* PagingFooterView.swift in Sources */,
