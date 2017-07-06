@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class FeedItemCell: UITableViewCell {
     
@@ -37,6 +38,16 @@ class FeedItemCell: UITableViewCell {
     }
     var imageUrl: URL? {
         didSet {
+            avatarImageView.image = nil
+            guard let imageUrl = imageUrl else {
+                return
+            }
+            
+            avatarImageView.af_setImage(withURL: imageUrl,
+                                        placeholderImage: nil,
+                                        imageTransition: .crossDissolve(0.2),
+                                        runImageTransitionIfCached: false,
+                                        completion: nil)
             // TODO - Image loading
         }
     }
