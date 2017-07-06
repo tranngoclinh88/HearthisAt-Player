@@ -64,7 +64,7 @@ class FeedApiController: ApiController, FeedController {
                       success: ((TrackFeed, [Track]) -> Void)?,
                       failure: ((Error) -> Void)?) {
         loadFeed(of: feed.kind,
-                 pageIndex: feed.currentPage,
+                 pageIndex: feed.nextPage,
                  count: feed.pageSize ?? TrackFeed.defaultPageSize,
                  success: success,
                  failure: failure)

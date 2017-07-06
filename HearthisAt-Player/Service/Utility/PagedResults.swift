@@ -28,6 +28,9 @@ class PagedResults<T> {
         }
         return elements.count - 1
     }
+    var nextPage: PageIndex {
+        return elements.count
+    }
     
     var pageSize: Int? {
         return elements[currentPage]?.items.count
