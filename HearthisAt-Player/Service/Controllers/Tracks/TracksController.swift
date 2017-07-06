@@ -8,9 +8,9 @@
 
 import Foundation
 
-protocol TracksController: Controller {
-    
-    typealias ArtistTracksList = ArtistList<Track>
+typealias ArtistTracksList = ArtistList<Track>
+
+protocol TracksController: Controller {    
     
     /// Get the tracks list for an artist.
     ///
@@ -27,8 +27,8 @@ protocol TracksController: Controller {
     ///   - success: Execution on successful method.
     ///   - failure: Execution on failed method.
     func loadTracks(for artist: User,
-                    pageIndex: Int,
-                    count: Int,
+                    pageIndex: Int?,
+                    count: Int?,
                     success: ((_ tracks: [Track], _ allTracks: ArtistTracksList) -> Void)?,
                     failure: MethodFailure?)
     

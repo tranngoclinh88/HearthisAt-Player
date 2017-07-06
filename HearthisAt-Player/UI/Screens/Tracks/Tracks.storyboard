@@ -22,23 +22,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ffP-p0-cnu">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="184.5" width="375" height="482.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="ZoN-YF-Tz7" id="kZK-Ag-ePo"/>
                                     <outlet property="delegate" destination="ZoN-YF-Tz7" id="GmK-ls-hLQ"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p6i-Zl-TBT" customClass="TracksHeaderView" customModule="HearthisAt_Player" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="184.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="AQi-jP-hnS" firstAttribute="top" secondItem="ffP-p0-cnu" secondAttribute="bottom" id="6A3-CQ-kxE"/>
                             <constraint firstItem="ffP-p0-cnu" firstAttribute="leading" secondItem="att-Q5-cN6" secondAttribute="leading" id="CHE-Ju-JFA"/>
+                            <constraint firstItem="p6i-Zl-TBT" firstAttribute="leading" secondItem="att-Q5-cN6" secondAttribute="leading" id="Q5k-nd-yQ9"/>
                             <constraint firstAttribute="trailing" secondItem="ffP-p0-cnu" secondAttribute="trailing" id="m75-LU-EMB"/>
-                            <constraint firstItem="ffP-p0-cnu" firstAttribute="top" secondItem="att-Q5-cN6" secondAttribute="top" id="wzd-86-dwe"/>
+                            <constraint firstItem="p6i-Zl-TBT" firstAttribute="top" secondItem="att-Q5-cN6" secondAttribute="top" id="oem-Up-Tw7"/>
+                            <constraint firstItem="ffP-p0-cnu" firstAttribute="top" secondItem="p6i-Zl-TBT" secondAttribute="bottom" id="ydH-mQ-b0d"/>
+                            <constraint firstAttribute="trailing" secondItem="p6i-Zl-TBT" secondAttribute="trailing" id="zie-TU-cAh"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="headerView" destination="p6i-Zl-TBT" id="1ar-JG-dRN"/>
                         <outlet property="tableView" destination="ffP-p0-cnu" id="Md2-dZ-0S6"/>
                     </connections>
                 </viewController>
