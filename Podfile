@@ -7,4 +7,7 @@ target 'HearthisAt-Player' do
   pod 'Alamofire', '~> 4.5.0'
   pod 'ObjectMapper', '~> 2.2.0'
 
+  pod 'SwiftHEXColors', '~> 1.1.0'
+  pod 'TinyConstraints', '~> 2.0.0'
+
 end

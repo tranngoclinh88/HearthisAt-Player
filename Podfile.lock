@@ -1,15 +1,21 @@
 PODS:
   - Alamofire (4.5.0)
   - ObjectMapper (2.2.7)
+  - SwiftHEXColors (1.1.0)
+  - TinyConstraints (2.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5.0)
   - ObjectMapper (~> 2.2.0)
+  - SwiftHEXColors (~> 1.1.0)
+  - TinyConstraints (~> 2.0.0)
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
+  SwiftHEXColors: 8f7e364df7929e32cff9f9eeb044bb215167d6be
+  TinyConstraints: c8f3c34a90aa2a5b6960dcff5cc6a69e8938cf1b
 
-PODFILE CHECKSUM: a57898a215adfa1ac8112eed2b397c95e49ed8be
+PODFILE CHECKSUM: f800046dc88468e33204f670be6f139ef2886d36
 
 COCOAPODS: 1.2.1
