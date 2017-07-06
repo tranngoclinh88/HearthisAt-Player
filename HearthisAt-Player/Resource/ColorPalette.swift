@@ -24,6 +24,6 @@ extension UIColor {
     }
     
     static var hta_textSecondary: UIColor {
-        return UIColor.white
+        return UIColor(hexString: "#DCDCDC")!
     }
 }
