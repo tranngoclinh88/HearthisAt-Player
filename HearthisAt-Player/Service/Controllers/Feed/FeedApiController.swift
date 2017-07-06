@@ -11,6 +11,12 @@ import ObjectMapper
 
 class FeedApiController: ApiController, FeedController {
  
+    // MARK: Defaults
+    
+    private struct Defaults {
+        static let pageSize = 20
+    }
+    
     // MARK: Properties
     
     private(set) var popularFeed = TrackFeed(kind: .popular)
@@ -65,7 +71,7 @@ class FeedApiController: ApiController, FeedController {
                       failure: ((Error) -> Void)?) {
         loadFeed(of: feed.kind,
                  pageIndex: feed.nextPage,
-                 count: feed.pageSize ?? TrackFeed.defaultPageSize,
+                 count: feed.pageSize ?? Defaults.pageSize,
                  success: success,
                  failure: failure)
     }

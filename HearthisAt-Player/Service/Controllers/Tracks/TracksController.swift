@@ -10,11 +10,35 @@ import Foundation
 
 protocol TracksController: Controller {
     
-    func tracks(for artist: User) -> ArtistList<Track>?
+    typealias ArtistTracksList = ArtistList<Track>
     
+    /// Get the tracks list for an artist.
+    ///
+    /// - Parameter artist: The artist to get tracks for.
+    /// - Returns: The tracks list if loaded.
+    func tracks(for artist: User) -> ArtistTracksList?
+    
+    /// Load a list of tracks for an artist.
+    ///
+    /// - Parameters:
+    ///   - artist: The artist to load tracks for.
+    ///   - pageIndex: The page index to load.
+    ///   - count: The number of tracks to load.
+    ///   - success: Execution on successful method.
+    ///   - failure: Execution on failed method.
     func loadTracks(for artist: User,
                     pageIndex: Int,
                     count: Int,
-                    success: ((_ tracks: [Track], _ allTracks: ArtistList<Track>) -> Void)?,
+                    success: ((_ tracks: [Track], _ allTracks: ArtistTracksList) -> Void)?,
                     failure: MethodFailure?)
+    
+    /// Load the next page of a tracks list.
+    ///
+    /// - Parameters:
+    ///   - tracks: The tracks list.
+    ///   - success: Execution on successful method.
+    ///   - failure: Execution on failed method.
+    func loadNextPage(of tracks: ArtistTracksList,
+                      success: ((_ newPage: [Track], _ allTracks: ArtistTracksList) -> Void)?,
+                      failure: MethodFailure?)
 }
