@@ -28,6 +28,8 @@ class FeedViewController: PagingTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "screen.feed.title".localized()
+        
         // use autosizing
         tableView.estimatedRowHeight = 80.0
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -68,5 +70,16 @@ class FeedViewController: PagingTableViewController {
         cell.imageUrl = track.user?.avatarUrl
         
         return cell
+    }
+    
+    // MARK: UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let storyboard = UIStoryboard(name: "Tracks", bundle: .main)
+        let tracksViewController = storyboard.instantiateViewController(withIdentifier: "TracksViewController") as! TracksViewController
+        
+        self.navigationController?.pushViewController(tracksViewController, animated: true)
     }
 }

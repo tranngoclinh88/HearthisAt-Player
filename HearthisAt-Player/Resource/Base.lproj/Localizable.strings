@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  HearthisAt-Player
+
+  Created by Merrick Sapsford on 06/07/2017.
+  Copyright © 2017 Merrick Sapsford. All rights reserved.
+*/
+
+"screen.feed.title" = "Top Track Artists";
