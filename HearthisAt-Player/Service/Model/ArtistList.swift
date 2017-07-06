@@ -21,10 +21,12 @@ class ArtistList<T>: PagedResults<T> {
     // MARK: Properties
     
     let kind: Kind
+    let artist: User
     
     // MARK: Init
     
-    init(kind: Kind) {
+    init(kind: Kind, for artist: User) {
         self.kind = kind
+        self.artist = artist
     }
 }

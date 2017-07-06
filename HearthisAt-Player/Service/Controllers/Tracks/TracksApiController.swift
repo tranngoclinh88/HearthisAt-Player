@@ -11,13 +11,19 @@ import ObjectMapper
 
 class TracksApiController: ApiController, TracksController {
     
+    // MARK: Defaults
+    
+    private struct Defaults {
+        static let pageSize = 20
+    }
+    
     // MARK: Properties
     
-    private var artistTracksMap: [String : ArtistList<Track>] = [:]
+    private var artistTracksMap: [String : ArtistTracksList] = [:]
     
     // MARK: Methods
     
-    func tracks(for artist: User) -> ArtistList<Track>? {
+    func tracks(for artist: User) -> ArtistTracksList? {
         guard let identifier = artist.permalink else { return nil }
         return artistTracksMap[identifier]
     }
@@ -25,7 +31,7 @@ class TracksApiController: ApiController, TracksController {
     func loadTracks(for artist: User,
                     pageIndex: Int,
                     count: Int,
-                    success: (([Track], ArtistList<Track>) -> Void)?,
+                    success: (([Track], ArtistTracksList) -> Void)?,
                     failure: Controller.MethodFailure?) {
         
         guard let identifier = artist.permalink else {
@@ -68,11 +74,21 @@ class TracksApiController: ApiController, TracksController {
         }
     }
     
+    func loadNextPage(of tracks: ArtistTracksList,
+                      success: (([Track], ArtistTracksList) -> Void)?,
+                      failure: Controller.MethodFailure?) {
+        loadTracks(for: tracks.artist,
+                   pageIndex: tracks.nextPage,
+                   count: tracks.pageSize ?? Defaults.pageSize,
+                   success: success,
+                   failure: failure)
+    }
+    
     // MARK: Utility
     
-    private func createTracksIfNeeded(for artist: User, identifier: String) -> ArtistList<Track> {
+    private func createTracksIfNeeded(for artist: User, identifier: String) -> ArtistTracksList {
         if tracks(for: artist) == nil {
-            self.artistTracksMap[identifier] = ArtistList<Track>(kind: .tracks)
+            self.artistTracksMap[identifier] = ArtistList<Track>(kind: .tracks, for: artist)
         }
         return tracks(for: artist)!
     }

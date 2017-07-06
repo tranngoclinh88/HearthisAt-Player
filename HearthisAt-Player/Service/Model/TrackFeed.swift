@@ -19,8 +19,6 @@ class TrackFeed: PagedResults<Track> {
     
     // MARK: Properties
     
-    static let defaultPageSize = 20
-    
     let kind: Kind
     
     // MARK: Init
