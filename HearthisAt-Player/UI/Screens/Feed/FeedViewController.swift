@@ -76,9 +76,12 @@ class FeedViewController: PagingTableViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let track = popularFeed.allItems[indexPath.row]
         
         let storyboard = UIStoryboard(name: "Tracks", bundle: .main)
         let tracksViewController = storyboard.instantiateViewController(withIdentifier: "TracksViewController") as! TracksViewController
+        
+        tracksViewController.artist = track.user
         
         self.navigationController?.pushViewController(tracksViewController, animated: true)
     }

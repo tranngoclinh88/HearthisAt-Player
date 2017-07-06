@@ -10,11 +10,11 @@ import Foundation
 
 protocol TracksController: Controller {
     
-    func tracks(for user: User) -> PagedResults<Track>?
+    func tracks(for artist: User) -> ArtistList<Track>?
     
-    func loadTracks(for user: User,
-                    page: Int,
+    func loadTracks(for artist: User,
+                    pageIndex: Int,
                     count: Int,
-                    success: ((PagedResults<Track>) -> Void)?,
-                    failure: MethodFailure)
+                    success: ((_ tracks: [Track], _ allTracks: ArtistList<Track>) -> Void)?,
+                    failure: MethodFailure?)
 }
