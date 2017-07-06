@@ -36,13 +36,33 @@
                     <view key="view" contentMode="scaleToFill" id="EXP-p7-8YC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PY6-Ri-jZH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="uYM-rj-s86" id="crq-fD-LHe"/>
+                                    <outlet property="delegate" destination="uYM-rj-s86" id="wiT-Ma-cEa"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="PY6-Ri-jZH" secondAttribute="trailing" id="6Ck-Or-4NI"/>
+                            <constraint firstItem="PY6-Ri-jZH" firstAttribute="top" secondItem="EXP-p7-8YC" secondAttribute="top" id="8SQ-rI-D7K"/>
+                            <constraint firstItem="PY6-Ri-jZH" firstAttribute="leading" secondItem="EXP-p7-8YC" secondAttribute="leading" id="YpP-kO-64P"/>
+                            <constraint firstItem="M2a-BD-dt2" firstAttribute="top" secondItem="PY6-Ri-jZH" secondAttribute="bottom" id="jUX-RK-gcZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SKn-jA-8Bn"/>
+                    <connections>
+                        <outlet property="tableView" destination="PY6-Ri-jZH" id="SWU-4h-6Ll"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xRY-91-9Zz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="428" y="71"/>
+            <point key="canvasLocation" x="428" y="70.614692653673174"/>
         </scene>
     </scenes>
 </document>

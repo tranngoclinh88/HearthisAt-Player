@@ -20,6 +20,6 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backgroundGradientView.colors = UIColor.backgroundGradient
+        backgroundGradientView.colors = UIColor.hta_backgroundGradient
     }
 }

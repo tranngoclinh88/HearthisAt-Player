@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class GradientView: ViewComponent {
+class GradientView: ViewComponent {
     
     enum Direction {
         case topToBottom

@@ -11,7 +11,19 @@ import SwiftHEXColors
 
 extension UIColor {
  
-    static var backgroundGradient: [UIColor] {
+    // MARK: Backgrounds
+    
+    static var hta_backgroundGradient: [UIColor] {
         return [UIColor(hexString: "#FF512F")!, UIColor(hexString: "#DD2476")!]
+    }
+    
+    // MARK: Text
+    
+    static var hta_textPrimary: UIColor {
+        return UIColor.white
+    }
+    
+    static var hta_textSecondary: UIColor {
+        return UIColor.white
     }
 }
