@@ -24,7 +24,7 @@ class TracksViewController: PagingTableViewController {
     
     @IBOutlet weak private var headerView: TracksHeaderView!
     
-    private var tracksList: ArtistTracksList? {
+    private var tracksList: TracksList? {
         return service.tracksController.tracks(for: self.artist)
     }
     
@@ -44,7 +44,7 @@ class TracksViewController: PagingTableViewController {
     
     override func loadNextPageOfData(completion: @escaping ((Bool) -> Void)) {
         
-        let successHandler: (([Track], ArtistTracksList) -> Void) = { newTracks, tracksList in
+        let successHandler: (([Track], TracksList) -> Void) = { newTracks, tracksList in
             self.tableView.reloadData()
             completion(true)
         }
