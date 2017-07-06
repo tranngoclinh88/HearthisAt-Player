@@ -12,10 +12,34 @@ class FeedItemCell: UITableViewCell {
     
     // MARK: Outlets
     
-    @IBOutlet private weak var numberLabel: UILabel!
+    @IBOutlet private weak var indexLabel: UILabel!
     @IBOutlet private weak var avatarImageView: AvatarImageView!
-    @IBOutlet private weak var artistLabel: UILabel!
-    @IBOutlet private weak var songCountLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var subtitleLabel: UILabel!
+    
+    // MARK: Properties
+    
+    var index: Int? {
+        didSet {
+            guard let index = index else { return }
+            indexLabel.text = String(describing: index)
+        }
+    }
+    var title: String? {
+        didSet {
+            titleLabel.text = title
+        }
+    }
+    var subtitle: String? {
+        didSet {
+            subtitleLabel.text = subtitle
+        }
+    }
+    var imageUrl: URL? {
+        didSet {
+            // TODO - Image loading
+        }
+    }
     
     // MARK: Lifecycle
     

@@ -19,13 +19,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7t-D8-usQ">
-                        <rect key="frame" x="16" y="45" width="11" height="29"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                        <rect key="frame" x="16" y="45" width="12" height="29"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEo-iV-bDg" userLabel="Content Container">
-                        <rect key="frame" x="43" y="0.0" width="332" height="118.5"/>
+                        <rect key="frame" x="44" y="0.0" width="331" height="118.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6PY-te-C7E" customClass="AvatarImageView" customModule="HearthisAt_Player" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="34.5" width="50" height="50"/>
@@ -36,18 +36,18 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z85-VP-5Rf" userLabel="Text Container">
-                                <rect key="frame" x="66" y="35.5" width="250" height="48"/>
+                                <rect key="frame" x="66" y="38" width="249" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8o-kY-US3">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="249" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="100 tracks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9t-KY-gYY">
-                                        <rect key="frame" x="0.0" y="27" width="250" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="0.0" y="27" width="249" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -88,10 +88,10 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="artistLabel" destination="Q8o-kY-US3" id="H2M-jb-Ege"/>
                 <outlet property="avatarImageView" destination="6PY-te-C7E" id="YFg-7G-cBB"/>
-                <outlet property="numberLabel" destination="u7t-D8-usQ" id="VOl-r9-Yjc"/>
-                <outlet property="songCountLabel" destination="t9t-KY-gYY" id="G2l-j3-b2s"/>
+                <outlet property="indexLabel" destination="u7t-D8-usQ" id="UUg-l0-s2i"/>
+                <outlet property="subtitleLabel" destination="t9t-KY-gYY" id="fP9-SF-eCH"/>
+                <outlet property="titleLabel" destination="Q8o-kY-US3" id="QMV-mM-vgx"/>
             </connections>
             <point key="canvasLocation" x="-73.5" y="-85.5"/>
         </tableViewCell>
