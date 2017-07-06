@@ -16,7 +16,7 @@ protocol Component {
     func construct(in view: UIView)
 }
 
-class ViewComponent: UIView, Component {
+@IBDesignable class ViewComponent: UIView, Component {
     
     // MARK: Init
     
@@ -37,3 +37,23 @@ class ViewComponent: UIView, Component {
     }
 }
 
+@IBDesignable class ImageViewComponent: UIImageView, Component {
+    
+    // MARK: Init
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.construct(in: self)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.construct(in: self)
+    }
+    
+    // MARK: Component
+    
+    open func construct(in view: UIView) {
+        
+    }
+}

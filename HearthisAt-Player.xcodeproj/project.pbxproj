@@ -32,6 +32,9 @@
 		D68DAC611F0EABD2000B390D /* AlbumArtBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC601F0EABD2000B390D /* AlbumArtBackgroundView.swift */; };
 		D68DAC631F0EAC3F000B390D /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC621F0EAC3F000B390D /* ColorPalette.swift */; };
 		D68DAC661F0EAFC5000B390D /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC651F0EAFC5000B390D /* Component.swift */; };
+		D68DAC691F0EB19A000B390D /* FeedItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC681F0EB19A000B390D /* FeedItemCell.swift */; };
+		D68DAC6B1F0EB1C2000B390D /* FeedItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC6A1F0EB1C2000B390D /* FeedItemCell.xib */; };
+		D68DAC6D1F0EB732000B390D /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC6C1F0EB732000B390D /* AvatarImageView.swift */; };
 		D693E7D91F0D385400C5B88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D693E7D81F0D385400C5B88C /* AppDelegate.swift */; };
 		D6BAB3861F0D39980056A13A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB37E1F0D39980056A13A /* Assets.xcassets */; };
 		D6BAB3871F0D39980056A13A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB37F1F0D39980056A13A /* LaunchScreen.storyboard */; };
@@ -74,6 +77,9 @@
 		D68DAC601F0EABD2000B390D /* AlbumArtBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumArtBackgroundView.swift; sourceTree = "<group>"; };
 		D68DAC621F0EAC3F000B390D /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		D68DAC651F0EAFC5000B390D /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		D68DAC681F0EB19A000B390D /* FeedItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItemCell.swift; sourceTree = "<group>"; };
+		D68DAC6A1F0EB1C2000B390D /* FeedItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedItemCell.xib; sourceTree = "<group>"; };
+		D68DAC6C1F0EB732000B390D /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		D693E7D51F0D385400C5B88C /* HearthisAt-Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HearthisAt-Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D693E7D81F0D385400C5B88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D693E7E41F0D385400C5B88C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -179,6 +185,7 @@
 		D68DAC521F0EAA55000B390D /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				D68DAC671F0EB188000B390D /* Views */,
 				D68DAC581F0EAA8E000B390D /* Feed.storyboard */,
 				D68DAC5A1F0EAA97000B390D /* FeedViewController.swift */,
 			);
@@ -206,6 +213,7 @@
 			children = (
 				D68DAC5E1F0EAB19000B390D /* GradientView.swift */,
 				D68DAC601F0EABD2000B390D /* AlbumArtBackgroundView.swift */,
+				D68DAC6C1F0EB732000B390D /* AvatarImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,6 +224,15 @@
 				D68DAC651F0EAFC5000B390D /* Component.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		D68DAC671F0EB188000B390D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D68DAC681F0EB19A000B390D /* FeedItemCell.swift */,
+				D68DAC6A1F0EB1C2000B390D /* FeedItemCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D693E7CC1F0D385400C5B88C = {
@@ -400,6 +417,7 @@
 			files = (
 				D68DAC571F0EAA7A000B390D /* Root.storyboard in Resources */,
 				D6BAB3921F0D3B180056A13A /* Config.plist in Resources */,
+				D68DAC6B1F0EB1C2000B390D /* FeedItemCell.xib in Resources */,
 				D68DAC591F0EAA8E000B390D /* Feed.storyboard in Resources */,
 				D6BAB3861F0D39980056A13A /* Assets.xcassets in Resources */,
 				D6BAB3871F0D39980056A13A /* LaunchScreen.storyboard in Resources */,
@@ -488,7 +506,9 @@
 				D62375871F0D769400AACA96 /* MapperTransforms.swift in Sources */,
 				D623758C1F0D82AF00AACA96 /* PlaybackApiController.swift in Sources */,
 				D6BAB39C1F0D3E080056A13A /* Endpoints.swift in Sources */,
+				D68DAC691F0EB19A000B390D /* FeedItemCell.swift in Sources */,
 				D6BAB39E1F0D3F920056A13A /* Request.swift in Sources */,
+				D68DAC6D1F0EB732000B390D /* AvatarImageView.swift in Sources */,
 				D68DAC5F1F0EAB19000B390D /* GradientView.swift in Sources */,
 				D68DAC661F0EAFC5000B390D /* Component.swift in Sources */,
 				D6BAB3991F0D3DB30056A13A /* Controller.swift in Sources */,

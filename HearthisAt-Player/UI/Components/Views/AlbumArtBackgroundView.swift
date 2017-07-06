@@ -14,7 +14,7 @@ class AlbumArtBackgroundView: ViewComponent {
     // MARK: Properties
     
     let blurView: UIVisualEffectView = {
-        let blurEffect = UIBlurEffect(style: .extraLight)
+        let blurEffect = UIBlurEffect(style: .light)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.translatesAutoresizingMaskIntoConstraints = false
         return blurView
