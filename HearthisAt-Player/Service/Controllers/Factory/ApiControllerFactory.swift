@@ -10,6 +10,7 @@ import Foundation
 
 class ApiControllerFactory: ControllerFactory {
     
+    private(set) var artistController: ArtistController
     private(set) var feedController: FeedController
     private(set) var playbackController: PlaybackController
     private(set) var tracksController: TracksController
@@ -20,6 +21,9 @@ class ApiControllerFactory: ControllerFactory {
                   requestBuilder: RequestBuilder,
                   requestExecutor: RequestExecutor) {
         
+        self.artistController = ArtistApiController(with: config,
+                                                    requestBuilder: requestBuilder,
+                                                    requestExecutor: requestExecutor)
         self.feedController = FeedApiController(with: config,
                                                 requestBuilder: requestBuilder,
                                                 requestExecutor: requestExecutor)

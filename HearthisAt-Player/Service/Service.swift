@@ -17,6 +17,9 @@ class Service: ControllerProvider {
     let requestExecutor: RequestExecutor
     private let controllerFactory: ControllerFactory
     
+    var artistController: ArtistController {
+        return controllerFactory.artistController
+    }
     var feedController: FeedController {
         return controllerFactory.feedController
     }

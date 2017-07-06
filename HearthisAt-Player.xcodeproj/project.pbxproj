@@ -45,6 +45,8 @@
 		D68DAC841F0ED8FA000B390D /* TracksHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC831F0ED8FA000B390D /* TracksHeaderView.swift */; };
 		D68DAC861F0EDEF9000B390D /* TrackItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC851F0EDEF9000B390D /* TrackItemCell.swift */; };
 		D68DAC881F0EDF29000B390D /* TrackItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC871F0EDF29000B390D /* TrackItemCell.xib */; };
+		D68DAC8B1F0EE65A000B390D /* ArtistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC8A1F0EE65A000B390D /* ArtistController.swift */; };
+		D68DAC8D1F0EE676000B390D /* ArtistApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC8C1F0EE676000B390D /* ArtistApiController.swift */; };
 		D693E7D91F0D385400C5B88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D693E7D81F0D385400C5B88C /* AppDelegate.swift */; };
 		D6BAB3861F0D39980056A13A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB37E1F0D39980056A13A /* Assets.xcassets */; };
 		D6BAB3871F0D39980056A13A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6BAB37F1F0D39980056A13A /* LaunchScreen.storyboard */; };
@@ -100,6 +102,8 @@
 		D68DAC831F0ED8FA000B390D /* TracksHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksHeaderView.swift; sourceTree = "<group>"; };
 		D68DAC851F0EDEF9000B390D /* TrackItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackItemCell.swift; sourceTree = "<group>"; };
 		D68DAC871F0EDF29000B390D /* TrackItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackItemCell.xib; sourceTree = "<group>"; };
+		D68DAC8A1F0EE65A000B390D /* ArtistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistController.swift; sourceTree = "<group>"; };
+		D68DAC8C1F0EE676000B390D /* ArtistApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistApiController.swift; sourceTree = "<group>"; };
 		D693E7D51F0D385400C5B88C /* HearthisAt-Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HearthisAt-Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D693E7D81F0D385400C5B88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D693E7E41F0D385400C5B88C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -293,6 +297,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		D68DAC891F0EE650000B390D /* Artist */ = {
+			isa = PBXGroup;
+			children = (
+				D68DAC8A1F0EE65A000B390D /* ArtistController.swift */,
+				D68DAC8C1F0EE676000B390D /* ArtistApiController.swift */,
+			);
+			path = Artist;
+			sourceTree = "<group>";
+		};
 		D693E7CC1F0D385400C5B88C = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +409,7 @@
 				D62375731F0D4DD400AACA96 /* ApiController.swift */,
 				D62375921F0D855800AACA96 /* ControllerProvider.swift */,
 				D62375691F0D4B7B00AACA96 /* Factory */,
+				D68DAC891F0EE650000B390D /* Artist */,
 				D623757A1F0D65A200AACA96 /* Feed */,
 				D623758D1F0D84E900AACA96 /* Tracks */,
 				D62375881F0D82A100AACA96 /* Playback */,
@@ -554,6 +568,7 @@
 				D623758F1F0D84F000AACA96 /* TracksController.swift in Sources */,
 				D6BAB3901F0D3ABB0056A13A /* Config.swift in Sources */,
 				D62375791F0D62DB00AACA96 /* Track.swift in Sources */,
+				D68DAC8B1F0EE65A000B390D /* ArtistController.swift in Sources */,
 				D68DAC551F0EAA61000B390D /* RootViewController.swift in Sources */,
 				D623756D1F0D4C1200AACA96 /* ApiControllerFactory.swift in Sources */,
 				D62375681F0D47F800AACA96 /* Response.swift in Sources */,
@@ -584,6 +599,7 @@
 				D68DAC661F0EAFC5000B390D /* Component.swift in Sources */,
 				D6BAB3991F0D3DB30056A13A /* Controller.swift in Sources */,
 				D62375851F0D71FB00AACA96 /* User.swift in Sources */,
+				D68DAC8D1F0EE676000B390D /* ArtistApiController.swift in Sources */,
 				D68DAC7F1F0ECDE6000B390D /* String+Localization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
