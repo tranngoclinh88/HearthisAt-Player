@@ -21,6 +21,12 @@ class FeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: Properties
+    
+    var popularFeed: TrackFeed {
+        return service.feedController.popularFeed
+    }
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -33,6 +39,20 @@ class FeedViewController: UIViewController {
         // register cell
         let nib = UINib(nibName: Defaults.cellNibName, bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: Defaults.cellReuseIdentifier)
+        
+        loadNextPageOfFeed()
+    }
+}
+
+extension FeedViewController {
+    
+    func loadNextPageOfFeed() {
+        service.feedController.loadNextPage(of: popularFeed,
+                                            success: { (feed, newPage) in
+                                                self.tableView.reloadData()
+        }) { (error) in
+            // TODO - Handle error
+        }
     }
 }
 
@@ -43,13 +63,15 @@ extension FeedViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return popularFeed.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Defaults.cellReuseIdentifier, for: indexPath) as! FeedItemCell
+        let track = popularFeed.allItems[indexPath.row]
         
         cell.index = indexPath.row + 1
+        cell.title = track.user?.username
         
         return cell
     }

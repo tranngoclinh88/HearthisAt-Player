@@ -23,6 +23,9 @@ class PagedResults<T> {
     }
     
     var currentPage: PageIndex {
+        guard elements.count > 0 else {
+            return 0
+        }
         return elements.count - 1
     }
     
