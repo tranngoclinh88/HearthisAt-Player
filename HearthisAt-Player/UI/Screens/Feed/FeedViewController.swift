@@ -65,6 +65,7 @@ class FeedViewController: PagingTableViewController {
         
         cell.index = indexPath.row + 1
         cell.title = track.user?.username
+        cell.imageUrl = track.user?.avatarUrl
         
         return cell
     }
