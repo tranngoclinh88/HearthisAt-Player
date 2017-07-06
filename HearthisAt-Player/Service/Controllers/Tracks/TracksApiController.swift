@@ -19,11 +19,11 @@ class TracksApiController: ApiController, TracksController {
     
     // MARK: Properties
     
-    private var artistTracksMap: [String : ArtistTracksList] = [:]
+    private var artistTracksMap: [String : TracksList] = [:]
     
     // MARK: Methods
     
-    func tracks(for artist: User) -> ArtistTracksList? {
+    func tracks(for artist: User) -> TracksList? {
         guard let identifier = artist.permalink else { return nil }
         return artistTracksMap[identifier]
     }
@@ -31,7 +31,7 @@ class TracksApiController: ApiController, TracksController {
     func loadTracks(for artist: User,
                     pageIndex: Int?,
                     count: Int?,
-                    success: (([Track], ArtistTracksList) -> Void)?,
+                    success: (([Track], TracksList) -> Void)?,
                     failure: Controller.MethodFailure?) {
         let pageIndex = pageIndex ?? 1
         let count = count ?? Defaults.pageSize
@@ -76,8 +76,8 @@ class TracksApiController: ApiController, TracksController {
         }
     }
     
-    func loadNextPage(of tracks: ArtistTracksList,
-                      success: (([Track], ArtistTracksList) -> Void)?,
+    func loadNextPage(of tracks: TracksList,
+                      success: (([Track], TracksList) -> Void)?,
                       failure: Controller.MethodFailure?) {
         loadTracks(for: tracks.artist,
                    pageIndex: tracks.nextPage,
@@ -88,7 +88,7 @@ class TracksApiController: ApiController, TracksController {
     
     // MARK: Utility
     
-    private func createTracksIfNeeded(for artist: User, identifier: String) -> ArtistTracksList {
+    private func createTracksIfNeeded(for artist: User, identifier: String) -> TracksList {
         if tracks(for: artist) == nil {
             self.artistTracksMap[identifier] = ArtistList<Track>(kind: .tracks, for: artist)
         }

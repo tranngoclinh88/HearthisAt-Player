@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias ArtistTracksList = ArtistList<Track>
+typealias TracksList = ArtistList<Track>
 
 protocol TracksController: Controller {    
     
@@ -16,7 +16,7 @@ protocol TracksController: Controller {
     ///
     /// - Parameter artist: The artist to get tracks for.
     /// - Returns: The tracks list if loaded.
-    func tracks(for artist: User) -> ArtistTracksList?
+    func tracks(for artist: User) -> TracksList?
     
     /// Load a list of tracks for an artist.
     ///
@@ -29,7 +29,7 @@ protocol TracksController: Controller {
     func loadTracks(for artist: User,
                     pageIndex: Int?,
                     count: Int?,
-                    success: ((_ tracks: [Track], _ allTracks: ArtistTracksList) -> Void)?,
+                    success: ((_ tracks: [Track], _ allTracks: TracksList) -> Void)?,
                     failure: MethodFailure?)
     
     /// Load the next page of a tracks list.
@@ -38,7 +38,7 @@ protocol TracksController: Controller {
     ///   - tracks: The tracks list.
     ///   - success: Execution on successful method.
     ///   - failure: Execution on failed method.
-    func loadNextPage(of tracks: ArtistTracksList,
-                      success: ((_ newPage: [Track], _ allTracks: ArtistTracksList) -> Void)?,
+    func loadNextPage(of tracks: TracksList,
+                      success: ((_ newPage: [Track], _ allTracks: TracksList) -> Void)?,
                       failure: MethodFailure?)
 }
