@@ -9,6 +9,8 @@
 import Foundation
 import ObjectMapper
 
+typealias Artist = User
+
 struct User: Mappable {
     
     private(set) var id: Int?

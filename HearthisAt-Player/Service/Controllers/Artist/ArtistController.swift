@@ -10,4 +10,7 @@ import Foundation
 
 protocol ArtistController: Controller {
     
+    func loadProfile(for artist: Artist,
+                     success: ((ArtistProfile) -> Void)?,
+                     failure: MethodFailure?)
 }

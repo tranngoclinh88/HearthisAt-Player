@@ -24,6 +24,7 @@
 		D623758F1F0D84F000AACA96 /* TracksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623758E1F0D84F000AACA96 /* TracksController.swift */; };
 		D62375911F0D850200AACA96 /* TracksApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375901F0D850200AACA96 /* TracksApiController.swift */; };
 		D62375931F0D855800AACA96 /* ControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375921F0D855800AACA96 /* ControllerProvider.swift */; };
+		D66EF58D1F0F8F610015DB01 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF58C1F0F8F610015DB01 /* UserProfile.swift */; };
 		D68DAC551F0EAA61000B390D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC541F0EAA61000B390D /* RootViewController.swift */; };
 		D68DAC571F0EAA7A000B390D /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC561F0EAA7A000B390D /* Root.storyboard */; };
 		D68DAC591F0EAA8E000B390D /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC581F0EAA8E000B390D /* Feed.storyboard */; };
@@ -81,6 +82,7 @@
 		D623758E1F0D84F000AACA96 /* TracksController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksController.swift; sourceTree = "<group>"; };
 		D62375901F0D850200AACA96 /* TracksApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksApiController.swift; sourceTree = "<group>"; };
 		D62375921F0D855800AACA96 /* ControllerProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerProvider.swift; sourceTree = "<group>"; };
+		D66EF58C1F0F8F610015DB01 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		D68DAC541F0EAA61000B390D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		D68DAC561F0EAA7A000B390D /* Root.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
 		D68DAC581F0EAA8E000B390D /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				D62375821F0D691200AACA96 /* TrackFeed.swift */,
 				D68DAC801F0ECF19000B390D /* ArtistList.swift */,
 				D62375841F0D71FB00AACA96 /* User.swift */,
+				D66EF58C1F0F8F610015DB01 /* UserProfile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				D62375681F0D47F800AACA96 /* Response.swift in Sources */,
 				D68DAC841F0ED8FA000B390D /* TracksHeaderView.swift in Sources */,
 				D68DAC631F0EAC3F000B390D /* ColorPalette.swift in Sources */,
+				D66EF58D1F0F8F610015DB01 /* UserProfile.swift in Sources */,
 				D62375931F0D855800AACA96 /* ControllerProvider.swift in Sources */,
 				D68DAC6F1F0EBFEC000B390D /* PagingFooterView.swift in Sources */,
 				D68DAC861F0EDEF9000B390D /* TrackItemCell.swift in Sources */,
