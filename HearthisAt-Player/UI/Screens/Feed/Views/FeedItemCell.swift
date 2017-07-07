@@ -53,10 +53,8 @@ class FeedItemCell: UITableViewCell {
     }
     weak var profileProvider: ArtistProfileProvider? {
         didSet {
-            if oldValue?.delegate === self {
-                oldValue?.delegate = nil
-            }
-            profileProvider?.delegate = self
+            oldValue?.remove(listener: self)
+            profileProvider?.add(listener: self)
             
             if let currentState = profileProvider?.currentState {
                 updateForProfileProvider(with: currentState)
@@ -111,7 +109,7 @@ class FeedItemCell: UITableViewCell {
     }
 }
 
-extension FeedItemCell: ArtistProfileProviderDelegate {
+extension FeedItemCell: ArtistProfileProviderObservable {
     
     func artistProfileProvider(_ provider: ArtistProfileProvider,
                                didUpdate state: ArtistProfileProvider.State) {

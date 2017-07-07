@@ -88,6 +88,7 @@ class FeedViewController: PagingTableViewController {
         let tracksViewController = storyboard.instantiateViewController(withIdentifier: "TracksViewController") as! TracksViewController
         
         tracksViewController.artist = track.user
+        tracksViewController.profileProvider = profileProvider(for: track.user)
         
         self.navigationController?.pushViewController(tracksViewController, animated: true)
     }

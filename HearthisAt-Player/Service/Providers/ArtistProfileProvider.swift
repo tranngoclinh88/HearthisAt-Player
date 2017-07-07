@@ -7,14 +7,15 @@
 //
 
 import Foundation
+import Listenable
 
-protocol ArtistProfileProviderDelegate: class {
+protocol ArtistProfileProviderObservable: class {
     
     func artistProfileProvider(_ provider: ArtistProfileProvider,
                                didUpdate state: ArtistProfileProvider.State)
 }
 
-class ArtistProfileProvider {
+class ArtistProfileProvider: Listenable<ArtistProfileProviderObservable> {
     
     // MARK: Types
     
@@ -30,11 +31,9 @@ class ArtistProfileProvider {
     let artist: Artist
     let service: Service
     
-    weak var delegate: ArtistProfileProviderDelegate?
-    
     private(set) var currentState: State = .ready {
         didSet {
-            delegate?.artistProfileProvider(self, didUpdate: currentState)
+            updateListeners({ $0.0.artistProfileProvider(self, didUpdate: currentState) })
         }
     }
     
@@ -43,6 +42,7 @@ class ArtistProfileProvider {
     init(for artist: Artist, service: Service) {
         self.artist = artist
         self.service = service
+        super.init()
         
         reloadData()
     }
