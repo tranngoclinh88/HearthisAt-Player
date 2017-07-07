@@ -87,6 +87,10 @@ class FeedViewController: PagingTableViewController {
         let profileProvider = self.profileProvider(for: track.user)
         cell.profileProvider = profileProvider
         
+        let selectedBackground = UIView()
+        selectedBackground.backgroundColor = .hta_cellHightlight
+        cell.selectedBackgroundView = selectedBackground
+        
         return cell
     }
     

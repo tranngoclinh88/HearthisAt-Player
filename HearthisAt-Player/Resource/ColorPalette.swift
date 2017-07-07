@@ -26,4 +26,10 @@ extension UIColor {
     static var hta_textSecondary: UIColor {
         return UIColor(hexString: "#DCDCDC")!
     }
+    
+    // MARK: Cells
+    
+    static var hta_cellHightlight: UIColor {
+        return UIColor.white.withAlphaComponent(0.3)
+    }
 }
