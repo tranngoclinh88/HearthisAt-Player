@@ -49,16 +49,16 @@ class TracksViewController: PagingTableViewController {
         }
     }
     
-    override func loadNextPageOfData(completion: @escaping ((Bool) -> Void)) {
+    override func loadNextPageOfData(completion: @escaping ((Bool, Bool) -> Void)) {
         
         let successHandler: (([Track], TracksList) -> Void) = { newTracks, tracksList in
             self.tableView.reloadData()
-            completion(true)
+            completion(true, tracksList.canPageFurther)
         }
         
         let failureHandler: Controller.MethodFailure = { error in
             // TODO - Handle error
-            completion(false)
+            completion(false, false)
         }
         
         if let tracksList = self.tracksList {

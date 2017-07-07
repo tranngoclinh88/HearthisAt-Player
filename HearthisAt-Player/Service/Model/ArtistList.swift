@@ -25,8 +25,9 @@ class ArtistList<T>: PagedResults<T> {
     
     // MARK: Init
     
-    init(kind: Kind, for artist: User) {
+    init(kind: Kind, for artist: User, pageSize: Int) {
         self.kind = kind
         self.artist = artist
+        super.init(with: pageSize)
     }
 }
