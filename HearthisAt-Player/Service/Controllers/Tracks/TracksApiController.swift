@@ -23,12 +23,12 @@ class TracksApiController: ApiController, TracksController {
     
     // MARK: Methods
     
-    func tracks(for artist: User) -> TracksList? {
+    func tracks(for artist: Artist) -> TracksList? {
         guard let identifier = artist.permalink else { return nil }
         return artistTracksMap[identifier]
     }
     
-    func loadTracks(for artist: User,
+    func loadTracks(for artist: Artist,
                     pageIndex: Int?,
                     count: Int?,
                     success: (([Track], TracksList) -> Void)?,
@@ -88,7 +88,7 @@ class TracksApiController: ApiController, TracksController {
     
     // MARK: Utility
     
-    private func createTracksIfNeeded(for artist: User, identifier: String) -> TracksList {
+    private func createTracksIfNeeded(for artist: Artist, identifier: String) -> TracksList {
         if tracks(for: artist) == nil {
             self.artistTracksMap[identifier] = ArtistList<Track>(kind: .tracks, for: artist)
         }

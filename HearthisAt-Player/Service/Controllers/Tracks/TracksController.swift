@@ -16,7 +16,7 @@ protocol TracksController: Controller {
     ///
     /// - Parameter artist: The artist to get tracks for.
     /// - Returns: The tracks list if loaded.
-    func tracks(for artist: User) -> TracksList?
+    func tracks(for artist: Artist) -> TracksList?
     
     /// Load a list of tracks for an artist.
     ///
@@ -26,7 +26,7 @@ protocol TracksController: Controller {
     ///   - count: The number of tracks to load.
     ///   - success: Execution on successful method.
     ///   - failure: Execution on failed method.
-    func loadTracks(for artist: User,
+    func loadTracks(for artist: Artist,
                     pageIndex: Int?,
                     count: Int?,
                     success: ((_ tracks: [Track], _ allTracks: TracksList) -> Void)?,

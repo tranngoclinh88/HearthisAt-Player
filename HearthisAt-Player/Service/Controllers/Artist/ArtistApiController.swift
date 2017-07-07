@@ -10,4 +10,9 @@ import Foundation
 
 class ArtistApiController: ApiController, ArtistController {
     
+    func loadProfile(for artist: Artist,
+                     success: ((ArtistProfile) -> Void)?,
+                     failure: Controller.MethodFailure?) {
+        
+    }
 }
