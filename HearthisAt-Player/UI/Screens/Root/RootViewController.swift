@@ -15,6 +15,12 @@ class RootViewController: UIViewController {
     @IBOutlet weak var backgroundGradientView: GradientView!
     @IBOutlet weak var backgroundAlbumArtView: AlbumArtBackgroundView!
     
+    // MARK: Properties
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
