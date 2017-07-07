@@ -10,4 +10,22 @@ import Foundation
 
 class PlaybackApiController: ApiController, PlaybackController {
     
+    // MARK: Properties
+    
+    // MARK: Methods
+    
+    func generatePlayableItem<T>(for object: T) -> PlayableItem<T> {
+        return PlayableItem<T>(for: object, responder: self)
+    }
+}
+
+extension PlaybackApiController: PlayableItemResponder {
+ 
+    func playableItem<T>(requestPlay item: PlayableItem<T>) {
+        print(item.object.contentUrl())
+    }
+    
+    func playableItem<T>(requestPause item: PlayableItem<T>) {
+        
+    }
 }

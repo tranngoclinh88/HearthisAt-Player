@@ -108,6 +108,16 @@ class TracksViewController: PagingTableViewController {
         return cell
     }
     
+    // MARK: UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let track = tracksList?.allItems[indexPath.row] else { return }
+        
+        let playableItem: PlayableItem<Track> = service.playbackController.generatePlayableItem(for: track)
+        playableItem.play()
+    }
+    
     // MARK: ArtistProfileProvider
     
     fileprivate func updateHeaderView(forProfileProviderWith state: ArtistProfileProvider.State) {
