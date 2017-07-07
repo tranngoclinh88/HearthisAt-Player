@@ -28,6 +28,7 @@
 		D66EF58F1F0F9B540015DB01 /* ExecutableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF58E1F0F9B540015DB01 /* ExecutableRequest.swift */; };
 		D66EF5931F0FFA010015DB01 /* FontPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5921F0FFA010015DB01 /* FontPalette.swift */; };
 		D66EF5961F0FFB9A0015DB01 /* ArtistProfileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5951F0FFB9A0015DB01 /* ArtistProfileProvider.swift */; };
+		D66EF5991F1000F40015DB01 /* FeedTransitioningHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5981F1000F40015DB01 /* FeedTransitioningHandler.swift */; };
 		D68DAC551F0EAA61000B390D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC541F0EAA61000B390D /* RootViewController.swift */; };
 		D68DAC571F0EAA7A000B390D /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC561F0EAA7A000B390D /* Root.storyboard */; };
 		D68DAC591F0EAA8E000B390D /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC581F0EAA8E000B390D /* Feed.storyboard */; };
@@ -89,6 +90,7 @@
 		D66EF58E1F0F9B540015DB01 /* ExecutableRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutableRequest.swift; sourceTree = "<group>"; };
 		D66EF5921F0FFA010015DB01 /* FontPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontPalette.swift; sourceTree = "<group>"; };
 		D66EF5951F0FFB9A0015DB01 /* ArtistProfileProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistProfileProvider.swift; sourceTree = "<group>"; };
+		D66EF5981F1000F40015DB01 /* FeedTransitioningHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTransitioningHandler.swift; sourceTree = "<group>"; };
 		D68DAC541F0EAA61000B390D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		D68DAC561F0EAA7A000B390D /* Root.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
 		D68DAC581F0EAA8E000B390D /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
@@ -224,9 +226,18 @@
 			path = Providers;
 			sourceTree = "<group>";
 		};
+		D66EF5971F1000E80015DB01 /* Transitioning */ = {
+			isa = PBXGroup;
+			children = (
+				D66EF5981F1000F40015DB01 /* FeedTransitioningHandler.swift */,
+			);
+			path = Transitioning;
+			sourceTree = "<group>";
+		};
 		D68DAC521F0EAA55000B390D /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				D66EF5971F1000E80015DB01 /* Transitioning */,
 				D68DAC671F0EB188000B390D /* Views */,
 				D68DAC581F0EAA8E000B390D /* Feed.storyboard */,
 				D68DAC5A1F0EAA97000B390D /* FeedViewController.swift */,
@@ -614,6 +625,7 @@
 				D62375871F0D769400AACA96 /* MapperTransforms.swift in Sources */,
 				D623758C1F0D82AF00AACA96 /* PlaybackApiController.swift in Sources */,
 				D6BAB39C1F0D3E080056A13A /* Endpoints.swift in Sources */,
+				D66EF5991F1000F40015DB01 /* FeedTransitioningHandler.swift in Sources */,
 				D68DAC691F0EB19A000B390D /* FeedItemCell.swift in Sources */,
 				D66EF5931F0FFA010015DB01 /* FontPalette.swift in Sources */,
 				D6BAB39E1F0D3F920056A13A /* Request.swift in Sources */,
