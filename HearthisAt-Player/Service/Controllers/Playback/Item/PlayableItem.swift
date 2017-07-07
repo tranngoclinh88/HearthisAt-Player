@@ -12,7 +12,9 @@ import Jukebox
 
 protocol Playable {
     
-    func contentUrl() -> URL?
+    var playableContentUrl: URL? { get }
+    
+    var playableArtworkUrl: URL? { get }
 }
 
 protocol PlayableItemResponder: class {

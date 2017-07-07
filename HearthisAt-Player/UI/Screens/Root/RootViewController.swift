@@ -14,6 +14,7 @@ class RootViewController: UIViewController {
     
     @IBOutlet weak var backgroundGradientView: GradientView!
     @IBOutlet weak var backgroundAlbumArtView: AlbumArtBackgroundView!
+    @IBOutlet weak var miniPlayer: MiniPlayer!
     
     // MARK: Properties
     
@@ -37,6 +38,20 @@ extension RootViewController: PlaybackControllerNotifyable {
     func playbackController(_ controller: PlaybackController,
                             didUpdate state: PlayableItem.State,
                             of item: PlayableItem) {
-        print(state)
+        
+        updateBackgroundView(for: state, item: item)
+    }
+    
+    private func updateBackgroundView(for state: PlayableItem.State,
+                                      item: PlayableItem) {
+        guard let artworkUrl = item.object.playableArtworkUrl else { return }
+        
+        switch state {
+        case .playing, .paused, .loading, .ready:
+            backgroundAlbumArtView.imageUrl = artworkUrl
+            
+        default:
+            backgroundAlbumArtView.imageUrl = nil
+        }
     }
 }

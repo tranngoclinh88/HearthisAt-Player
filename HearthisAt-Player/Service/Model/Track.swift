@@ -105,7 +105,11 @@ struct Track: Mappable {
 
 extension Track: Playable {
     
-    func contentUrl() -> URL? {
+    var playableContentUrl: URL? {
         return self.streamUrl
+    }
+    
+    var playableArtworkUrl: URL? {
+        return self.artworkUrl
     }
 }
