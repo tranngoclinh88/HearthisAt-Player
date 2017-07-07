@@ -27,6 +27,7 @@
 		D66EF58D1F0F8F610015DB01 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF58C1F0F8F610015DB01 /* UserProfile.swift */; };
 		D66EF58F1F0F9B540015DB01 /* ExecutableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF58E1F0F9B540015DB01 /* ExecutableRequest.swift */; };
 		D66EF5911F0FC9C70015DB01 /* FeedArtistProfileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5901F0FC9C70015DB01 /* FeedArtistProfileProvider.swift */; };
+		D66EF5931F0FFA010015DB01 /* FontPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5921F0FFA010015DB01 /* FontPalette.swift */; };
 		D68DAC551F0EAA61000B390D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC541F0EAA61000B390D /* RootViewController.swift */; };
 		D68DAC571F0EAA7A000B390D /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC561F0EAA7A000B390D /* Root.storyboard */; };
 		D68DAC591F0EAA8E000B390D /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC581F0EAA8E000B390D /* Feed.storyboard */; };
@@ -87,6 +88,7 @@
 		D66EF58C1F0F8F610015DB01 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		D66EF58E1F0F9B540015DB01 /* ExecutableRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutableRequest.swift; sourceTree = "<group>"; };
 		D66EF5901F0FC9C70015DB01 /* FeedArtistProfileProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedArtistProfileProvider.swift; sourceTree = "<group>"; };
+		D66EF5921F0FFA010015DB01 /* FontPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontPalette.swift; sourceTree = "<group>"; };
 		D68DAC541F0EAA61000B390D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		D68DAC561F0EAA7A000B390D /* Root.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
 		D68DAC581F0EAA8E000B390D /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				D6BAB37E1F0D39980056A13A /* Assets.xcassets */,
 				D6BAB37F1F0D39980056A13A /* LaunchScreen.storyboard */,
 				D68DAC621F0EAC3F000B390D /* ColorPalette.swift */,
+				D66EF5921F0FFA010015DB01 /* FontPalette.swift */,
 				D68DAC7C1F0ECD8E000B390D /* Localizable.strings */,
 			);
 			path = Resource;
@@ -603,6 +606,7 @@
 				D623758C1F0D82AF00AACA96 /* PlaybackApiController.swift in Sources */,
 				D6BAB39C1F0D3E080056A13A /* Endpoints.swift in Sources */,
 				D68DAC691F0EB19A000B390D /* FeedItemCell.swift in Sources */,
+				D66EF5931F0FFA010015DB01 /* FontPalette.swift in Sources */,
 				D6BAB39E1F0D3F920056A13A /* Request.swift in Sources */,
 				D68DAC6D1F0EB732000B390D /* AvatarImageView.swift in Sources */,
 				D68DAC751F0ECBCB000B390D /* TracksViewController.swift in Sources */,

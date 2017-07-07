@@ -33,6 +33,8 @@ class TracksViewController: PagingTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        headerView.delegate = self
+        
         // register cell
         let nib = UINib(nibName: Defaults.cellNibName, bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: Defaults.cellReuseIdentifier)
@@ -81,5 +83,12 @@ class TracksViewController: PagingTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: Defaults.cellReuseIdentifier, for: indexPath) as! TrackItemCell
         
         return cell
+    }
+}
+
+extension TracksViewController: TracksHeaderViewDelegate {
+    
+    func tracksHeaderView(backButtonPressed view: TracksHeaderView) {
+        navigationController?.popViewController(animated: true)
     }
 }
