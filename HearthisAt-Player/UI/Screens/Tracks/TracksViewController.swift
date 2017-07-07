@@ -21,6 +21,7 @@ class TracksViewController: PagingTableViewController {
     // MARK: Properties
     
     var artist: User!
+    weak var profileProvider: ArtistProfileProvider?
     
     @IBOutlet weak private var headerView: TracksHeaderView!
     
