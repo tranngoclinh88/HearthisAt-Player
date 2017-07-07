@@ -26,15 +26,16 @@ class MiniPlayer: ViewComponent {
     // MARK: Properties
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 0.0, height: 60.0)
+        return CGSize(width: 0.0, height: 64.0)
     }
-    
+
     private var playButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(#imageLiteral(resourceName: "ic_play"), for: .normal)
+        button.tintColor = .white
         button.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
-        button.backgroundColor = UIColor.white.withAlphaComponent(0.6)
+        button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         return button
     }()
     private var titleLabel: UILabel = {
