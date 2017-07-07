@@ -34,6 +34,10 @@ class TracksViewController: PagingTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        profileProvider?.add(listener: self)
+        if let state = profileProvider?.currentState {
+            updateHeaderView(forProfileProviderWith: state)
+        }
         headerView.delegate = self
         
         // register cell
@@ -85,11 +89,57 @@ class TracksViewController: PagingTableViewController {
         
         return cell
     }
+    
+    // MARK: ArtistProfileProvider
+    
+    fileprivate func updateHeaderView(forProfileProviderWith state: ArtistProfileProvider.State) {
+        switch state {
+            
+        case .available(let profile):
+            headerView.title = profile.username
+            headerView.subtitle = generateSubtitle(from: profile)
+            headerView.avatarUrl = profile.avatarUrl
+            
+        case .loading:
+            headerView.title = "screen.tracks.header.artistname.placeholder".localized()
+            headerView.subtitle = "screen.tracks.header.artistdetails.loading".localized()
+            headerView.avatarUrl = nil
+            
+        case .failed(_):
+            headerView.title = "general.error.title".localized()
+            headerView.subtitle = "screen.tracks.header.artistdetails.error".localized()
+            headerView.avatarUrl = nil
+
+        default:
+            headerView.title = ""
+            headerView.subtitle = ""
+            headerView.avatarUrl = nil
+
+        }
+    }
+    
+    private func generateSubtitle(from profile: UserProfile) -> String? {
+        if let description = profile.description, description.characters.count > 0 {
+            return description
+        } else if let geo = profile.geo, geo.characters.count > 0  {
+            return geo
+        }
+        
+        return profile.permalink
+    }
 }
 
 extension TracksViewController: TracksHeaderViewDelegate {
     
     func tracksHeaderView(backButtonPressed view: TracksHeaderView) {
         navigationController?.popViewController(animated: true)
+    }
+}
+
+extension TracksViewController: ArtistProfileProviderObservable {
+    
+    func artistProfileProvider(_ provider: ArtistProfileProvider,
+                               didUpdate state: ArtistProfileProvider.State) {
+        updateHeaderView(forProfileProviderWith: state)
     }
 }
