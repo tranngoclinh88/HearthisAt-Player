@@ -22,6 +22,7 @@ class FeedViewController: PagingTableViewController {
     var popularFeed: TrackFeed {
         return service.feedController.popularFeed
     }
+    private(set) var artistProfileProviders: [Artist.Id : FeedArtistProfileProvider] = [:]
     
     // MARK: Lifecycle
     
@@ -71,6 +72,8 @@ class FeedViewController: PagingTableViewController {
         cell.title = track.user?.username
         cell.imageUrl = track.user?.avatarUrl
         
+        let profileProvider = self.profileProvider(for: track.user)
+        
         return cell
     }
     
@@ -86,5 +89,15 @@ class FeedViewController: PagingTableViewController {
         tracksViewController.artist = track.user
         
         self.navigationController?.pushViewController(tracksViewController, animated: true)
+    }
+    
+    // MARK: Profile Providers
+    
+    private func profileProvider(for artist: Artist?) -> FeedArtistProfileProvider? {
+        guard let artist = artist, let id = artist.id else { return nil }
+        if self.artistProfileProviders[id] == nil {
+            self.artistProfileProviders[id] = FeedArtistProfileProvider(for: artist)
+        }
+        return self.artistProfileProviders[id]
     }
 }
