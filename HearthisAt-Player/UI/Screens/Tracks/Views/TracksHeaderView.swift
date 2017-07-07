@@ -22,6 +22,7 @@ class TracksHeaderView: ViewComponent {
     private let imageView: AvatarImageView = {
         let imageView = AvatarImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         return imageView
     }()
     private let titleLabel: UILabel = {
@@ -46,6 +47,7 @@ class TracksHeaderView: ViewComponent {
         button.setImage(#imageLiteral(resourceName: "ic_back"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.tintColor = .white
+        button.imageEdgeInsets = UIEdgeInsets(top: 4.0, left: 4.0, bottom: 4.0, right: 4.0)
         return button
     }()
     private let bottomSeparator: UIView = {
