@@ -24,11 +24,14 @@ class FeedViewController: PagingTableViewController {
     }
     private(set) var artistProfileProviders: [Artist.Id : ArtistProfileProvider] = [:]
     
+    private var transitioningHandler = FeedTransitioningHandler()
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.delegate = transitioningHandler
         title = "screen.feed.title".localized()
         
         // use autosizing
