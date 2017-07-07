@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.5.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
+  - Jukebox (0.2.1)
   - Listenable (1.0.0)
   - ObjectMapper (2.2.7)
   - SwiftHEXColors (1.1.0)
@@ -10,19 +11,31 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.5.0)
   - AlamofireImage (~> 3.2.0)
+  - Jukebox (from `https://github.com/msaps/Jukebox`, branch `develop`)
   - Listenable (~> 1.0.0)
   - ObjectMapper (~> 2.2.0)
   - SwiftHEXColors (~> 1.1.0)
   - TinyConstraints (~> 2.0.0)
 
+EXTERNAL SOURCES:
+  Jukebox:
+    :branch: develop
+    :git: https://github.com/msaps/Jukebox
+
+CHECKOUT OPTIONS:
+  Jukebox:
+    :commit: a7d9f184d6ada15cbbbc7a2b292ea94267e595dc
+    :git: https://github.com/msaps/Jukebox
+
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  Jukebox: 81db618ccd3a1cc9b154f4ae0f5c4b54638666dd
   Listenable: '078c3585861c811e0c123d965bf60d20402d4268'
   ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
   SwiftHEXColors: 8f7e364df7929e32cff9f9eeb044bb215167d6be
   TinyConstraints: c8f3c34a90aa2a5b6960dcff5cc6a69e8938cf1b
 
-PODFILE CHECKSUM: 7b8777e08683880ee02b3e0bf06f102ee5cb31d1
+PODFILE CHECKSUM: d221b26f0152ee80119aab7628373a76e6e09d43
 
 COCOAPODS: 1.2.1

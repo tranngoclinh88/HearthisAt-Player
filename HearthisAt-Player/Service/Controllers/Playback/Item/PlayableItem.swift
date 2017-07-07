@@ -24,26 +24,16 @@ protocol PlayableItemResponder: class {
 protocol PlayableItemObservable {
     
     func playableItem<T>(_ item: PlayableItem<T>,
-                      didUpdate state: PlayableItem<T>.State)
+                      didUpdate state: PlayableItemStateManager.State)
 }
 
 class PlayableItem<T : Playable>: Listenable<PlayableItemObservable> {
-    
-    // MARK: Types
-    
-    enum State {
-        case ready
-        case playing
-        case paused
-    }
     
     // MARK: Properties
     
     let object: T
     
     private weak var responder: PlayableItemResponder?
-    
-    private(set) var currentState: State = .ready
     
     // MARK: Init
     
