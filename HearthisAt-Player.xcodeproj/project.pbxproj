@@ -32,7 +32,6 @@
 		D66EF5A31F1020550015DB01 /* PlaybackError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5A21F1020550015DB01 /* PlaybackError.swift */; };
 		D66EF5AC1F1024C90015DB01 /* MutablePlayableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5A91F1024C90015DB01 /* MutablePlayableItem.swift */; };
 		D66EF5AD1F1024C90015DB01 /* PlayableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5AA1F1024C90015DB01 /* PlayableItem.swift */; };
-		D66EF5AE1F1024C90015DB01 /* PlayableItemStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5AB1F1024C90015DB01 /* PlayableItemStateManager.swift */; };
 		D66EF5B01F1027500015DB01 /* MiniPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5AF1F1027500015DB01 /* MiniPlayer.swift */; };
 		D68DAC551F0EAA61000B390D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC541F0EAA61000B390D /* RootViewController.swift */; };
 		D68DAC571F0EAA7A000B390D /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC561F0EAA7A000B390D /* Root.storyboard */; };
@@ -99,7 +98,6 @@
 		D66EF5A21F1020550015DB01 /* PlaybackError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackError.swift; sourceTree = "<group>"; };
 		D66EF5A91F1024C90015DB01 /* MutablePlayableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutablePlayableItem.swift; sourceTree = "<group>"; };
 		D66EF5AA1F1024C90015DB01 /* PlayableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayableItem.swift; sourceTree = "<group>"; };
-		D66EF5AB1F1024C90015DB01 /* PlayableItemStateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayableItemStateManager.swift; sourceTree = "<group>"; };
 		D66EF5AF1F1027500015DB01 /* MiniPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniPlayer.swift; sourceTree = "<group>"; };
 		D68DAC541F0EAA61000B390D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		D68DAC561F0EAA7A000B390D /* Root.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
@@ -251,7 +249,6 @@
 			children = (
 				D66EF5A91F1024C90015DB01 /* MutablePlayableItem.swift */,
 				D66EF5AA1F1024C90015DB01 /* PlayableItem.swift */,
-				D66EF5AB1F1024C90015DB01 /* PlayableItemStateManager.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -614,7 +611,6 @@
 			files = (
 				D62375831F0D691200AACA96 /* TrackFeed.swift in Sources */,
 				D66EF5961F0FFB9A0015DB01 /* ArtistProfileProvider.swift in Sources */,
-				D66EF5AE1F1024C90015DB01 /* PlayableItemStateManager.swift in Sources */,
 				D623758A1F0D82A800AACA96 /* PlaybackController.swift in Sources */,
 				D68DAC611F0EABD2000B390D /* AlbumArtBackgroundView.swift in Sources */,
 				D6BAB3941F0D3B8B0056A13A /* AppConfig.swift in Sources */,

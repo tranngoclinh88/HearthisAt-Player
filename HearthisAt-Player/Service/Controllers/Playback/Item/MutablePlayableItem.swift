@@ -8,24 +8,15 @@
 
 import Foundation
 
-class MutablePlayableItem<T : Playable>: PlayableItem<T> {
+class MutablePlayableItem: PlayableItem {
     
-    // MARK: Properties
-    
-    private(set) var stateManager: PlayableItemStateManager!
-    
-    // MARK: Init
-    
-    override init(for object: T, responder: PlayableItemResponder) {
-        super.init(for: object, responder: responder)
-        self.stateManager = PlayableItemStateManager(with: self)
-    }
-}
-
-extension MutablePlayableItem: PlayableItemStateManagerHandler {
-    
-    func stateManager(_ manager: PlayableItemStateManager,
-                      didUpdate state: PlayableItemStateManager.State) {
-        updateListeners({ $0.0.playableItem(self, didUpdate: state) })
+    private var _currentState: PlayableItem.State = .ready
+    override var currentState: PlayableItem.State {
+        get {
+            return _currentState
+        } set {
+            _currentState = newValue
+            updateListeners({ $0.0.playableItem(self, didUpdate: newValue )})
+        }
     }
 }
