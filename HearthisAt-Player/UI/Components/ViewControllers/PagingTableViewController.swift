@@ -31,6 +31,10 @@ class PagingTableViewController: UIViewController, UITableViewDataSource, UITabl
     
     // MARK: Data
     
+    func updatePagingAbility(canPage: Bool) {
+        self.tableView.tableFooterView = canPage ? self.footerView : UIView()
+    }
+    
     func loadNextPageOfData() {
         attemptLoadNextPageOfData()
     }
@@ -42,7 +46,7 @@ class PagingTableViewController: UIViewController, UITableViewDataSource, UITabl
         loadNextPageOfData { (success, allowPaging) in
             self.isLoadingData = false
             
-            self.tableView.tableFooterView = allowPaging ? self.footerView : nil
+            self.updatePagingAbility(canPage: allowPaging)
         }
     }
     
