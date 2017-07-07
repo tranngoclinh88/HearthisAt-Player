@@ -19,7 +19,7 @@ protocol RequestObservable: class {
     func request(_ request: Request, didFailWith error: Error, response: Response?)
 }
 
-class Request: Listenable<RequestObservable> {
+class Request: Listenable<RequestObservable>, Hashable {
     
     // MARK: Properties
     
@@ -37,6 +37,7 @@ class Request: Listenable<RequestObservable> {
     /// The response to the request.
     private(set) var response: Response?
     
+    /// Whether the request is currently in progress.
     private(set) var inProgress: Bool = false
     
     // MARK: Init
@@ -57,5 +58,18 @@ class Request: Listenable<RequestObservable> {
     
     func cancel() {
         
+    }
+    
+    // MARK: Hashable
+    
+    var hashValue: Int {
+        return 0
+    }
+}
+
+extension Request: Equatable {
+    
+    static func ==(lhs: Request, rhs: Request) -> Bool {
+        return false
     }
 }

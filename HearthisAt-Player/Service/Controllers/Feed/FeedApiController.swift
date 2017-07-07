@@ -66,7 +66,7 @@ class FeedApiController: ApiController, FeedController {
                 }
         }) { (request, response, error) in
             failure?(error)
-        }
+        }        
     }
     
     func loadNextPage(of feed: TrackFeed,

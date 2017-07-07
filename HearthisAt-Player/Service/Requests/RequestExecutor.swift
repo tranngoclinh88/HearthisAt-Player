@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 
 enum RequestExecutorError: Error {
+    case cancelled
     case unknown
 }
 
@@ -38,7 +39,7 @@ class RequestExecutor {
             return
         }
         let request = executableRequest
-        request.delegate = self
+        
         request.inProgress = true
         request.updateListeners({ $0.0.request(didBegin: request) })
         
@@ -47,7 +48,17 @@ class RequestExecutor {
                                             parameters: request.parameters,
                                             encoding: request.encoding ?? URLEncoding.default,
                                             headers: request.headers)
+        request.dataRequest = dataRequest
+        
+        // handle response
         dataRequest.response { (response) in
+            
+            // handle cancellation
+            guard self.wasCancelled(error: response.error) == false else {
+                failure(request, nil, RequestExecutorError.cancelled)
+                return
+            }
+            
             guard let urlResponse = response.response else {
                 failure(request, nil, RequestExecutorError.unknown)
                 return
@@ -72,11 +83,14 @@ class RequestExecutor {
             request.updateListeners({ $0.0.request(request, didFinishWith: response, data: response.data) })
         }
     }
-}
-
-extension RequestExecutor: ExecutableRequestDelegate {
     
-    func request(doesRequireCancellation request: Request) {
-        // TODO
+    // MARK: Utility
+    
+    func wasCancelled(error: Error?) -> Bool {
+        guard let error = error else {
+            return false
+        }
+        let nsError = error as NSError
+        return nsError.domain == NSURLErrorDomain && nsError.code == NSURLErrorCancelled
     }
 }
