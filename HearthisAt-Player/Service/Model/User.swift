@@ -12,8 +12,10 @@ import ObjectMapper
 typealias Artist = User
 
 struct User: Mappable {
+
+    typealias Id = Int
     
-    private(set) var id: Int?
+    private(set) var id: Id?
     private(set) var permalink: String?
     private(set) var username: String?
     private(set) var uri: String?
