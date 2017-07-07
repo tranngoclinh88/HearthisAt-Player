@@ -81,7 +81,7 @@ class TracksApiController: ApiController, TracksController {
                       failure: Controller.MethodFailure?) {
         loadTracks(for: tracks.artist,
                    pageIndex: tracks.nextPage,
-                   count: tracks.pageSize ?? Defaults.pageSize,
+                   count: tracks.pageSize,
                    success: success,
                    failure: failure)
     }
@@ -90,7 +90,9 @@ class TracksApiController: ApiController, TracksController {
     
     private func createTracksIfNeeded(for artist: Artist, identifier: String) -> TracksList {
         if tracks(for: artist) == nil {
-            self.artistTracksMap[identifier] = ArtistList<Track>(kind: .tracks, for: artist)
+            self.artistTracksMap[identifier] = ArtistList<Track>(kind: .tracks,
+                                                                 for: artist,
+                                                                 pageSize: Defaults.pageSize)
         }
         return tracks(for: artist)!
     }

@@ -27,7 +27,6 @@ class PagingTableViewController: UIViewController, UITableViewDataSource, UITabl
         
         // Add paging footer
         footerView.frame = CGRect(x: 0.0, y: 0.0, width: 0.0, height: footerView.intrinsicContentSize.height)
-        tableView.tableFooterView = footerView
     }
     
     // MARK: Data
@@ -40,12 +39,14 @@ class PagingTableViewController: UIViewController, UITableViewDataSource, UITabl
         guard !isLoadingData else { return }
         
         isLoadingData = true
-        loadNextPageOfData { (success) in
+        loadNextPageOfData { (success, allowPaging) in
             self.isLoadingData = false
+            
+            self.tableView.tableFooterView = allowPaging ? self.footerView : nil
         }
     }
     
-    func loadNextPageOfData(completion: @escaping ((_ success: Bool) -> Void)) {
+    func loadNextPageOfData(completion: @escaping ((_ success: Bool, _ allowPaging: Bool) -> Void)) {
         
     }
     

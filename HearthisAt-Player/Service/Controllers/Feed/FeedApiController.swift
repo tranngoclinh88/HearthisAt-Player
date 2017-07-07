@@ -19,8 +19,8 @@ class FeedApiController: ApiController, FeedController {
     
     // MARK: Properties
     
-    private(set) var popularFeed = TrackFeed(kind: .popular)
-    private(set) var newFeed = TrackFeed(kind: .new)
+    private(set) var popularFeed = TrackFeed(kind: .popular, pageSize: Defaults.pageSize)
+    private(set) var newFeed = TrackFeed(kind: .new, pageSize: Defaults.pageSize)
     
     // MARK: Methods
     
@@ -74,7 +74,7 @@ class FeedApiController: ApiController, FeedController {
                       failure: ((Error) -> Void)?) {
         loadFeed(of: feed.kind,
                  pageIndex: feed.nextPage,
-                 count: feed.pageSize ?? Defaults.pageSize,
+                 count: feed.pageSize,
                  success: success,
                  failure: failure)
     }

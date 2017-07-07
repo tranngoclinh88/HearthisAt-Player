@@ -32,9 +32,7 @@ class PagedResults<T> {
         return elements.count
     }
     
-    var pageSize: Int? {
-        return elements[currentPage]?.items.count
-    }
+    let pageSize: Int
     
     var allItems: [T] {
         var allItems = [T]()
@@ -50,10 +48,24 @@ class PagedResults<T> {
         return elements.count == 0
     }
     
+    var canPageFurther: Bool {
+        return elements[self.currentPage]?.items.count == pageSize
+    }
+    
+    // MARK: Init
+    
+    init(with pageSize: Int) {
+        self.pageSize = pageSize
+    }
+    
+    // MARK: Data fetch
+    
     func page(at index: PageIndex) -> [T]? {
         guard elements.count < index else { return nil }
         return elements[index]?.items
     }
+    
+    // MARK: Mutation
     
     func append(page: [T]) {
         let nextIndex = elements.count

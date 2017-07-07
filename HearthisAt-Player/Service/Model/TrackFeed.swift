@@ -23,7 +23,8 @@ class TrackFeed: PagedResults<Track> {
     
     // MARK: Init
     
-    init(kind: Kind) {
+    init(kind: Kind, pageSize: Int) {
         self.kind = kind
+        super.init(with: pageSize)
     }
 }

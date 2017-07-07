@@ -45,14 +45,14 @@ class FeedViewController: PagingTableViewController {
         loadNextPageOfData()
     }
     
-    override func loadNextPageOfData(completion: @escaping ((Bool) -> Void)) {
+    override func loadNextPageOfData(completion: @escaping ((Bool, Bool) -> Void)) {
         service.feedController.loadNextPage(of: popularFeed,
                                             success: { (feed, newPage) in
                                                 self.tableView.reloadData()
-                                                completion(true)
+                                                completion(true, feed.canPageFurther)
         }) { (error) in
             dump(error)
-            completion(false)
+            completion(false, false)
             // TODO - Handle error
         }
     }
