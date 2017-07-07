@@ -7,3 +7,5 @@
 */
 
 "screen.feed.title" = "Top Track Artists";
+"screen.feed.cell.profiledetails.loading" = "Loading details...";
+"screen.feed.cell.profiledetails.unavailable" = "Details Unavailable";

@@ -73,6 +73,7 @@ class FeedViewController: PagingTableViewController {
         cell.imageUrl = track.user?.avatarUrl
         
         let profileProvider = self.profileProvider(for: track.user)
+        cell.profileProvider = profileProvider
         
         return cell
     }
@@ -96,7 +97,8 @@ class FeedViewController: PagingTableViewController {
     private func profileProvider(for artist: Artist?) -> FeedArtistProfileProvider? {
         guard let artist = artist, let id = artist.id else { return nil }
         if self.artistProfileProviders[id] == nil {
-            self.artistProfileProviders[id] = FeedArtistProfileProvider(for: artist)
+            self.artistProfileProviders[id] = FeedArtistProfileProvider(for: artist,
+                                                                        service: self.service)
         }
         return self.artistProfileProviders[id]
     }
