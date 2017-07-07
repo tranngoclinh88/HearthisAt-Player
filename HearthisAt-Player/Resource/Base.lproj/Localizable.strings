@@ -11,7 +11,7 @@
 "general.title.loading" = "Loading...";
 "general.title.failed" = "Failed to load";
 
-"screen.feed.title" = "Top Artists";
+"screen.feed.title" = "Top Track Artists";
 "screen.feed.cell.profiledetails.loading" = "Loading details...";
 "screen.feed.cell.profiledetails.error" = "Details Unavailable";
 
