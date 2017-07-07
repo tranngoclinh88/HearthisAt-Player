@@ -11,10 +11,10 @@ import UIKit
 extension UIFont {
     
     static var hta_title: UIFont {
-        return UIFont.systemFont(ofSize: 20.0, weight: UIFontWeightMedium)
+        return UIFont.systemFont(ofSize: 22.0, weight: UIFontWeightMedium)
     }
     
     static var hta_subtitle: UIFont {
-        return UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightRegular)
+        return UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightRegular)
     }
 }

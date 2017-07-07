@@ -6,6 +6,12 @@
   Copyright © 2017 Merrick Sapsford. All rights reserved.
 */
 
+"general.error.title" = "Ooops";
+
 "screen.feed.title" = "Top Track Artists";
 "screen.feed.cell.profiledetails.loading" = "Loading details...";
-"screen.feed.cell.profiledetails.unavailable" = "Details Unavailable";
+"screen.feed.cell.profiledetails.error" = "Details Unavailable";
+
+"screen.tracks.header.artistname.placeholder" = "Artist";
+"screen.tracks.header.artistdetails.loading" = "Loading...";
+"screen.tracks.header.artistdetails.error" = "Could not load artist details.";

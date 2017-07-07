@@ -90,7 +90,7 @@ class FeedItemCell: UITableViewCell {
             subtitle = generateProfileDetails(for: profile)
             
         case .failed(_):
-            subtitle = "screen.feed.cell.profiledetails.unavailable".localized()
+            subtitle = "screen.feed.cell.profiledetails.error".localized()
             
         default:
             subtitle = ""

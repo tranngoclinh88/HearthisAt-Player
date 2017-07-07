@@ -8,6 +8,7 @@
 
 import UIKit
 import TinyConstraints
+import AlamofireImage
 
 protocol TracksHeaderViewDelegate: class {
     
@@ -36,6 +37,7 @@ class TracksHeaderView: ViewComponent {
         label.textAlignment = .center
         label.font = .hta_subtitle
         label.textColor = .hta_textSecondary
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -55,6 +57,30 @@ class TracksHeaderView: ViewComponent {
     }()
     
     weak var delegate: TracksHeaderViewDelegate?
+    
+    var title: String? {
+        didSet {
+            titleLabel.text = title
+        }
+    }
+    var subtitle: String? {
+        didSet {
+            subtitleLabel.text = subtitle
+        }
+    }
+    var avatarUrl: URL? {
+        didSet {
+            guard let avatarUrl = avatarUrl else {
+                imageView.image = nil
+                return
+            }
+            imageView.af_setImage(withURL: avatarUrl,
+                                  placeholderImage: nil,
+                                  imageTransition: .crossDissolve(0.2),
+                                  runImageTransitionIfCached: false,
+                                  completion: nil)
+        }
+    }
     
     // MARK: Lifecycle
     
@@ -88,19 +114,16 @@ class TracksHeaderView: ViewComponent {
         backButton.centerY(to: imageView)
         backButton.size(CGSize(width: 40.0, height: 40.0))
         
-        titleLabel.left(to: innerContainer)
-        titleLabel.right(to: innerContainer)
+        titleLabel.left(to: innerContainer, offset: 8.0)
+        titleLabel.right(to: innerContainer, offset: -8.0)
         titleLabel.topToBottom(of: imageView, offset: 24.0)
         
-        subtitleLabel.left(to: innerContainer)
-        subtitleLabel.right(to: innerContainer)
-        subtitleLabel.topToBottom(of: titleLabel, offset: 4.0)
+        subtitleLabel.left(to: innerContainer, offset: 8.0)
+        subtitleLabel.right(to: innerContainer, offset: -8.0)
+        subtitleLabel.topToBottom(of: titleLabel, offset: 6.0)
         subtitleLabel.bottom(to: innerContainer)
         
         backButton.addTarget(self, action: #selector(backButtonPressed(_:)), for: .touchUpInside)
-        
-        titleLabel.text = "Merrick Sapsford"
-        subtitleLabel.text = "Doncaster, UK"
     }
     
     // MARK: Actions
