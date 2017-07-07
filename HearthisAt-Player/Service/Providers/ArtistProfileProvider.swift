@@ -8,13 +8,13 @@
 
 import Foundation
 
-protocol FeedArtistProfileProviderDelegate: class {
+protocol ArtistProfileProviderDelegate: class {
     
-    func feedArtistProfileProvider(_ provider: FeedArtistProfileProvider,
-                                   didUpdate state: FeedArtistProfileProvider.State)
+    func artistProfileProvider(_ provider: ArtistProfileProvider,
+                               didUpdate state: ArtistProfileProvider.State)
 }
 
-class FeedArtistProfileProvider {
+class ArtistProfileProvider {
     
     // MARK: Types
     
@@ -30,11 +30,11 @@ class FeedArtistProfileProvider {
     let artist: Artist
     let service: Service
     
-    weak var delegate: FeedArtistProfileProviderDelegate?
+    weak var delegate: ArtistProfileProviderDelegate?
     
     private(set) var currentState: State = .ready {
         didSet {
-            delegate?.feedArtistProfileProvider(self, didUpdate: currentState)
+            delegate?.artistProfileProvider(self, didUpdate: currentState)
         }
     }
     

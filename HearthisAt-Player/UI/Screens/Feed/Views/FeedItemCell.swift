@@ -51,7 +51,7 @@ class FeedItemCell: UITableViewCell {
             // TODO - Image loading
         }
     }
-    weak var profileProvider: FeedArtistProfileProvider? {
+    weak var profileProvider: ArtistProfileProvider? {
         didSet {
             if oldValue?.delegate === self {
                 oldValue?.delegate = nil
@@ -82,7 +82,7 @@ class FeedItemCell: UITableViewCell {
     
     // MARK: Profile Provider
     
-    fileprivate func updateForProfileProvider(with state: FeedArtistProfileProvider.State) {
+    fileprivate func updateForProfileProvider(with state: ArtistProfileProvider.State) {
         switch state {
             
         case .loading:
@@ -111,10 +111,10 @@ class FeedItemCell: UITableViewCell {
     }
 }
 
-extension FeedItemCell: FeedArtistProfileProviderDelegate {
+extension FeedItemCell: ArtistProfileProviderDelegate {
     
-    func feedArtistProfileProvider(_ provider: FeedArtistProfileProvider,
-                                   didUpdate state: FeedArtistProfileProvider.State) {
+    func artistProfileProvider(_ provider: ArtistProfileProvider,
+                               didUpdate state: ArtistProfileProvider.State) {
         updateForProfileProvider(with: state)
     }
 }
