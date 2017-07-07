@@ -38,7 +38,7 @@ class TracksViewController: PagingTableViewController {
         tableView.register(nib, forCellReuseIdentifier: Defaults.cellReuseIdentifier)
         
         if self.tracksList == nil {
-            performInitialDataLoad()
+            loadNextPageOfData()
         }
     }
     
