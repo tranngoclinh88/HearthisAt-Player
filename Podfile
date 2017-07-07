@@ -9,6 +9,8 @@ target 'HearthisAt-Player' do
   pod 'ObjectMapper', '~> 2.2.0'
   pod 'Listenable', '~> 1.0.0'
 
+  pod 'Jukebox', :git => 'https://github.com/msaps/Jukebox', :branch => 'develop'
+
   pod 'SwiftHEXColors', '~> 1.1.0'
   pod 'TinyConstraints', '~> 2.0.0'
 
