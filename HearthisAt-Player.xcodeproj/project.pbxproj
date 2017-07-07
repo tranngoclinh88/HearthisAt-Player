@@ -33,6 +33,7 @@
 		D66EF5AC1F1024C90015DB01 /* MutablePlayableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5A91F1024C90015DB01 /* MutablePlayableItem.swift */; };
 		D66EF5AD1F1024C90015DB01 /* PlayableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5AA1F1024C90015DB01 /* PlayableItem.swift */; };
 		D66EF5AE1F1024C90015DB01 /* PlayableItemStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5AB1F1024C90015DB01 /* PlayableItemStateManager.swift */; };
+		D66EF5B01F1027500015DB01 /* MiniPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5AF1F1027500015DB01 /* MiniPlayer.swift */; };
 		D68DAC551F0EAA61000B390D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC541F0EAA61000B390D /* RootViewController.swift */; };
 		D68DAC571F0EAA7A000B390D /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC561F0EAA7A000B390D /* Root.storyboard */; };
 		D68DAC591F0EAA8E000B390D /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC581F0EAA8E000B390D /* Feed.storyboard */; };
@@ -99,6 +100,7 @@
 		D66EF5A91F1024C90015DB01 /* MutablePlayableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutablePlayableItem.swift; sourceTree = "<group>"; };
 		D66EF5AA1F1024C90015DB01 /* PlayableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayableItem.swift; sourceTree = "<group>"; };
 		D66EF5AB1F1024C90015DB01 /* PlayableItemStateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayableItemStateManager.swift; sourceTree = "<group>"; };
+		D66EF5AF1F1027500015DB01 /* MiniPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniPlayer.swift; sourceTree = "<group>"; };
 		D68DAC541F0EAA61000B390D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		D68DAC561F0EAA7A000B390D /* Root.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
 		D68DAC581F0EAA8E000B390D /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				D68DAC601F0EABD2000B390D /* AlbumArtBackgroundView.swift */,
 				D68DAC6C1F0EB732000B390D /* AvatarImageView.swift */,
 				D68DAC6E1F0EBFEC000B390D /* PagingFooterView.swift */,
+				D66EF5AF1F1027500015DB01 /* MiniPlayer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				D68DAC631F0EAC3F000B390D /* ColorPalette.swift in Sources */,
 				D66EF58D1F0F8F610015DB01 /* UserProfile.swift in Sources */,
 				D62375931F0D855800AACA96 /* ControllerProvider.swift in Sources */,
+				D66EF5B01F1027500015DB01 /* MiniPlayer.swift in Sources */,
 				D68DAC6F1F0EBFEC000B390D /* PagingFooterView.swift in Sources */,
 				D68DAC861F0EDEF9000B390D /* TrackItemCell.swift in Sources */,
 				D693E7D91F0D385400C5B88C /* AppDelegate.swift in Sources */,
