@@ -31,6 +31,16 @@ class RequestExecutor {
     func execute(_ request: Request,
                  success: @escaping ExecutionSuccess,
                  failure: @escaping ExecutionFailure) {
+        guard let executableRequest = request as? ExecutableRequest else {
+            let error = RequestExecutorError.unknown
+            failure(request, nil, error)
+            request.updateListeners({ $0.0.request(request, didFailWith: error, response: nil) })
+            return
+        }
+        let request = executableRequest
+        request.delegate = self
+        request.inProgress = true
+        request.updateListeners({ $0.0.request(didBegin: request) })
         
         let dataRequest = Alamofire.request(request.url,
                                             method: request.method,
@@ -43,19 +53,30 @@ class RequestExecutor {
                 return
             }
             
-            let response = Response(for: request,
-                                    rawResponse: urlResponse,
+            let response = Response(rawResponse: urlResponse,
                                     statusCode: urlResponse.statusCode,
                                     data: response.data,
                                     error: response.error)
-
+            request.response = response
+            request.inProgress = false
+            
             // Handle failed request
             guard response.isSuccessful else {
-                failure(request, response, response.error ?? RequestExecutorError.unknown)
+                let error = response.error ?? RequestExecutorError.unknown
+                failure(request, response, error)
+                request.updateListeners({ $0.0.request(request, didFailWith: error, response: response) })
                 return
             }
             
             success(request, response, response.data)
+            request.updateListeners({ $0.0.request(request, didFinishWith: response, data: response.data) })
         }
+    }
+}
+
+extension RequestExecutor: ExecutableRequestDelegate {
+    
+    func request(doesRequireCancellation request: Request) {
+        // TODO
     }
 }

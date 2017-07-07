@@ -42,10 +42,10 @@ class RequestBuilder {
         let urlString = "\(config.api.baseUrl)\(endpoint.path)"
         guard let url = URL(string: urlString) else { return nil }
         
-        return Request(with: url,
-                       method: method,
-                       headers: headers,
-                       parameters: parameters,
-                       encoding: encoding)
+        return ExecutableRequest(with: url,
+                                 method: method,
+                                 headers: headers,
+                                 parameters: parameters,
+                                 encoding: encoding)
     }
 }

@@ -25,6 +25,7 @@
 		D62375911F0D850200AACA96 /* TracksApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375901F0D850200AACA96 /* TracksApiController.swift */; };
 		D62375931F0D855800AACA96 /* ControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375921F0D855800AACA96 /* ControllerProvider.swift */; };
 		D66EF58D1F0F8F610015DB01 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF58C1F0F8F610015DB01 /* UserProfile.swift */; };
+		D66EF58F1F0F9B540015DB01 /* ExecutableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF58E1F0F9B540015DB01 /* ExecutableRequest.swift */; };
 		D68DAC551F0EAA61000B390D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC541F0EAA61000B390D /* RootViewController.swift */; };
 		D68DAC571F0EAA7A000B390D /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC561F0EAA7A000B390D /* Root.storyboard */; };
 		D68DAC591F0EAA8E000B390D /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC581F0EAA8E000B390D /* Feed.storyboard */; };
@@ -83,6 +84,7 @@
 		D62375901F0D850200AACA96 /* TracksApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksApiController.swift; sourceTree = "<group>"; };
 		D62375921F0D855800AACA96 /* ControllerProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerProvider.swift; sourceTree = "<group>"; };
 		D66EF58C1F0F8F610015DB01 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		D66EF58E1F0F9B540015DB01 /* ExecutableRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutableRequest.swift; sourceTree = "<group>"; };
 		D68DAC541F0EAA61000B390D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		D68DAC561F0EAA7A000B390D /* Root.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
 		D68DAC581F0EAA8E000B390D /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 			children = (
 				D6BAB39B1F0D3E080056A13A /* Endpoints.swift */,
 				D6BAB39D1F0D3F920056A13A /* Request.swift */,
+				D66EF58E1F0F9B540015DB01 /* ExecutableRequest.swift */,
 				D62375671F0D47F800AACA96 /* Response.swift */,
 				D6BAB39F1F0D3F9E0056A13A /* RequestBuilder.swift */,
 				D6BAB3A11F0D43B90056A13A /* RequestExecutor.swift */,
@@ -575,6 +578,7 @@
 				D68DAC551F0EAA61000B390D /* RootViewController.swift in Sources */,
 				D623756D1F0D4C1200AACA96 /* ApiControllerFactory.swift in Sources */,
 				D62375681F0D47F800AACA96 /* Response.swift in Sources */,
+				D66EF58F1F0F9B540015DB01 /* ExecutableRequest.swift in Sources */,
 				D68DAC841F0ED8FA000B390D /* TracksHeaderView.swift in Sources */,
 				D68DAC631F0EAC3F000B390D /* ColorPalette.swift in Sources */,
 				D66EF58D1F0F8F610015DB01 /* UserProfile.swift in Sources */,

@@ -12,8 +12,6 @@ class Response {
  
     /// The raw response.
     let raw: URLResponse
-    /// The corresponding request.
-    let request: Request
     /// The status code of the response.
     let statusCode: Int
     /// The data included with the response.
@@ -26,12 +24,10 @@ class Response {
         return error == nil && 200 ... 299 ~= statusCode 
     }
     
-    init(for request: Request,
-         rawResponse: URLResponse,
+    init(rawResponse: URLResponse,
          statusCode: Int,
          data: Data?,
          error: Error?) {
-        self.request = request
         self.raw = rawResponse
         self.statusCode = statusCode
         self.data = data
