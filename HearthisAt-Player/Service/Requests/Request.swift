@@ -8,8 +8,18 @@
 
 import Foundation
 import Alamofire
+import Listenable
 
-class Request {
+protocol RequestObservable: class {
+    
+    func request(didBegin request: Request)
+    
+    func request(_ request: Request, didFinishWith response: Response, data: Data?)
+    
+    func request(_ request: Request, didFailWith error: Error, response: Response?)
+}
+
+class Request: Listenable<RequestObservable> {
     
     // MARK: Properties
     
@@ -24,6 +34,11 @@ class Request {
     /// The encoding to use.
     let encoding: Alamofire.ParameterEncoding?
     
+    /// The response to the request.
+    private(set) var response: Response?
+    
+    private(set) var inProgress: Bool = false
+    
     // MARK: Init
     
     init(with url: URL,
@@ -36,5 +51,11 @@ class Request {
         self.headers = headers
         self.parameters = parameters
         self.encoding = encoding
+    }
+    
+    // MARK: Actions
+    
+    func cancel() {
+        
     }
 }
