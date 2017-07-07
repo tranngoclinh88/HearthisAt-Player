@@ -56,7 +56,7 @@ extension PlaybackApiController: JukeboxDelegate {
                               success: (() -> Void)?,
                               failure: ((Error) -> Void)?) {
         guard let item = item as? MutablePlayableItem,
-            let url = item.object.contentUrl() else {
+            let url = item.object.playableContentUrl else {
             failure?(PlaybackError.missingContentUrl)
             return
         }

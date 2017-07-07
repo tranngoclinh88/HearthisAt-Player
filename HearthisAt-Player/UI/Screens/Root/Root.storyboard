@@ -62,6 +62,7 @@
                     <connections>
                         <outlet property="backgroundAlbumArtView" destination="KsD-18-s2n" id="fq1-NF-Z63"/>
                         <outlet property="backgroundGradientView" destination="3QH-bV-Vfn" id="4qt-Sp-Iaa"/>
+                        <outlet property="miniPlayer" destination="gJD-0r-lAz" id="9eM-RP-bMz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMe-RG-eTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
