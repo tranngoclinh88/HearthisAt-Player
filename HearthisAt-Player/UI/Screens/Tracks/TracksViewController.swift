@@ -29,16 +29,28 @@ class TracksViewController: PagingTableViewController {
         return service.tracksController.tracks(for: self.artist)
     }
     
+    private var dateComponentsFormatter: DateComponentsFormatter = {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.day, .hour, .minute, .second]
+        formatter.unitsStyle = .abbreviated
+        formatter.maximumUnitCount = 1
+        return formatter
+    }()
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // configure header view
         profileProvider?.add(listener: self)
         if let state = profileProvider?.currentState {
             updateHeaderView(forProfileProviderWith: state)
         }
         headerView.delegate = self
+        
+        tableView.estimatedRowHeight = 50.0
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         // register cell
         let nib = UINib(nibName: Defaults.cellNibName, bundle: .main)
@@ -88,7 +100,11 @@ class TracksViewController: PagingTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Defaults.cellReuseIdentifier, for: indexPath) as! TrackItemCell
-        
+        if let track = self.tracksList?.allItems[indexPath.row] {
+         
+            cell.title = track.title
+            cell.duration = dateComponentsFormatter.string(from: track.duration ?? 0.0)
+        }
         return cell
     }
     
