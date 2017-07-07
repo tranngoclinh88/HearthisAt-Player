@@ -12,7 +12,7 @@
         <!--Tracks View Controller-->
         <scene sceneID="Sof-M2-icl">
             <objects>
-                <viewController storyboardIdentifier="TracksViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZoN-YF-Tz7" customClass="TracksViewController" customModule="HearthisAt_Player" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TracksViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZoN-YF-Tz7" customClass="TracksViewController" customModule="HearthisAt_Player" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fGn-mn-SqW"/>
                         <viewControllerLayoutGuide type="bottom" id="AQi-jP-hnS"/>
