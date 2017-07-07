@@ -7,6 +7,9 @@
 */
 
 "general.error.title" = "Ooops";
+"general.title.unknown" = "Unknown";
+"general.title.loading" = "Loading...";
+"general.title.failed" = "Failed to load";
 
 "screen.feed.title" = "Top Track Artists";
 "screen.feed.cell.profiledetails.loading" = "Loading details...";

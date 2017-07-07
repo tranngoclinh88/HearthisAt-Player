@@ -112,4 +112,12 @@ extension Track: Playable {
     var playableArtworkUrl: URL? {
         return self.artworkUrl
     }
+    
+    var playableTitle: String? {
+        return title
+    }
+    
+    var playableDetails: String? {
+        return user?.username
+    }
 }

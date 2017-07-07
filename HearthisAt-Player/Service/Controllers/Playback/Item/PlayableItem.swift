@@ -13,8 +13,9 @@ import Jukebox
 protocol Playable {
     
     var playableContentUrl: URL? { get }
-    
     var playableArtworkUrl: URL? { get }
+    var playableTitle: String? { get }
+    var playableDetails: String? { get }
 }
 
 protocol PlayableItemResponder: class {
@@ -65,6 +66,13 @@ class PlayableItem: Listenable<PlayableItemObservable> {
     
     func pause() {
         responder?.playableItem(requestPause: self)
+    }
+}
+
+extension PlayableItem: Equatable {
+    
+    static func ==(lhs: PlayableItem, rhs: PlayableItem) -> Bool {
+        return lhs.object.playableContentUrl == rhs.object.playableContentUrl
     }
 }
 

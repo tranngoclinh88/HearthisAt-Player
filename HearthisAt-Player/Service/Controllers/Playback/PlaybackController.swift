@@ -20,5 +20,7 @@ protocol PlaybackController: Controller {
     
     var notificationService: Listenable<PlaybackControllerNotifyable> { get }
     
+    var currentItem: PlayableItem? { get }
+    
     func generatePlayableItem(for object: Playable) -> PlayableItem
 }

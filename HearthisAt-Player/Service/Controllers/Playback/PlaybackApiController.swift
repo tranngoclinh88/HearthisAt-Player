@@ -16,7 +16,10 @@ class PlaybackApiController: ApiController, PlaybackController {
     
     fileprivate private(set) var jukebox: Jukebox!
     
-    fileprivate var currentItem: MutablePlayableItem?
+    fileprivate var _currentItem: MutablePlayableItem?
+    var currentItem: PlayableItem? {
+        return _currentItem
+    }
     
     let notificationService = Listenable<PlaybackControllerNotifyable>()
     
@@ -42,7 +45,11 @@ class PlaybackApiController: ApiController, PlaybackController {
 extension PlaybackApiController: PlayableItemResponder {
  
     func playableItem(requestPlay item: PlayableItem) {
-        playItem(item: item, success: nil, failure: nil)
+        if self.currentItem == item {
+            resumeCurrentItem()
+        } else {
+            playItem(item: item, success: nil, failure: nil)
+        }
     }
     
     func playableItem(requestPause item: PlayableItem) {
@@ -66,8 +73,12 @@ extension PlaybackApiController: JukeboxDelegate {
             jukebox.remove(item: currentItem)
         }
         
-        self.currentItem = item
+        _currentItem = item
         jukebox.append(item: JukeboxItem(URL: url), loadingAssets: true)
+        jukebox.play()
+    }
+    
+    fileprivate func resumeCurrentItem() {
         jukebox.play()
     }
     
@@ -78,7 +89,7 @@ extension PlaybackApiController: JukeboxDelegate {
     // MARK: JukeboxDelegate
     
     func jukeboxStateDidChange(_ jukebox: Jukebox) {
-        guard let currentItem = self.currentItem else { return }
+        guard let currentItem = _currentItem else { return }
         
         let state = PlayableItem.State.fromJukeboxState(jukebox.state)
         currentItem.currentState = state

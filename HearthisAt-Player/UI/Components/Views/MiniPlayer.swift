@@ -9,7 +9,19 @@
 import UIKit
 import TinyConstraints
 
+protocol MiniPlayerDelegate: class {
+    
+    func miniPlayer(playPauseButtonPressed miniPlayer: MiniPlayer)
+}
+
 class MiniPlayer: ViewComponent {
+    
+    // MARK: Types
+    
+    enum ButtonState {
+        case play
+        case pause
+    }
     
     // MARK: Properties
     
@@ -21,7 +33,7 @@ class MiniPlayer: ViewComponent {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(#imageLiteral(resourceName: "ic_play"), for: .normal)
-        button.imageEdgeInsets = UIEdgeInsetsMake(8.0, 12.0, 8.0, 8.0)
+        button.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
         button.backgroundColor = UIColor.white.withAlphaComponent(0.6)
         return button
     }()
@@ -38,6 +50,24 @@ class MiniPlayer: ViewComponent {
 
         return subtitleLabel
     }()
+    
+    var title: String? {
+        didSet {
+            titleLabel.text = title
+        }
+    }
+    var subtitle: String? {
+        didSet {
+            subtitleLabel.text = subtitle
+        }
+    }
+    var buttonState: ButtonState = .play {
+        didSet {
+            playButton.setImage(buttonState == .play ? #imageLiteral(resourceName: "ic_play") : #imageLiteral(resourceName: "ic_pause"), for: .normal)
+        }
+    }
+    
+    weak var delegate: MiniPlayerDelegate?
     
     // MARK: Lifecycle
     
@@ -66,7 +96,12 @@ class MiniPlayer: ViewComponent {
         subtitleLabel.leading(to: titleLabel)
         subtitleLabel.trailing(to: titleLabel)
         
-        titleLabel.text = "Song Title"
-        subtitleLabel.text = "Artist Name"
+        playButton.addTarget(self, action: #selector(playButtonPressed(_:)), for: .touchUpInside)
+    }
+    
+    // MARK: Actions
+    
+    func playButtonPressed(_ sender: UIButton) {
+        delegate?.miniPlayer(playPauseButtonPressed: self)
     }
 }
