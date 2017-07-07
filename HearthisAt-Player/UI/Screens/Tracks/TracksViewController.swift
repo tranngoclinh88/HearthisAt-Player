@@ -44,7 +44,9 @@ class TracksViewController: PagingTableViewController {
         let nib = UINib(nibName: Defaults.cellNibName, bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: Defaults.cellReuseIdentifier)
         
-        if self.tracksList == nil {
+        if let tracksList = self.tracksList {
+            updatePagingAbility(canPage: tracksList.canPageFurther)
+        } else {
             loadNextPageOfData()
         }
     }
