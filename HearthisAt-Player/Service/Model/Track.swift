@@ -102,3 +102,10 @@ struct Track: Mappable {
         self.isReshared         <- map["reshared"]
     }
 }
+
+extension Track: Playable {
+    
+    func contentUrl() -> URL? {
+        return self.streamUrl
+    }
+}
