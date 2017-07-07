@@ -101,6 +101,8 @@ class PagingTableViewController: UIViewController, UITableViewDataSource, UITabl
     
     /// Checks if table view has reached bottom for page load.
     private func checkIfPagingLoadRequired() {
+        guard self.tableView.tableFooterView == self.footerView else { return }
+        
         let bottomEdge = tableView.contentOffset.y + tableView.frame.size.height
         if bottomEdge >= tableView.contentSize.height {
             

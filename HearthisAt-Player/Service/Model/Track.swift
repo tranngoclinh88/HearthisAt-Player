@@ -20,7 +20,7 @@ struct Track: Mappable {
     private(set) var releaseDate: Date?
     private(set) var genre: String?
 
-    private(set) var duration: Int?
+    private(set) var duration: TimeInterval?
     
     private(set) var permalink: String?
     private(set) var geo: String?
@@ -68,7 +68,7 @@ struct Track: Mappable {
         self.createdAt          <- (map["created_at"], DateTransform())
         self.releaseDate        <- (map["release_date"], DateTransform())
         self.userId             <- (map["user_id"], IntTransform())
-        self.duration           <- (map["duration"], IntTransform())
+        self.duration           <- (map["duration"], TimeIntervalTransform())
         self.permalink          <- map["permalink"]
         self.description        <- map["description"]
         self.geo                <- map["geo"]

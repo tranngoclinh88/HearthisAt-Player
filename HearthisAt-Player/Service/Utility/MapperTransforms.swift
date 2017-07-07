@@ -55,3 +55,19 @@ struct BoolTransform: TransformType {
         return "\(value ? 1 : 0)"
     }
 }
+
+struct TimeIntervalTransform: TransformType {
+    
+    typealias Object = TimeInterval
+    typealias JSON = String
+    
+    func transformFromJSON(_ value: Any?) -> TimeInterval? {
+        guard let value = value as? String else { return nil }
+        return TimeInterval(value)
+    }
+    
+    func transformToJSON(_ value: TimeInterval?) -> String? {
+        guard let value = value else { return nil }
+        return "\(value)"
+    }
+}
