@@ -114,7 +114,7 @@ class TracksViewController: PagingTableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let track = tracksList?.allItems[indexPath.row] else { return }
         
-        let playableItem: PlayableItem<Track> = service.playbackController.generatePlayableItem(for: track)
+        let playableItem = service.playbackController.generatePlayableItem(for: track)
         playableItem.play()
     }
     

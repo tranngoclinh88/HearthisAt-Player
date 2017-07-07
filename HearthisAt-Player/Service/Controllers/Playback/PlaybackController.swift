@@ -10,5 +10,5 @@ import Foundation
 
 protocol PlaybackController: Controller {
     
-    func generatePlayableItem<T>(for object: T) -> PlayableItem<T>
+    func generatePlayableItem(for object: Playable) -> PlayableItem
 }

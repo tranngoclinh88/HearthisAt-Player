@@ -15,7 +15,7 @@ class PlaybackApiController: ApiController, PlaybackController {
     
     fileprivate private(set) var jukebox: Jukebox!
     
-    fileprivate weak var currentItemState: PlayableItemStateManager?
+    fileprivate var currentItem: MutablePlayableItem?
     
     // MARK: Init
     
@@ -31,27 +31,27 @@ class PlaybackApiController: ApiController, PlaybackController {
     
     // MARK: Methods
     
-    func generatePlayableItem<T>(for object: T) -> PlayableItem<T> {
-        return MutablePlayableItem<T>(for: object, responder: self)
+    func generatePlayableItem(for object: Playable) -> PlayableItem {
+        return MutablePlayableItem(for: object, responder: self)
     }
 }
 
 extension PlaybackApiController: PlayableItemResponder {
  
-    func playableItem<T>(requestPlay item: PlayableItem<T>) {
+    func playableItem(requestPlay item: PlayableItem) {
         playItem(item: item, success: nil, failure: nil)
     }
     
-    func playableItem<T>(requestPause item: PlayableItem<T>) {
+    func playableItem(requestPause item: PlayableItem) {
         pauseCurrentItem()
     }
 }
 
 extension PlaybackApiController: JukeboxDelegate {
     
-    fileprivate func playItem<T>(item: PlayableItem<T>,
-                  success: (() -> Void)?,
-                  failure: ((Error) -> Void)?) {
+    fileprivate func playItem(item: PlayableItem,
+                              success: (() -> Void)?,
+                              failure: ((Error) -> Void)?) {
         guard let item = item as? MutablePlayableItem,
             let url = item.object.contentUrl() else {
             failure?(PlaybackError.missingContentUrl)
@@ -63,7 +63,7 @@ extension PlaybackApiController: JukeboxDelegate {
             jukebox.remove(item: currentItem)
         }
         
-        self.currentItemState = item.stateManager
+        self.currentItem = item
         jukebox.append(item: JukeboxItem(URL: url), loadingAssets: true)
         jukebox.play()
     }
@@ -75,8 +75,8 @@ extension PlaybackApiController: JukeboxDelegate {
     // MARK: JukeboxDelegate
     
     func jukeboxStateDidChange(_ jukebox: Jukebox) {
-        let state = PlayableItemStateManager.State.fromJukeboxState(jukebox.state)
-        currentItemState?.updateState(to: state)
+        let state = PlayableItem.State.fromJukeboxState(jukebox.state)
+        currentItem?.currentState = state
     }
     
     func jukeboxPlaybackProgressDidChange(_ jukebox: Jukebox) {

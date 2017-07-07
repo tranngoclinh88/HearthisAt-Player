@@ -8,6 +8,7 @@
 
 import Foundation
 import Listenable
+import Jukebox
 
 protocol Playable {
     
@@ -16,28 +17,40 @@ protocol Playable {
 
 protocol PlayableItemResponder: class {
     
-    func playableItem<T>(requestPlay item: PlayableItem<T>)
+    func playableItem(requestPlay item: PlayableItem)
     
-    func playableItem<T>(requestPause item: PlayableItem<T>)
+    func playableItem(requestPause item: PlayableItem)
 }
 
 protocol PlayableItemObservable {
     
-    func playableItem<T>(_ item: PlayableItem<T>,
-                      didUpdate state: PlayableItemStateManager.State)
+    func playableItem(_ item: PlayableItem,
+                      didUpdate state: PlayableItem.State)
 }
 
-class PlayableItem<T : Playable>: Listenable<PlayableItemObservable> {
+class PlayableItem: Listenable<PlayableItemObservable> {
+    
+    // MARK: Types
+    
+    enum State {
+        case ready
+        case playing
+        case paused
+        case loading
+        case failed
+    }
     
     // MARK: Properties
     
-    let object: T
+    let object: Playable
     
     private weak var responder: PlayableItemResponder?
     
+    private(set) var currentState: State = .ready
+    
     // MARK: Init
     
-    init(for object: T, responder: PlayableItemResponder) {
+    init(for object: Playable, responder: PlayableItemResponder) {
         self.object = object
         self.responder = responder
     }
@@ -50,5 +63,23 @@ class PlayableItem<T : Playable>: Listenable<PlayableItemObservable> {
     
     func pause() {
         responder?.playableItem(requestPause: self)
+    }
+}
+
+extension PlayableItem.State {
+    
+    static func fromJukeboxState(_ state: Jukebox.State) -> PlayableItem.State {
+        switch state {
+        case .failed:
+            return .failed
+        case .loading:
+            return .loading
+        case .paused:
+            return .paused
+        case .playing:
+            return .playing
+        case .ready:
+            return .ready
+        }
     }
 }
