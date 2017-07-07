@@ -19,6 +19,12 @@ class FeedViewController: PagingTableViewController {
     
     // MARK: Properties
     
+    let headerView: FeedTitleHeaderView = {
+        let headerView = FeedTitleHeaderView()
+        headerView.title = "screen.feed.title".localized()
+        return headerView
+    }()
+    
     var popularFeed: TrackFeed {
         return service.feedController.popularFeed
     }
@@ -33,6 +39,9 @@ class FeedViewController: PagingTableViewController {
         
         navigationController?.delegate = transitioningHandler
         title = "screen.feed.title".localized()
+        
+        headerView.frame.size = headerView.intrinsicContentSize
+        tableView.tableHeaderView = headerView
         
         // use autosizing
         tableView.estimatedRowHeight = 80.0
