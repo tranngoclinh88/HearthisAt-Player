@@ -35,7 +35,7 @@ class MiniPlayer: ViewComponent {
         button.setImage(#imageLiteral(resourceName: "ic_play"), for: .normal)
         button.tintColor = .white
         button.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
-        button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        button.backgroundColor = UIColor.hta_backgroundGradient.first
         return button
     }()
     private var titleLabel: UILabel = {
@@ -97,7 +97,19 @@ class MiniPlayer: ViewComponent {
         subtitleLabel.leading(to: titleLabel)
         subtitleLabel.trailing(to: titleLabel)
         
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        layer.shadowRadius = 12.0
+        layer.shadowOpacity = 0.3
+        
         playButton.addTarget(self, action: #selector(playButtonPressed(_:)), for: .touchUpInside)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        superview?.layoutIfNeeded()
+        
+        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
     }
     
     // MARK: Actions
