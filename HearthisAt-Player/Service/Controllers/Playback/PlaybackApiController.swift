@@ -15,7 +15,7 @@ class PlaybackApiController: ApiController, PlaybackController {
     // MARK: Methods
     
     func generatePlayableItem<T>(for object: T) -> PlayableItem<T> {
-        return PlayableItem<T>(for: object, responder: self)
+        return MutablePlaybackItem<T>(for: object, responder: self)
     }
 }
 
