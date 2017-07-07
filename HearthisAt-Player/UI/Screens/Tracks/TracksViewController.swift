@@ -105,6 +105,11 @@ class TracksViewController: PagingTableViewController {
             cell.title = track.title
             cell.duration = dateComponentsFormatter.string(from: track.duration ?? 0.0)
         }
+        
+        let selectedBackground = UIView()
+        selectedBackground.backgroundColor = .hta_cellHightlight
+        cell.selectedBackgroundView = selectedBackground
+        
         return cell
     }
     
