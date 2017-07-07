@@ -22,7 +22,7 @@ class FeedViewController: PagingTableViewController {
     var popularFeed: TrackFeed {
         return service.feedController.popularFeed
     }
-    private(set) var artistProfileProviders: [Artist.Id : FeedArtistProfileProvider] = [:]
+    private(set) var artistProfileProviders: [Artist.Id : ArtistProfileProvider] = [:]
     
     // MARK: Lifecycle
     
@@ -94,11 +94,11 @@ class FeedViewController: PagingTableViewController {
     
     // MARK: Profile Providers
     
-    private func profileProvider(for artist: Artist?) -> FeedArtistProfileProvider? {
+    private func profileProvider(for artist: Artist?) -> ArtistProfileProvider? {
         guard let artist = artist, let id = artist.id else { return nil }
         if self.artistProfileProviders[id] == nil {
-            self.artistProfileProviders[id] = FeedArtistProfileProvider(for: artist,
-                                                                        service: self.service)
+            self.artistProfileProviders[id] = ArtistProfileProvider(for: artist,
+                                                                    service: self.service)
         }
         return self.artistProfileProviders[id]
     }
