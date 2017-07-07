@@ -44,7 +44,7 @@ class TracksApiController: ApiController, TracksController {
         let parameters: [String : Any] = ["type" : ArtistList<Track>.Kind.tracks.rawValue,
                                           "page" : pageIndex,
                                           "count": count]
-        guard let request = requestBuilder.build(for: .artistTracks(username: identifier),
+        guard let request = requestBuilder.build(for: .artistList(username: identifier),
                                                  method: .get,
                                                  parameters: parameters) else {
                                                     failure?(ControllerError.unknownMethodFailure)

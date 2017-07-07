@@ -12,7 +12,8 @@ enum Endpoint {
     
     case feed
     
-    case artistTracks(username: String)
+    case artist(username: String)
+    case artistList(username: String)
 }
 
 extension Endpoint {
@@ -24,7 +25,9 @@ extension Endpoint {
         case .feed:
             return "/feed/"
             
-        case .artistTracks(let username):
+        case .artist(let username):
+            return "/\(username)"
+        case .artistList(let username):
             return "/\(username)/"
         }
     }
