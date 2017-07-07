@@ -8,6 +8,7 @@
 
 import Foundation
 import Jukebox
+import Listenable
 
 class PlaybackApiController: ApiController, PlaybackController {
     
@@ -16,6 +17,8 @@ class PlaybackApiController: ApiController, PlaybackController {
     fileprivate private(set) var jukebox: Jukebox!
     
     fileprivate var currentItem: MutablePlayableItem?
+    
+    let notificationService = Listenable<PlaybackControllerNotifyable>()
     
     // MARK: Init
     
@@ -75,8 +78,11 @@ extension PlaybackApiController: JukeboxDelegate {
     // MARK: JukeboxDelegate
     
     func jukeboxStateDidChange(_ jukebox: Jukebox) {
+        guard let currentItem = self.currentItem else { return }
+        
         let state = PlayableItem.State.fromJukeboxState(jukebox.state)
-        currentItem?.currentState = state
+        currentItem.currentState = state
+        notificationService.updateListeners({ $0.0.playbackController(self, didUpdate: state, of: currentItem) })
     }
     
     func jukeboxPlaybackProgressDidChange(_ jukebox: Jukebox) {

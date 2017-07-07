@@ -26,6 +26,17 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        service.playbackController.notificationService.add(listener: self)
+        
         backgroundGradientView.colors = UIColor.hta_backgroundGradient
+    }
+}
+
+extension RootViewController: PlaybackControllerNotifyable {
+    
+    func playbackController(_ controller: PlaybackController,
+                            didUpdate state: PlayableItem.State,
+                            of item: PlayableItem) {
+        print(state)
     }
 }
