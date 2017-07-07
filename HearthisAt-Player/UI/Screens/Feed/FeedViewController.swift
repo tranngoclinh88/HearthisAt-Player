@@ -38,7 +38,7 @@ class FeedViewController: PagingTableViewController {
         let nib = UINib(nibName: Defaults.cellNibName, bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: Defaults.cellReuseIdentifier)
         
-        performInitialDataLoad()
+        loadNextPageOfData()
     }
     
     override func loadNextPageOfData(completion: @escaping ((Bool) -> Void)) {

@@ -32,7 +32,7 @@ class PagingTableViewController: UIViewController, UITableViewDataSource, UITabl
     
     // MARK: Data
     
-    func performInitialDataLoad() {
+    func loadNextPageOfData() {
         attemptLoadNextPageOfData()
     }
     
