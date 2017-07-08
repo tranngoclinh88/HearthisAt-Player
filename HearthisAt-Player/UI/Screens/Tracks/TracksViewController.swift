@@ -18,12 +18,15 @@ class TracksViewController: PagingTableViewController {
         static let cellReuseIdentifier = "TrackItemCell"
     }
     
+    // MARK: Outlets
+    
+    @IBOutlet weak private var headerView: TracksHeaderView!
+    @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
+    
     // MARK: Properties
     
     var artist: User!
     weak var profileProvider: ArtistProfileProvider?
-    
-    @IBOutlet weak private var headerView: TracksHeaderView!
     
     private var tracksList: TracksList? {
         return service.tracksController.tracks(for: self.artist)
@@ -65,14 +68,28 @@ class TracksViewController: PagingTableViewController {
     
     override func loadNextPageOfData(completion: @escaping ((Bool, Bool) -> Void)) {
         
+        let loadingFinished: () -> Void = {
+            self.activityIndicator.stopAnimating()
+            self.tableView.isHidden = false
+        }
+        
         let successHandler: (([Track], TracksList) -> Void) = { newTracks, tracksList in
+            loadingFinished()
+            
             self.tableView.reloadData()
             completion(true, tracksList.canPageFurther)
         }
         
         let failureHandler: Controller.MethodFailure = { error in
+            loadingFinished()
+            
             // TODO - Handle error
             completion(false, false)
+        }
+        
+        if self.state == .loading {
+            activityIndicator.startAnimating()
+            tableView.isHidden = true
         }
         
         if let tracksList = self.tracksList {

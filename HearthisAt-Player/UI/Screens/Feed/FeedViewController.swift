@@ -19,17 +19,17 @@ class FeedViewController: PagingTableViewController {
     
     // MARK: Outlets
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: Properties
     
-    let headerView: FeedTitleHeaderView = {
+    private let headerView: FeedTitleHeaderView = {
         let headerView = FeedTitleHeaderView()
         headerView.title = "screen.feed.title".localized()
         return headerView
     }()
     
-    var popularFeed: TrackFeed {
+    private var popularFeed: TrackFeed {
         return service.feedController.popularFeed
     }
     private(set) var artistProfileProviders: [Artist.Id : ArtistProfileProvider] = [:]
