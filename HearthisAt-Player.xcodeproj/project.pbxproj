@@ -24,6 +24,12 @@
 		D623758F1F0D84F000AACA96 /* TracksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623758E1F0D84F000AACA96 /* TracksController.swift */; };
 		D62375911F0D850200AACA96 /* TracksApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375901F0D850200AACA96 /* TracksApiController.swift */; };
 		D62375931F0D855800AACA96 /* ControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62375921F0D855800AACA96 /* ControllerProvider.swift */; };
+		D657C6A91F10C9F2003D4978 /* AlbumArtBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D657C6A01F10C9F2003D4978 /* AlbumArtBackgroundView.swift */; };
+		D657C6AA1F10C9F2003D4978 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D657C6A21F10C9F2003D4978 /* AvatarImageView.swift */; };
+		D657C6AB1F10C9F2003D4978 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D657C6A41F10C9F2003D4978 /* GradientView.swift */; };
+		D657C6AC1F10C9F2003D4978 /* MiniPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D657C6A61F10C9F2003D4978 /* MiniPlayer.swift */; };
+		D657C6AD1F10C9F2003D4978 /* PagingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D657C6A81F10C9F2003D4978 /* PagingFooterView.swift */; };
+		D657C6AF1F10C9FE003D4978 /* MiniPlayerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D657C6AE1F10C9FE003D4978 /* MiniPlayerContainer.swift */; };
 		D66EF58D1F0F8F610015DB01 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF58C1F0F8F610015DB01 /* UserProfile.swift */; };
 		D66EF58F1F0F9B540015DB01 /* ExecutableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF58E1F0F9B540015DB01 /* ExecutableRequest.swift */; };
 		D66EF5931F0FFA010015DB01 /* FontPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5921F0FFA010015DB01 /* FontPalette.swift */; };
@@ -32,19 +38,14 @@
 		D66EF5A31F1020550015DB01 /* PlaybackError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5A21F1020550015DB01 /* PlaybackError.swift */; };
 		D66EF5AC1F1024C90015DB01 /* MutablePlayableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5A91F1024C90015DB01 /* MutablePlayableItem.swift */; };
 		D66EF5AD1F1024C90015DB01 /* PlayableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5AA1F1024C90015DB01 /* PlayableItem.swift */; };
-		D66EF5B01F1027500015DB01 /* MiniPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5AF1F1027500015DB01 /* MiniPlayer.swift */; };
 		D68DAC551F0EAA61000B390D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC541F0EAA61000B390D /* RootViewController.swift */; };
 		D68DAC571F0EAA7A000B390D /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC561F0EAA7A000B390D /* Root.storyboard */; };
 		D68DAC591F0EAA8E000B390D /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC581F0EAA8E000B390D /* Feed.storyboard */; };
 		D68DAC5B1F0EAA97000B390D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC5A1F0EAA97000B390D /* FeedViewController.swift */; };
-		D68DAC5F1F0EAB19000B390D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC5E1F0EAB19000B390D /* GradientView.swift */; };
-		D68DAC611F0EABD2000B390D /* AlbumArtBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC601F0EABD2000B390D /* AlbumArtBackgroundView.swift */; };
 		D68DAC631F0EAC3F000B390D /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC621F0EAC3F000B390D /* ColorPalette.swift */; };
 		D68DAC661F0EAFC5000B390D /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC651F0EAFC5000B390D /* Component.swift */; };
 		D68DAC691F0EB19A000B390D /* FeedItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC681F0EB19A000B390D /* FeedItemCell.swift */; };
 		D68DAC6B1F0EB1C2000B390D /* FeedItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC6A1F0EB1C2000B390D /* FeedItemCell.xib */; };
-		D68DAC6D1F0EB732000B390D /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC6C1F0EB732000B390D /* AvatarImageView.swift */; };
-		D68DAC6F1F0EBFEC000B390D /* PagingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC6E1F0EBFEC000B390D /* PagingFooterView.swift */; };
 		D68DAC721F0EC4EA000B390D /* PagingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC711F0EC4EA000B390D /* PagingTableViewController.swift */; };
 		D68DAC751F0ECBCB000B390D /* TracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68DAC741F0ECBCB000B390D /* TracksViewController.swift */; };
 		D68DAC771F0ECBFF000B390D /* Tracks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68DAC761F0ECBFF000B390D /* Tracks.storyboard */; };
@@ -91,6 +92,12 @@
 		D623758E1F0D84F000AACA96 /* TracksController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksController.swift; sourceTree = "<group>"; };
 		D62375901F0D850200AACA96 /* TracksApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksApiController.swift; sourceTree = "<group>"; };
 		D62375921F0D855800AACA96 /* ControllerProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerProvider.swift; sourceTree = "<group>"; };
+		D657C6A01F10C9F2003D4978 /* AlbumArtBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumArtBackgroundView.swift; sourceTree = "<group>"; };
+		D657C6A21F10C9F2003D4978 /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
+		D657C6A41F10C9F2003D4978 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		D657C6A61F10C9F2003D4978 /* MiniPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniPlayer.swift; sourceTree = "<group>"; };
+		D657C6A81F10C9F2003D4978 /* PagingFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingFooterView.swift; sourceTree = "<group>"; };
+		D657C6AE1F10C9FE003D4978 /* MiniPlayerContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniPlayerContainer.swift; sourceTree = "<group>"; };
 		D66EF58C1F0F8F610015DB01 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		D66EF58E1F0F9B540015DB01 /* ExecutableRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutableRequest.swift; sourceTree = "<group>"; };
 		D66EF5921F0FFA010015DB01 /* FontPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontPalette.swift; sourceTree = "<group>"; };
@@ -99,19 +106,14 @@
 		D66EF5A21F1020550015DB01 /* PlaybackError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackError.swift; sourceTree = "<group>"; };
 		D66EF5A91F1024C90015DB01 /* MutablePlayableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutablePlayableItem.swift; sourceTree = "<group>"; };
 		D66EF5AA1F1024C90015DB01 /* PlayableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayableItem.swift; sourceTree = "<group>"; };
-		D66EF5AF1F1027500015DB01 /* MiniPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniPlayer.swift; sourceTree = "<group>"; };
 		D68DAC541F0EAA61000B390D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		D68DAC561F0EAA7A000B390D /* Root.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
 		D68DAC581F0EAA8E000B390D /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		D68DAC5A1F0EAA97000B390D /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		D68DAC5E1F0EAB19000B390D /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		D68DAC601F0EABD2000B390D /* AlbumArtBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumArtBackgroundView.swift; sourceTree = "<group>"; };
 		D68DAC621F0EAC3F000B390D /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		D68DAC651F0EAFC5000B390D /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		D68DAC681F0EB19A000B390D /* FeedItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItemCell.swift; sourceTree = "<group>"; };
 		D68DAC6A1F0EB1C2000B390D /* FeedItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedItemCell.xib; sourceTree = "<group>"; };
-		D68DAC6C1F0EB732000B390D /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
-		D68DAC6E1F0EBFEC000B390D /* PagingFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingFooterView.swift; sourceTree = "<group>"; };
 		D68DAC711F0EC4EA000B390D /* PagingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingTableViewController.swift; sourceTree = "<group>"; };
 		D68DAC741F0ECBCB000B390D /* TracksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksViewController.swift; sourceTree = "<group>"; };
 		D68DAC761F0ECBFF000B390D /* Tracks.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tracks.storyboard; sourceTree = "<group>"; };
@@ -230,6 +232,47 @@
 			path = Tracks;
 			sourceTree = "<group>";
 		};
+		D657C69F1F10C9F2003D4978 /* AlbumArtBackgroundView */ = {
+			isa = PBXGroup;
+			children = (
+				D657C6A01F10C9F2003D4978 /* AlbumArtBackgroundView.swift */,
+			);
+			path = AlbumArtBackgroundView;
+			sourceTree = "<group>";
+		};
+		D657C6A11F10C9F2003D4978 /* AvatarImageView */ = {
+			isa = PBXGroup;
+			children = (
+				D657C6A21F10C9F2003D4978 /* AvatarImageView.swift */,
+			);
+			path = AvatarImageView;
+			sourceTree = "<group>";
+		};
+		D657C6A31F10C9F2003D4978 /* GradientView */ = {
+			isa = PBXGroup;
+			children = (
+				D657C6A41F10C9F2003D4978 /* GradientView.swift */,
+			);
+			path = GradientView;
+			sourceTree = "<group>";
+		};
+		D657C6A51F10C9F2003D4978 /* MiniPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				D657C6AE1F10C9FE003D4978 /* MiniPlayerContainer.swift */,
+				D657C6A61F10C9F2003D4978 /* MiniPlayer.swift */,
+			);
+			path = MiniPlayer;
+			sourceTree = "<group>";
+		};
+		D657C6A71F10C9F2003D4978 /* PagingFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				D657C6A81F10C9F2003D4978 /* PagingFooterView.swift */,
+			);
+			path = PagingFooterView;
+			sourceTree = "<group>";
+		};
 		D66EF5941F0FFB910015DB01 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,11 +328,11 @@
 		D68DAC5D1F0EAB10000B390D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D68DAC5E1F0EAB19000B390D /* GradientView.swift */,
-				D68DAC601F0EABD2000B390D /* AlbumArtBackgroundView.swift */,
-				D68DAC6C1F0EB732000B390D /* AvatarImageView.swift */,
-				D68DAC6E1F0EBFEC000B390D /* PagingFooterView.swift */,
-				D66EF5AF1F1027500015DB01 /* MiniPlayer.swift */,
+				D657C69F1F10C9F2003D4978 /* AlbumArtBackgroundView */,
+				D657C6A11F10C9F2003D4978 /* AvatarImageView */,
+				D657C6A31F10C9F2003D4978 /* GradientView */,
+				D657C6A51F10C9F2003D4978 /* MiniPlayer */,
+				D657C6A71F10C9F2003D4978 /* PagingFooterView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -615,14 +658,16 @@
 				D62375831F0D691200AACA96 /* TrackFeed.swift in Sources */,
 				D66EF5961F0FFB9A0015DB01 /* ArtistProfileProvider.swift in Sources */,
 				D623758A1F0D82A800AACA96 /* PlaybackController.swift in Sources */,
-				D68DAC611F0EABD2000B390D /* AlbumArtBackgroundView.swift in Sources */,
 				D6BAB3941F0D3B8B0056A13A /* AppConfig.swift in Sources */,
 				D66EF5AD1F1024C90015DB01 /* PlayableItem.swift in Sources */,
+				D657C6AB1F10C9F2003D4978 /* GradientView.swift in Sources */,
 				D623757E1F0D65AE00AACA96 /* FeedApiController.swift in Sources */,
 				D6BAB3961F0D3BE50056A13A /* ApiConfig.swift in Sources */,
 				D623756B1F0D4B8100AACA96 /* ControllerFactory.swift in Sources */,
 				D623758F1F0D84F000AACA96 /* TracksController.swift in Sources */,
+				D657C6A91F10C9F2003D4978 /* AlbumArtBackgroundView.swift in Sources */,
 				D66EF5A31F1020550015DB01 /* PlaybackError.swift in Sources */,
+				D657C6AA1F10C9F2003D4978 /* AvatarImageView.swift in Sources */,
 				D6BAB3901F0D3ABB0056A13A /* Config.swift in Sources */,
 				D62375791F0D62DB00AACA96 /* Track.swift in Sources */,
 				D68DAC8B1F0EE65A000B390D /* ArtistController.swift in Sources */,
@@ -634,12 +679,12 @@
 				D68DAC841F0ED8FA000B390D /* TracksHeaderView.swift in Sources */,
 				D68DAC631F0EAC3F000B390D /* ColorPalette.swift in Sources */,
 				D66EF58D1F0F8F610015DB01 /* UserProfile.swift in Sources */,
+				D657C6AD1F10C9F2003D4978 /* PagingFooterView.swift in Sources */,
 				D62375931F0D855800AACA96 /* ControllerProvider.swift in Sources */,
-				D66EF5B01F1027500015DB01 /* MiniPlayer.swift in Sources */,
-				D68DAC6F1F0EBFEC000B390D /* PagingFooterView.swift in Sources */,
 				D68DAC861F0EDEF9000B390D /* TrackItemCell.swift in Sources */,
 				D693E7D91F0D385400C5B88C /* AppDelegate.swift in Sources */,
 				D6BAB3A21F0D43B90056A13A /* RequestExecutor.swift in Sources */,
+				D657C6AF1F10C9FE003D4978 /* MiniPlayerContainer.swift in Sources */,
 				D6BAB3A01F0D3F9E0056A13A /* RequestBuilder.swift in Sources */,
 				D68DAC721F0EC4EA000B390D /* PagingTableViewController.swift in Sources */,
 				D62375741F0D4DD400AACA96 /* ApiController.swift in Sources */,
@@ -656,9 +701,8 @@
 				D68DAC691F0EB19A000B390D /* FeedItemCell.swift in Sources */,
 				D66EF5931F0FFA010015DB01 /* FontPalette.swift in Sources */,
 				D6BAB39E1F0D3F920056A13A /* Request.swift in Sources */,
-				D68DAC6D1F0EB732000B390D /* AvatarImageView.swift in Sources */,
 				D68DAC751F0ECBCB000B390D /* TracksViewController.swift in Sources */,
-				D68DAC5F1F0EAB19000B390D /* GradientView.swift in Sources */,
+				D657C6AC1F10C9F2003D4978 /* MiniPlayer.swift in Sources */,
 				D68DAC661F0EAFC5000B390D /* Component.swift in Sources */,
 				D6BAB3991F0D3DB30056A13A /* Controller.swift in Sources */,
 				D62375851F0D71FB00AACA96 /* User.swift in Sources */,

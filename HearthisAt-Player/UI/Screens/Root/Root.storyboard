@@ -35,8 +35,8 @@
                                     <segue destination="YJ0-g5-dK1" kind="embed" id="yI0-bG-5hN"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJD-0r-lAz" customClass="MiniPlayer" customModule="HearthisAt_Player" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qdu-gN-pBm" customClass="MiniPlayerContainer" customModule="HearthisAt_Player" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -44,25 +44,26 @@
                         <constraints>
                             <constraint firstItem="KsD-18-s2n" firstAttribute="top" secondItem="TpU-AW-zwb" secondAttribute="top" id="5fj-hL-cfn"/>
                             <constraint firstItem="0Tu-0b-jNj" firstAttribute="top" secondItem="QAo-6B-WqL" secondAttribute="bottom" id="6VB-fW-pAi"/>
-                            <constraint firstAttribute="trailing" secondItem="gJD-0r-lAz" secondAttribute="trailing" id="9Xb-6c-d7s"/>
+                            <constraint firstItem="Qdu-gN-pBm" firstAttribute="top" secondItem="TpU-AW-zwb" secondAttribute="top" id="D2Q-2l-PoK"/>
+                            <constraint firstItem="Qdu-gN-pBm" firstAttribute="leading" secondItem="TpU-AW-zwb" secondAttribute="leading" id="GBV-AW-7xe"/>
                             <constraint firstItem="3QH-bV-Vfn" firstAttribute="leading" secondItem="TpU-AW-zwb" secondAttribute="leading" id="GYT-7W-zvi"/>
                             <constraint firstAttribute="trailing" secondItem="3QH-bV-Vfn" secondAttribute="trailing" id="Gut-FB-mQm"/>
+                            <constraint firstAttribute="trailing" secondItem="Qdu-gN-pBm" secondAttribute="trailing" id="R71-aE-jib"/>
+                            <constraint firstItem="0Tu-0b-jNj" firstAttribute="top" secondItem="Qdu-gN-pBm" secondAttribute="bottom" id="Rnh-ZC-N8F"/>
                             <constraint firstItem="0Tu-0b-jNj" firstAttribute="top" secondItem="3QH-bV-Vfn" secondAttribute="bottom" id="U3b-Kk-dme"/>
                             <constraint firstAttribute="trailing" secondItem="KsD-18-s2n" secondAttribute="trailing" id="ZZt-BA-1Mb"/>
-                            <constraint firstItem="gJD-0r-lAz" firstAttribute="leading" secondItem="TpU-AW-zwb" secondAttribute="leading" id="iEz-MN-iSX"/>
                             <constraint firstItem="QAo-6B-WqL" firstAttribute="leading" secondItem="TpU-AW-zwb" secondAttribute="leading" id="lJn-wI-ccL"/>
                             <constraint firstItem="3QH-bV-Vfn" firstAttribute="top" secondItem="TpU-AW-zwb" secondAttribute="top" id="oOL-E8-D3c"/>
                             <constraint firstItem="KsD-18-s2n" firstAttribute="leading" secondItem="TpU-AW-zwb" secondAttribute="leading" id="q4y-vA-1fG"/>
                             <constraint firstAttribute="trailing" secondItem="QAo-6B-WqL" secondAttribute="trailing" id="qwy-9r-fCV"/>
                             <constraint firstItem="0Tu-0b-jNj" firstAttribute="top" secondItem="KsD-18-s2n" secondAttribute="bottom" id="tRg-Zi-cQ9"/>
-                            <constraint firstAttribute="bottom" secondItem="gJD-0r-lAz" secondAttribute="bottom" id="uKg-5S-viR"/>
                             <constraint firstItem="QAo-6B-WqL" firstAttribute="top" secondItem="TpU-AW-zwb" secondAttribute="top" id="ydE-u9-aCn"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backgroundAlbumArtView" destination="KsD-18-s2n" id="fq1-NF-Z63"/>
                         <outlet property="backgroundGradientView" destination="3QH-bV-Vfn" id="4qt-Sp-Iaa"/>
-                        <outlet property="miniPlayer" destination="gJD-0r-lAz" id="9eM-RP-bMz"/>
+                        <outlet property="miniPlayerContainer" destination="Qdu-gN-pBm" id="FuG-1a-ynZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMe-RG-eTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
