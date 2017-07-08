@@ -561,6 +561,7 @@
 				TargetAttributes = {
 					D693E7D41F0D385400C5B88C = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 9LZFW84Z53;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -824,6 +825,7 @@
 			baseConfigurationReference = 13E78C73F61817FF43F0C0FF /* Pods-HearthisAt-Player.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9LZFW84Z53;
 				INFOPLIST_FILE = "HearthisAt-Player/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.msapsford.HearthisAt-Player";
@@ -837,6 +839,7 @@
 			baseConfigurationReference = B688C9A710F1D9E93CE040A5 /* Pods-HearthisAt-Player.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9LZFW84Z53;
 				INFOPLIST_FILE = "HearthisAt-Player/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.msapsford.HearthisAt-Player";
