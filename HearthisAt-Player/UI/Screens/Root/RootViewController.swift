@@ -14,7 +14,11 @@ class RootViewController: UIViewController {
     
     @IBOutlet weak var backgroundGradientView: GradientView!
     @IBOutlet weak var backgroundAlbumArtView: AlbumArtBackgroundView!
-    @IBOutlet weak var miniPlayer: MiniPlayer!
+    @IBOutlet weak var miniPlayerContainer: MiniPlayerContainer!
+    
+    var miniPlayer: MiniPlayer {
+        return miniPlayerContainer.miniPlayer
+    }
     
     // MARK: Properties
     
@@ -62,6 +66,7 @@ extension RootViewController: PlaybackControllerNotifyable {
     
     private func updateMiniPlayer(for item: PlayableItem,
                                   state: PlayableItem.State) {
+        
         miniPlayer.buttonState = miniPlayerButtonState(for: state)
         
         switch state {
