@@ -38,7 +38,7 @@ class TracksHeaderView: ViewComponent {
         label.textAlignment = .center
         label.font = .hta_subtitle
         label.textColor = .hta_textSecondary
-        label.numberOfLines = 0
+        label.numberOfLines = 5
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

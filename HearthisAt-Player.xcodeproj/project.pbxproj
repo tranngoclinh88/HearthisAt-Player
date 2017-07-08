@@ -30,6 +30,7 @@
 		D657C6AC1F10C9F2003D4978 /* MiniPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D657C6A61F10C9F2003D4978 /* MiniPlayer.swift */; };
 		D657C6AD1F10C9F2003D4978 /* PagingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D657C6A81F10C9F2003D4978 /* PagingFooterView.swift */; };
 		D657C6AF1F10C9FE003D4978 /* MiniPlayerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D657C6AE1F10C9FE003D4978 /* MiniPlayerContainer.swift */; };
+		D657C6B11F10D9B5003D4978 /* UIAlertController+ErrorDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D657C6B01F10D9B5003D4978 /* UIAlertController+ErrorDisplay.swift */; };
 		D66EF58D1F0F8F610015DB01 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF58C1F0F8F610015DB01 /* UserProfile.swift */; };
 		D66EF58F1F0F9B540015DB01 /* ExecutableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF58E1F0F9B540015DB01 /* ExecutableRequest.swift */; };
 		D66EF5931F0FFA010015DB01 /* FontPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EF5921F0FFA010015DB01 /* FontPalette.swift */; };
@@ -98,6 +99,7 @@
 		D657C6A61F10C9F2003D4978 /* MiniPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniPlayer.swift; sourceTree = "<group>"; };
 		D657C6A81F10C9F2003D4978 /* PagingFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingFooterView.swift; sourceTree = "<group>"; };
 		D657C6AE1F10C9FE003D4978 /* MiniPlayerContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniPlayerContainer.swift; sourceTree = "<group>"; };
+		D657C6B01F10D9B5003D4978 /* UIAlertController+ErrorDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+ErrorDisplay.swift"; sourceTree = "<group>"; };
 		D66EF58C1F0F8F610015DB01 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		D66EF58E1F0F9B540015DB01 /* ExecutableRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutableRequest.swift; sourceTree = "<group>"; };
 		D66EF5921F0FFA010015DB01 /* FontPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontPalette.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				D68DAC7E1F0ECDE6000B390D /* String+Localization.swift */,
+				D657C6B01F10D9B5003D4978 /* UIAlertController+ErrorDisplay.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				D66EF5AD1F1024C90015DB01 /* PlayableItem.swift in Sources */,
 				D657C6AB1F10C9F2003D4978 /* GradientView.swift in Sources */,
 				D623757E1F0D65AE00AACA96 /* FeedApiController.swift in Sources */,
+				D657C6B11F10D9B5003D4978 /* UIAlertController+ErrorDisplay.swift in Sources */,
 				D6BAB3961F0D3BE50056A13A /* ApiConfig.swift in Sources */,
 				D623756B1F0D4B8100AACA96 /* ControllerFactory.swift in Sources */,
 				D623758F1F0D84F000AACA96 /* TracksController.swift in Sources */,

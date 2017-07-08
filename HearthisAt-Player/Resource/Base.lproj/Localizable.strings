@@ -7,6 +7,8 @@
 */
 
 "general.error.title" = "Ooops";
+"general.error.cancel" = "Okay";
+"general.error.retry" = "Retry";
 "general.title.unknown" = "Unknown";
 "general.title.loading" = "Loading...";
 "general.title.failed" = "Failed to load";
@@ -14,7 +16,9 @@
 "screen.feed.title" = "Top Track Artists";
 "screen.feed.cell.profiledetails.loading" = "Loading details...";
 "screen.feed.cell.profiledetails.error" = "Details Unavailable";
+"screen.feed.error.loading" = "Could not load feed";
 
 "screen.tracks.header.artistname.placeholder" = "Artist";
 "screen.tracks.header.artistdetails.loading" = "Loading...";
 "screen.tracks.header.artistdetails.error" = "Could not load artist details.";
+"screen.tracks.error.loading" = "Could not load tracks";

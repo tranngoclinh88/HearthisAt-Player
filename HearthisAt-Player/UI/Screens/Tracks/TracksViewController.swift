@@ -83,8 +83,11 @@ class TracksViewController: PagingTableViewController {
         let failureHandler: Controller.MethodFailure = { error in
             loadingFinished()
             
-            // TODO - Handle error
             completion(false, false)
+            
+            // show alert
+            let alert = UIAlertController.errorController(message: "screen.tracks.error.loading".localized())
+            self.present(alert, animated: true, completion: nil)
         }
         
         if self.state == .loading {
