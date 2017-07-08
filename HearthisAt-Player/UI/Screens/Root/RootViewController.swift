@@ -38,6 +38,7 @@ class RootViewController: UIViewController {
     }
 }
 
+// MARK: - Playback Notifications
 extension RootViewController: PlaybackControllerNotifyable {
     
     func playbackController(_ controller: PlaybackController,
@@ -99,6 +100,7 @@ extension RootViewController: PlaybackControllerNotifyable {
     }
 }
 
+// MARK: - MiniPlayerDelegate
 extension RootViewController: MiniPlayerDelegate {
     
     func miniPlayer(playPauseButtonPressed miniPlayer: MiniPlayer) {
