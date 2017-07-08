@@ -90,7 +90,20 @@ class FeedViewController: PagingTableViewController {
             completion(false, true)
             
             // show alert
-            let alert = UIAlertController.errorController(message: "screen.feed.error.loading".localized())
+            var alert: UIAlertController!
+            switch self.state {
+                
+            case .loading:
+                alert = UIAlertController.errorController(message: "screen.feed.error.loading".localized(),
+                                                          allowCancel: false,
+                                                          retryHandler: {
+                    self.loadNextPageOfData()
+                })
+                
+            default:
+                alert = UIAlertController.errorController(message: "screen.feed.error.loading".localized())
+            }
+                
             self.present(alert, animated: true, completion: nil)
         }
     }
