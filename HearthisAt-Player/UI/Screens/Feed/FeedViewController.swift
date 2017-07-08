@@ -17,6 +17,10 @@ class FeedViewController: PagingTableViewController {
         static let cellReuseIdentifier = "FeedItemCell"
     }
     
+    // MARK: Outlets
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     // MARK: Properties
     
     let headerView: FeedTitleHeaderView = {
@@ -55,11 +59,26 @@ class FeedViewController: PagingTableViewController {
     }
     
     override func loadNextPageOfData(completion: @escaping ((Bool, Bool) -> Void)) {
+        
+        if self.state == .loading {
+            activityIndicator.startAnimating()
+            tableView.isHidden = true
+        }
+        
+        let loadingFinished: () -> Void = {
+            self.activityIndicator.stopAnimating()
+            self.tableView.isHidden = false
+        }
+        
         service.feedController.loadNextPage(of: popularFeed,
                                             success: { (feed, newPage) in
+                                                loadingFinished()
+                                                
                                                 self.tableView.reloadData()
                                                 completion(true, feed.canPageFurther)
         }) { (error) in
+            loadingFinished()
+            
             dump(error)
             completion(false, false)
             // TODO - Handle error

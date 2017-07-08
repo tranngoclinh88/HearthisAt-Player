@@ -47,17 +47,23 @@
                                     <outlet property="delegate" destination="uYM-rj-s86" id="wiT-Ma-cEa"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Q1K-ea-soX">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="PY6-Ri-jZH" secondAttribute="trailing" id="6Ck-Or-4NI"/>
                             <constraint firstItem="PY6-Ri-jZH" firstAttribute="leading" secondItem="EXP-p7-8YC" secondAttribute="leading" id="YpP-kO-64P"/>
+                            <constraint firstItem="Q1K-ea-soX" firstAttribute="centerY" secondItem="EXP-p7-8YC" secondAttribute="centerY" id="dg9-dN-kP3"/>
                             <constraint firstItem="PY6-Ri-jZH" firstAttribute="top" secondItem="24t-3g-53N" secondAttribute="bottom" id="gi1-Ri-yYx"/>
                             <constraint firstItem="M2a-BD-dt2" firstAttribute="top" secondItem="PY6-Ri-jZH" secondAttribute="bottom" id="jUX-RK-gcZ"/>
+                            <constraint firstItem="Q1K-ea-soX" firstAttribute="centerX" secondItem="EXP-p7-8YC" secondAttribute="centerX" id="zyA-nN-wTJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SKn-jA-8Bn"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Q1K-ea-soX" id="V0u-Ok-vev"/>
                         <outlet property="tableView" destination="PY6-Ri-jZH" id="SWU-4h-6Ll"/>
                     </connections>
                 </viewController>

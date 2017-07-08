@@ -10,6 +10,14 @@ import UIKit
 
 class PagingTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    // MARK: Types
+    
+    enum State {
+        case normal
+        case loading
+        case paging
+    }
+    
     // MARK: Outlets
     
     @IBOutlet weak var tableView: UITableView!
@@ -18,7 +26,7 @@ class PagingTableViewController: UIViewController, UITableViewDataSource, UITabl
 
     private var footerView = PagingFooterView()
     
-    private var isLoadingData: Bool = false
+    private(set) var state: State = .normal
     
     // MARK: Lifecycle
     
@@ -36,15 +44,15 @@ class PagingTableViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func loadNextPageOfData() {
-        attemptLoadNextPageOfData()
+        attemptLoadNextPageOfData(newState: .loading)
     }
     
-    private func attemptLoadNextPageOfData() {
-        guard !isLoadingData else { return }
+    private func attemptLoadNextPageOfData(newState: State) {
+        guard state == .normal else { return }
         
-        isLoadingData = true
+        self.state = newState
         loadNextPageOfData { (success, allowPaging) in
-            self.isLoadingData = false
+            self.state = .normal
             
             self.updatePagingAbility(canPage: allowPaging)
         }
@@ -106,7 +114,7 @@ class PagingTableViewController: UIViewController, UITableViewDataSource, UITabl
         let bottomEdge = tableView.contentOffset.y + tableView.frame.size.height
         if bottomEdge >= tableView.contentSize.height {
             
-            attemptLoadNextPageOfData()
+            attemptLoadNextPageOfData(newState: .paging)
         }
     }
 }
