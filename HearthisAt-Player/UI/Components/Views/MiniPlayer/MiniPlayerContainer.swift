@@ -57,6 +57,7 @@ class MiniPlayerContainer: ViewComponent {
             completion?(false)
             return
         }
+        self.playerVisibilityState = .visible
         
         let duration = animated ? 0.3 : 0.0
 
@@ -110,6 +111,7 @@ class MiniPlayerContainer: ViewComponent {
             {
                 self.layoutIfNeeded()
         }) { (finished) in
+            self.playerVisibilityState = .hidden
             completion?(finished)
         }
         
