@@ -33,12 +33,39 @@ class PlaybackApiController: ApiController, PlaybackController {
                    requestExecutor: requestExecutor)
         
         self.jukebox = Jukebox(delegate: self, items: [])
+        
+        UIApplication.shared.beginReceivingRemoteControlEvents()
     }
     
     // MARK: Methods
     
     func generatePlayableItem(for object: Playable) -> PlayableItem {
         return MutablePlayableItem(for: object, responder: self)
+    }
+    
+    func respondToRemoteControlEvent(_ event: UIEvent?) {
+        guard let event = event, event.type == .remoteControl else {
+            return
+        }
+        
+        switch event.subtype {
+            
+        case .remoteControlPlay:
+            self.jukebox.play()
+            
+        case .remoteControlPause:
+            self.jukebox.pause()
+            
+        case .remoteControlTogglePlayPause:
+            if self.jukebox.state == .playing {
+                self.jukebox.pause()
+            } else {
+                self.jukebox.play()
+            }
+            
+        default:
+            break
+        }
     }
 }
 
@@ -74,7 +101,13 @@ extension PlaybackApiController: JukeboxDelegate {
         }
         
         _currentItem = item
-        jukebox.append(item: JukeboxItem(URL: url), loadingAssets: true)
+        let jukeboxItem = JukeboxItem(URL: url)
+        jukeboxItem.customMetaBuilder = JukeboxItem.MetaBuilder({ (builder) in
+            builder.title = item.object.playableTitle
+            builder.artist = item.object.playableDetails
+        })
+        
+        jukebox.append(item: jukeboxItem, loadingAssets: true)
         jukebox.play()
     }
     

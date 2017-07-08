@@ -6,7 +6,7 @@
 //  Copyright © 2017 Merrick Sapsford. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Listenable
 
 protocol PlaybackControllerNotifyable {
@@ -18,9 +18,20 @@ protocol PlaybackControllerNotifyable {
 
 protocol PlaybackController: Controller {
     
+    /// The notification service for playback.
     var notificationService: Listenable<PlaybackControllerNotifyable> { get }
     
+    /// The currently active playable item.
     var currentItem: PlayableItem? { get }
     
+    /// Generate a playable item.
+    ///
+    /// - Parameter object: The object to play.
+    /// - Returns: A playable item.
     func generatePlayableItem(for object: Playable) -> PlayableItem
+    
+    /// Handle Remote control event.
+    ///
+    /// - Parameter event: The remote event.
+    func respondToRemoteControlEvent(_ event: UIEvent?)
 }
