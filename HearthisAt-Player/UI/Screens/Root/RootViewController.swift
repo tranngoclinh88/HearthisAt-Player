@@ -67,6 +67,7 @@ extension RootViewController: PlaybackControllerNotifyable {
     private func updateMiniPlayer(for item: PlayableItem,
                                   state: PlayableItem.State) {
         
+        miniPlayerContainer.showPlayer(animated: true, completion: nil)
         miniPlayer.buttonState = miniPlayerButtonState(for: state)
         
         switch state {

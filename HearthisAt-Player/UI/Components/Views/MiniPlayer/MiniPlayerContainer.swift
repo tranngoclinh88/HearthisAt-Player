@@ -11,6 +11,13 @@ import TinyConstraints
 
 class MiniPlayerContainer: ViewComponent {
     
+    // MARK: Types
+    
+    enum VisibilityState {
+        case hidden
+        case visible
+    }
+    
     // MARK: Properties
     
     let miniPlayer: MiniPlayer = {
@@ -18,6 +25,9 @@ class MiniPlayerContainer: ViewComponent {
         miniPlayer.translatesAutoresizingMaskIntoConstraints = false
         return miniPlayer
     }()
+    private var playerBottomConstraint: NSLayoutConstraint?
+    
+    private(set) var playerVisibilityState: VisibilityState?
     
     // MARK: Lifecycle
     
@@ -26,8 +36,10 @@ class MiniPlayerContainer: ViewComponent {
         
         view.addSubview(miniPlayer)
         miniPlayer.leading(to: view)
-        miniPlayer.bottom(to: view)
+        self.playerBottomConstraint = miniPlayer.bottom(to: view)
         miniPlayer.trailing(to: view)
+        
+        hidePlayer(animated: false, completion: nil)
     }
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
@@ -36,5 +48,71 @@ class MiniPlayerContainer: ViewComponent {
             return hitView
         }
         return nil
+    }
+    
+    // MARK: Player Visibility
+    
+    func showPlayer(animated: Bool, completion: ((Bool) -> Void)?) {
+        guard self.playerVisibilityState != .visible else {
+            completion?(false)
+            return
+        }
+        
+        let duration = animated ? 0.3 : 0.0
+
+        if animated {
+            let shadowAnimation = CABasicAnimation(keyPath: "shadowOpacity")
+            shadowAnimation.fromValue = miniPlayer.layer.shadowOpacity
+            shadowAnimation.toValue = 0.3
+            shadowAnimation.duration = duration
+            shadowAnimation.fillMode = kCAFillModeBoth
+            shadowAnimation.isRemovedOnCompletion = false
+            miniPlayer.layer.add(shadowAnimation, forKey: nil)
+            
+        } else {
+            miniPlayer.layer.shadowOpacity = 0.3
+        }
+        
+        playerBottomConstraint?.constant = 0.0
+        UIView.animate(withDuration: duration,
+                       animations:
+            {
+                self.layoutIfNeeded()
+        }) { (finished) in
+            completion?(finished)
+        }
+    }
+    
+    func hidePlayer(animated: Bool, completion: ((Bool) -> Void)?) {
+        guard self.playerVisibilityState != .hidden else {
+            completion?(false)
+            return
+        }
+        
+        let duration = animated ? 0.3 : 0.0
+        
+        if animated {
+            let shadowAnimation = CABasicAnimation(keyPath: "shadowOpacity")
+            shadowAnimation.fromValue = miniPlayer.layer.shadowOpacity
+            shadowAnimation.toValue = 0.0
+            shadowAnimation.duration = duration
+            shadowAnimation.fillMode = kCAFillModeBoth
+            shadowAnimation.isRemovedOnCompletion = false
+            miniPlayer.layer.add(shadowAnimation, forKey: nil)
+            
+        } else {
+            miniPlayer.layer.shadowOpacity = 0.0
+        }
+        
+        playerBottomConstraint?.constant = miniPlayer.intrinsicContentSize.height
+        UIView.animate(withDuration: duration,
+                       animations:
+            {
+                self.layoutIfNeeded()
+        }) { (finished) in
+            completion?(finished)
+        }
+        
+        
     }
 }
