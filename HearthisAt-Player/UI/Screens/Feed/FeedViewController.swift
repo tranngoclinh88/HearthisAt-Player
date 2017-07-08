@@ -36,10 +36,18 @@ class FeedViewController: PagingTableViewController {
     
     private var transitioningHandler = FeedTransitioningHandler()
     
+    // MARK: Init
+    
+    deinit {
+        unregisterForMiniPlayerInsetting()
+    }
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        registerForMiniPlayerInsetting()
         
         navigationController?.delegate = transitioningHandler
         title = "screen.feed.title".localized()

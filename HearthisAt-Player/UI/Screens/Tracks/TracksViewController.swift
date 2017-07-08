@@ -40,10 +40,18 @@ class TracksViewController: PagingTableViewController {
         return formatter
     }()
     
+    // MARK: Init
+    
+    deinit {
+        unregisterForMiniPlayerInsetting()
+    }
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        registerForMiniPlayerInsetting()
         
         // configure header view
         profileProvider?.add(listener: self)
