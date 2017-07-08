@@ -97,14 +97,7 @@ class PagingTableViewController: UIViewController, UITableViewDataSource, UITabl
     
     // MARK: UIScrollViewDelegate
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView,
-                                  willDecelerate decelerate: Bool) {
-        if !decelerate {
-            checkIfPagingLoadRequired()
-        }
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         checkIfPagingLoadRequired()
     }
     
@@ -112,8 +105,7 @@ class PagingTableViewController: UIViewController, UITableViewDataSource, UITabl
     private func checkIfPagingLoadRequired() {
         guard self.tableView.tableFooterView == self.footerView else { return }
         
-        let bottomEdge = tableView.contentOffset.y + tableView.frame.size.height
-        if bottomEdge >= tableView.contentSize.height {
+        if tableView.contentOffset.y >= (tableView.contentSize.height - tableView.bounds.size.height) {
             
             attemptLoadNextPageOfData(newState: .paging)
         }
