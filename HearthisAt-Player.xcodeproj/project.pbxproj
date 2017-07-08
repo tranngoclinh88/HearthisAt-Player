@@ -540,6 +540,7 @@
 				D693E7D11F0D385400C5B88C /* Sources */,
 				D693E7D21F0D385400C5B88C /* Frameworks */,
 				D693E7D31F0D385400C5B88C /* Resources */,
+				D636CD101F10F1ED0001FD86 /* Increment Build Number */,
 				A84BC78F0208950A638C2069 /* [CP] Embed Pods Frameworks */,
 				4F8A9DC57FC4902D690747AF /* [CP] Copy Pods Resources */,
 			);
@@ -564,7 +565,6 @@
 				TargetAttributes = {
 					D693E7D41F0D385400C5B88C = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 9LZFW84Z53;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -656,6 +656,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HearthisAt-Player/Pods-HearthisAt-Player-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D636CD101F10F1ED0001FD86 /* Increment Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Increment Build Number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`\"$git\" rev-list HEAD --count`\n\nif [ $CONFIGURATION = \"debug\" ]; then\nbranchName=`\"$git\" rev-parse --abbrev-ref HEAD`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild-$branchName\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild-$branchName\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}.dSYM/Contents/Info.plist\"\nelse\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}.dSYM/Contents/Info.plist\"\nfi\n\necho \"Incremented the build number ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -834,7 +848,7 @@
 			baseConfigurationReference = 13E78C73F61817FF43F0C0FF /* Pods-HearthisAt-Player.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9LZFW84Z53;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "HearthisAt-Player/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.msapsford.HearthisAt-Player";
@@ -848,7 +862,7 @@
 			baseConfigurationReference = B688C9A710F1D9E93CE040A5 /* Pods-HearthisAt-Player.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9LZFW84Z53;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "HearthisAt-Player/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.msapsford.HearthisAt-Player";
