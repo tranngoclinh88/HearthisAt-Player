@@ -48,7 +48,6 @@ class FeedItemCell: UITableViewCell {
                                         imageTransition: .crossDissolve(0.2),
                                         runImageTransitionIfCached: false,
                                         completion: nil)
-            // TODO - Image loading
         }
     }
     weak var profileProvider: ArtistProfileProvider? {

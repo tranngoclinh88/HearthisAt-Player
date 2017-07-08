@@ -54,6 +54,7 @@ class PagingTableViewController: UIViewController, UITableViewDataSource, UITabl
         loadNextPageOfData { (success, allowPaging) in
             self.state = .normal
             
+            self.footerView.stopAnimating()
             self.updatePagingAbility(canPage: allowPaging)
         }
     }
