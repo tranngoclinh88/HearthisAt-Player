@@ -29,5 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
         return true
     }
+    
+    override func remoteControlReceived(with event: UIEvent?) {
+        service?.playbackController.respondToRemoteControlEvent(event)
+    }
 }
 
