@@ -1,5 +1,14 @@
 # Hearthis.at Player
-Minimalistic iOS player for Hearthis.at top tracks and artists.
+**Minimalistic iOS player for Hearthis.at top track artists.**
+
+<p align="center">
+    <img src="Artwork/header.png" width="890" alt="Hearthis.at Player"/>
+</p>
+
+## Features
+- Pageable lists of Top Track Artists & Artist tracks.
+- Support for background audio and remote events.
+- Dynamic artwork backgrounds.
 
 ## About
 **Xcode Version** 8.3.x  
