@@ -5,6 +5,8 @@
     <img src="Artwork/header.png" width="890" alt="Hearthis.at Player"/>
 </p>
 
+Completed as coding challenge for [mimi.io](http://mimi.io).
+
 ## Features
 - Pageable lists of Top Track Artists & Artist tracks.
 - Support for background audio and remote events.
